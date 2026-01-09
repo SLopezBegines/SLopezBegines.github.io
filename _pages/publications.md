@@ -24,6 +24,7 @@ DOI: [10.1101/2025.01.18.633708](https://doi.org/10.1101/2025.01.18.633708)
 ## 2024
 
 **Santiago López-Begines** et. al. Handshaking for ultrafast endocytosis: Dynamin1xA and Endophilin A1 sealed the deal. ***EMBO Journal***.
+DOI: [10.1038/s44318-024-00179-1](htts://doi.org/10.1038/s44318-024-00179-1)
 
 ## 2020
 
