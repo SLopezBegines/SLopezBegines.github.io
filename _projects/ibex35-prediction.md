@@ -282,12 +282,4 @@ Potential extensions of this work:
 
 ---
 
-# Publications & Thesis Defense
-
-**Status**: Thesis completed and defended (2025)  
-**Institution**: UNED - Master's in Big Data and Data Science  
-**Grade**: *To be updated after defense*
-
----
-
 [← Back to Projects](/index.html#projects)
