@@ -65,5 +65,7 @@ navigation:
     url: /#projects
   - title: Publications
     url: /publications
+  - title: CV
+    url: /assets/cv/CV_Santiago_Lopez_Begines.pdf
   - title: Contact
     url: /#contact
