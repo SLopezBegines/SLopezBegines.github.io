@@ -46,14 +46,14 @@ social:
 
 # Skills
 skills:
-  - name: Python
-    level: 95
   - name: R
-    level: 95
-  - name: Machine Learning
     level: 90
+  - name: Python
+    level: 80
   - name: Data Analysis
     level: 95
+  - name: Machine Learning
+    level: 80
   - name: SQL
     level: 60
 
