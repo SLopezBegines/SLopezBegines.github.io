@@ -28,16 +28,6 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:santiago.lopez.begines@gmail.com"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/SLopezBegines"
-    - label: "ORCID"
-      icon: "fab fa-fw fa-orcid"
-      url: "https://orcid.org/0000-0001-8809-8919"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/santiago-lopez-begines"
-
 # Site Footer
 footer:
   links:
