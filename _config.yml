@@ -21,7 +21,7 @@ words_per_minute: 200
 # Site Author
 author:
   name: "Santiago López Begines, PhD"
-  avatar: "assets/images/photoprofile.jpeg"
+  avatar: "https://slopezbegines.github.io/assets/images/photoprofile.jpeg"
   bio: "Neuroscientist → Data Scientist<br>MSc Data Science | Machine Learning | Quantitative Finance<br>15+ years in biomedical research & omics analysis"
   location: "Sevilla"
   links:
