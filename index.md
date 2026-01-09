@@ -31,7 +31,7 @@ layout: home
                     Neuroscientist with over 15 years of expertise in neurodegeneration research, biomarker discovery, and advanced data analysis. Currently working as <strong>Postdoctoral Researcher at University of Cádiz</strong>.
                 </p>
                 <p>
-                   Now turned in Data Scientist after completing MSc in Big Data and Data Science (2025) for a transition into data science and omics data analysis. Proven
+                   Now turned in Data Scientist after completing <strong>MSc in Big Data and Data Science (2025)</strong> for a transition into data science and omics data analysis. Proven
 proficiency in Python and R for curation, validation, and analysis of large scientific datasets
 (proteomics, clinical, transcriptomic). Skilled in developing automated pipelines and
 reproducible analytical workflows, collaborating across multidisciplinary teams, and
