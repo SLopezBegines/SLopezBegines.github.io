@@ -129,6 +129,6 @@ navigation:
 
 ## License
 
-© 2025 Santiago López Begines. All rights reserved.
+© 2026 Santiago López Begines. All rights reserved.
 
 Code examples in projects are provided as educational material and can be adapted with attribution.
