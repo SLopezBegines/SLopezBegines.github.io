@@ -104,3 +104,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// Ejemplo: trackear clicks en proyectos
+document.querySelectorAll('.project-link').forEach(link => {
+    link.addEventListener('click', function() {
+        gtag('event', 'click', {
+            'event_category': 'Projects',
+            'event_label': this.closest('.project-card').querySelector('h3').textContent
+        });
+    });
+});
+
+// Ejemplo: trackear descargas del CV
+document.querySelectorAll('a[download]').forEach(link => {
+    link.addEventListener('click', function() {
+        gtag('event', 'download', {
+            'event_category': 'CV',
+            'event_label': 'PDF Download'
+        });
+    });
+});
