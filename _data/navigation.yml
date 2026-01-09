@@ -1,0 +1,12 @@
+# Main navigation links
+main:
+  - title: "Home"
+    url: /
+  - title: "Projects"
+    url: /#projects
+  - title: "Publications"
+    url: /publications/
+  - title: "CV"
+    url: /assets/cv/CV_Santiago_Lopez_Begines.pdf
+  - title: "GitHub"
+    url: https://github.com/SLopezBegines
