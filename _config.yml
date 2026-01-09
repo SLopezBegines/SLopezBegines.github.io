@@ -69,3 +69,6 @@ navigation:
     url: /assets/cv/CV_Santiago_Lopez_Begines.pdf
   - title: Contact
     url: /#contact
+
+# Google Analytics (opcional - añade tu ID aquí)
+google_analytics: G-1NTD08CXTS
