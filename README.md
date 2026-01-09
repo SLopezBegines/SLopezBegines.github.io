@@ -1,2 +1,0 @@
-# SLopezBegines.github.io
-Portfolio
