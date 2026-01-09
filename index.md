@@ -14,6 +14,8 @@ layout: home
             </p>
             <div class="hero-cta">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="assets/cv/CV_Santiago_Lopez_Begines.pdf" class="btn btn-outline" download>
+                    <i class="fas fa-download"></i> Download CV </a>
                 <a href="#contact" class="btn btn-outline">Get in Touch</a>
             </div>
         </div>
