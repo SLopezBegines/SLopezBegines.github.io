@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<article class="project-detail">
+    <div class="container">
+        <a href="/#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+        
+        <header class="project-header">
+            <h1>{{ page.title }}</h1>
+            {% if page.excerpt %}
+            <p class="lead">{{ page.excerpt }}</p>
+            {% endif %}
+            
+            {% if page.tags %}
+            <div class="tags">
+                {% for tag in page.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </header>
+        
+        <div class="project-content">
+            {{ content }}
+        </div>
+    </div>
+</article>

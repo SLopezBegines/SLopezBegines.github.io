@@ -1,10 +1,7 @@
 ---
+layout: project
 title: "AgrIoT Smart Motor Control"
 excerpt: "ESP32-based IoT system for agricultural automation with web interface and remote monitoring"
-header:
-  teaser: /assets/images/projects/agriot-thumb.jpg
-  overlay_image: /assets/images/projects/agriot-header.jpg
-  overlay_filter: 0.5
 tags:
   - IoT
   - ESP32

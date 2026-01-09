@@ -1,10 +1,7 @@
 ---
+layout: project
 title: "Alzheimer's Disease Prediction using A4 Study Data"
 excerpt: "Multimodal machine learning approach combining clinical data and PET imaging for early AD detection"
-header:
-  teaser: /assets/images/projects/alzheimer-thumb.jpg
-  overlay_image: /assets/images/projects/alzheimer-header.jpg
-  overlay_filter: 0.5
 tags:
   - Machine Learning
   - Medical Imaging

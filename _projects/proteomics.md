@@ -1,10 +1,7 @@
 ---
+layout: project
 title: "Proteomics Analysis Pipeline"
 excerpt: "High-throughput proteomic data analysis from mass spectrometry for neurodegenerative disease research"
-header:
-  teaser: /assets/images/projects/proteomics-thumb.jpg
-  overlay_image: /assets/images/projects/proteomics-header.jpg
-  overlay_filter: 0.5
 tags:
   - Proteomics
   - Mass Spectrometry

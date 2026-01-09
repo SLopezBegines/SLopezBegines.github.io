@@ -1,175 +1,69 @@
-# Theme Settings
-remote_theme: mmistakes/minimal-mistakes@4.24.0
-minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-
 # Site Settings
-locale: "es-ES"
-title: "Santiago López Begines"
-title_separator: "|"
-subtitle: "Biomedical Data Scientist"
-name: "Santiago López Begines"
-description: "Neuroscientist turned Data Scientist | Machine Learning & Financial Modeling"
-url: "https://SLopezBegines.github.io"
+title: Santiago López Begines
+subtitle: Biomedical Data Scientist
+email: santiago.lopez.begines@gmail.com
+description: >-
+  Neuroscientist turned Data Scientist | Machine Learning, Financial Modeling & Biomedical Research
 baseurl: ""
-repository: "SLopezBegines/SLopezBegines.github.io"
-teaser: # path of fallback teaser image
-logo: # path of logo image to display in the masthead
-masthead_title: # overrides the website title displayed in the masthead
-breadcrumbs: true
-words_per_minute: 200
+url: "https://SLopezBegines.github.io"
 
-# Site Author
-author:
-  name: "Santiago López Begines, PhD"
-  avatar: "https://slopezbegines.github.io/assets/images/photoprofile.jpeg"
-  bio: "Neuroscientist → Data Scientist<br>MSc Data Science | Machine Learning | Quantitative Finance<br>15+ years in biomedical research & omics analysis"
-  location: "Sevilla"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:santiago.lopez.begines@gmail.com"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/SLopezBegines"
-    - label: "ORCID"
-      icon: "fab fa-fw fa-orcid"
-      url: "https://orcid.org/0000-0001-8809-8919"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/santibegines/"
-# Site Footer
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/SLopezBegines"
-    - label: "ORCID"
-      icon: "fab fa-fw fa-orcid"
-      url: "https://orcid.org/0000-0001-8809-8919"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/santibegines/"
-
-# Reading Files
-include:
-  - .htaccess
-  - _pages
-exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - vendor
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - assets/js/plugins
-  - assets/js/_main.js
-  - assets/js/vendor
-  - Capfile
-  - CHANGELOG
-  - config
-  - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - log
-  - node_modules
-  - package.json
-  - package-lock.json
-  - Rakefile
-  - README
-  - tmp
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-# Conversion
+# Build settings
 markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-# Markdown Processing
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+permalink: /:title/
 
 # Collections
 collections:
   projects:
     output: true
-    permalink: /:collection/:path/
+    permalink: /projects/:path/
 
-# Defaults
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: false
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  # _projects
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      related: true
-      toc: true
-      toc_sticky: true
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
 
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed
+# Personal Info
+author:
+  name: Santiago López Begines, PhD
+  title: Data Scientist & Neuroscientist
+  bio: Neuroscientist → Data Scientist
+  tagline: Machine Learning | Quantitative Finance | Biomedical Research
+  location: Sevilla
+  email: santiago.lopez.begines@gmail.com
+  avatar: assets/images/photoprofile.jpeg
+  
+# Social Links
+social:
+  github: https://github.com/SLopezBegines
+  orcid: https://orcid.org/0000-0001-8809-8919
+  linkedin: https://linkedin.com/in/santiago-lopez-begines
 
-# Outputting
-permalink: /:categories/:title/
-paginate: 5
-paginate_path: /page:num/
-timezone: Europe/Madrid
+# Skills
+skills:
+  - name: Python
+    level: 95
+  - name: R
+    level: 95
+  - name: Machine Learning
+    level: 90
+  - name: Data Analysis
+    level: 95
+  - name: SQL
+    level: 60
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
-
-# Archives
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-
-# HTML Compression
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
+# Navigation
+navigation:
+  - title: About
+    url: /#about
+  - title: Projects
+    url: /#projects
+  - title: Publications
+    url: /publications
+  - title: Contact
+    url: /#contact

@@ -1,10 +1,7 @@
 ---
+layout: project
 title: "IBEX35 Stock Market Prediction using Machine Learning and Sentiment Analysis"
 excerpt: "Master's thesis: Predicting Spanish stock market movements using financial indicators and news sentiment analysis"
-header:
-  teaser: /assets/images/projects/ibex-thumb.jpg
-  overlay_image: /assets/images/projects/ibex-header.jpg
-  overlay_filter: 0.5
 tags:
   - Machine Learning
   - Financial Markets

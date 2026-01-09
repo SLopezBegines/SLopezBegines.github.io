@@ -6,33 +6,22 @@ Personal portfolio website showcasing data science and neuroscience research pro
 
 ## About
 
-This portfolio website is built with Jekyll and the Minimal Mistakes theme, hosted on GitHub Pages. It features:
+Minimalist portfolio built with Jekyll, featuring a custom dark theme optimized for technical content and project showcases.
 
-- Professional project showcases with technical details
-- Complete publication list
-- Interactive project pages with code examples
-- Responsive design for mobile and desktop
-- Dark theme optimized for technical content
+## Features
 
-## Projects Featured
-
-1. **IBEX35 Stock Market Prediction** - Machine learning and sentiment analysis for financial markets
-2. **Alzheimer's Disease Prediction** - Multimodal ML using A4 study data
-3. **Proteomics Analysis Pipeline** - High-throughput omics data processing
-4. **AgrIoT Smart Control** - ESP32-based IoT automation system
+- ⚡ Fast, lightweight design
+- 🎨 Custom dark theme with modern aesthetics
+- 📱 Fully responsive (mobile, tablet, desktop)
+- 🚀 Smooth animations and transitions
+- 📊 Project showcases with detailed technical documentation
+- 📚 Complete publication list
+- 🔗 Social links (GitHub, ORCID, LinkedIn)
 
 ## Local Development
 
-### Prerequisites
-
-- Ruby 2.7+
-- Bundler
-- Jekyll
-
-### Setup
-
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/SLopezBegines/SLopezBegines.github.io.git
 cd SLopezBegines.github.io
 
@@ -45,72 +34,92 @@ bundle exec jekyll serve
 # View at http://localhost:4000
 ```
 
-## Deployment
-
-The site is automatically built and deployed by GitHub Pages when changes are pushed to the `main` branch.
-
 ## Project Structure
 
 ```
 .
 ├── _config.yml           # Site configuration
-├── _data/
-│   └── navigation.yml    # Navigation menu
-├── _pages/
-│   └── publications.md   # Publications page
-├── _projects/            # Individual project pages
+├── _layouts/            # HTML templates
+│   ├── default.html     # Base layout
+│   ├── home.html        # Homepage layout
+│   └── project.html     # Project pages layout
+├── _includes/           # Reusable components
+│   ├── header.html      # Navigation
+│   └── footer.html      # Footer
+├── _projects/           # Project pages
 │   ├── ibex35-prediction.md
 │   ├── alzheimer-ml.md
 │   ├── proteomics.md
 │   └── agriot.md
 ├── assets/
-│   ├── images/          # Project images
-│   └── cv/              # CV PDF files
-└── index.md             # Home page
+│   ├── css/main.css     # Custom styles
+│   ├── js/main.js       # JavaScript
+│   └── images/          # Images
+├── index.md             # Homepage
+└── publications.md      # Publications page
 ```
 
-## Technologies Used
+## Technologies
 
-- **Jekyll**: Static site generator
-- **Minimal Mistakes**: Professional Jekyll theme
-- **GitHub Pages**: Free hosting
-- **Markdown**: Content writing
-- **Liquid**: Templating
-- **YAML**: Configuration
+- **Jekyll 4.3**: Static site generator
+- **Custom CSS**: No external frameworks
+- **Vanilla JavaScript**: No jQuery or libraries
+- **GitHub Pages**: Hosting
 
 ## Customization
 
-### Changing Theme Color
+### Colors
 
-Edit `_config.yml`:
+Edit CSS variables in `assets/css/main.css`:
 
-```yaml
-minimal_mistakes_skin: "dark"  # Options: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+```css
+:root {
+  --color-primary: #3b82f6;      /* Primary accent color */
+  --color-accent: #8b5cf6;       /* Secondary accent */
+  --color-bg: #0a0a0a;           /* Background */
+  --color-text: #e8e8e8;         /* Text color */
+}
 ```
 
-### Adding a New Project
+### Adding Projects
 
-1. Create a new file in `_projects/` (e.g., `new-project.md`)
+1. Create `.md` file in `_projects/`
 2. Add front matter:
 
 ```yaml
 ---
+layout: project
 title: "Project Title"
 excerpt: "Short description"
-header:
-  teaser: /assets/images/projects/thumb.jpg
 tags:
   - Tag1
   - Tag2
 ---
+
+# Your content here
 ```
 
-3. Write project content in Markdown
-4. Add project card to `index.md`
+3. Add project card to `index.md`
 
-### Updating CV
+### Navigation
 
-Replace the PDF file in `assets/cv/` with your updated CV, keeping the same filename.
+Edit `_config.yml`:
+
+```yaml
+navigation:
+  - title: About
+    url: /#about
+  - title: Projects
+    url: /#projects
+```
+
+## Performance
+
+- ✅ No external CSS frameworks
+- ✅ Minimal JavaScript
+- ✅ Optimized fonts (Inter, JetBrains Mono)
+- ✅ Fast page loads
+- ✅ SEO optimized
 
 ## Contact
 
@@ -120,12 +129,6 @@ Replace the PDF file in `assets/cv/` with your updated CV, keeping the same file
 
 ## License
 
-This portfolio is © 2025 Santiago López Begines. Content is available for reference but please ask before reusing substantial portions.
+© 2025 Santiago López Begines. All rights reserved.
 
-Code snippets in projects are provided as examples and can be adapted for your own use with attribution.
-
-## Acknowledgments
-
-- Theme: [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) by Michael Rose
-- Icons: Font Awesome
-- Hosting: GitHub Pages
+Code examples in projects are provided as educational material and can be adapted with attribution.
