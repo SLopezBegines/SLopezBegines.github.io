@@ -28,10 +28,15 @@ layout: home
             <div class="about-text">
                 <h3>Background</h3>
                 <p>
-                    Neuroscientist with over 15 years of expertise in neurodegeneration research, biomarker discovery, and advanced data analysis. Currently working as <strong>Postdoctoral Researcher at Luxembourg Center for Systems Biomedicine (LCSB)</strong> and completing a <strong>Master's Degree in Big Data and Data Science</strong> at UNED.
+                    Neuroscientist with over 15 years of expertise in neurodegeneration research, biomarker discovery, and advanced data analysis. Currently working as <strong>Postdoctoral Researcher at University of Cádiz</strong>.
                 </p>
                 <p>
-                    I leverage machine learning alongside Python and R to interrogate complex datasets—ranging from proteomics and transcriptomics to clinical and financial data—to drive actionable insights.
+                   Now turned in Data Scientist after completing MSc in Big Data and Data Science (2025) for a transition into data science and omics data analysis. Proven
+proficiency in Python and R for curation, validation, and analysis of large scientific datasets
+(proteomics, clinical, transcriptomic). Skilled in developing automated pipelines and
+reproducible analytical workflows, collaborating across multidisciplinary teams, and
+communicating technical insights effectively. Experienced in managing research projects
+and mentoring researchers.
                 </p>
                 
                 <h3>Key Achievements</h3>
