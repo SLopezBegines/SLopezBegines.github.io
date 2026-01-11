@@ -1,0 +1,67 @@
+<!-- JSON-LD Schema.org markup for Google Rich Results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author.name }}",
+  "url": "{{ site.url }}",
+  "image": "{{ site.url }}{{ site.author.avatar }}",
+  "email": "{{ site.email }}",
+  "jobTitle": "Data Scientist & Neuroscientist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "University of Cádiz",
+    "url": "https://www.uca.es"
+  },
+  "alumniOf": [
+    {
+      "@type": "Organization",
+      "name": "Universidad Nacional de Educación a Distancia (UNED)",
+      "sameAs": "https://www.uned.es/"
+    },
+    {
+      "@type": "Organization",
+      "name": "University of Barcelona",
+      "sameAs": "https://www.ub.edu/web/portal/en/"
+    }
+  ],
+  "knowsAbout": [
+    "Machine Learning",
+    "Data Science",
+    "Neuroscience",
+    "Proteomics",
+    "Financial Modeling",
+    "Python Programming",
+    "R Programming",
+    "Deep Learning",
+    "Bioinformatics"
+  ],
+  "sameAs": [
+    "https://github.com/SLopezBegines",
+    "https://orcid.org/0000-0001-8809-8919",
+    "{{ site.social.linkedin }}"
+  ],
+  "nationality": {
+    "@type": "Country",
+    "name": "Spain"
+  }
+}
+</script>
+
+{% if page.layout == "project" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "{{ page.title }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "description": "{{ page.excerpt | strip_html | strip_newlines }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "keywords": "{% if page.tags %}{{ page.tags | join: ', ' }}{% endif %}",
+  "inLanguage": "{% if page.lang %}{{ page.lang }}{% else %}es{% endif %}"
+}
+</script>
+{% endif %}
