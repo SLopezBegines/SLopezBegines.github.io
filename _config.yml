@@ -3,9 +3,14 @@ title: Santiago López Begines
 subtitle: Biomedical Data Scientist
 email: santiago.lopez.begines@gmail.com
 description: >-
-  Neuroscientist turned Data Scientist | Machine Learning & Biomedical Research
+  Santiago López Begines, PhD - Neuroscientist & Data Scientist specializing in Machine Learning, 
+  Financial Modeling, and Biomedical Research. 15+ years experience in neurodegeneration research, 
+  proteomics, and quantitative analysis. Expert in Python, R, and deep learning for predictive modeling.
 baseurl: ""
 url: "https://SLopezBegines.github.io"
+# SEO Keywords
+keywords: "data scientist, machine learning, neuroscience, financial modeling, IBEX35 prediction, 
+  proteomics analysis, biomedical research, Python, R, deep learning, Luxembourg, Santiago López Begines"
 
 # Build settings
 markdown: kramdown
