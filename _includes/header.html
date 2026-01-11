@@ -1,7 +1,7 @@
 <header class="site-header">
     <nav class="navbar">
         <div class="container">
-            <a href="/" class="logo">
+            <a href="{% if page.lang == 'en' %}/en/{% else %}/{% endif %}" class="logo">
                 <span class="logo-text">{{ site.author.name }}</span>
             </a>
             
@@ -11,13 +11,31 @@
                 <span></span>
             </button>
             
-            <ul class="nav-menu">
-                {% for item in site.navigation %}
-                <li class="nav-item">
-                    <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
-                </li>
-                {% endfor %}
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    {% for item in site.navigation %}
+                    <li class="nav-item">
+                        {% if page.lang == "en" %}
+                            <a href="{{ item.url | prepend: '/en' }}" class="nav-link">{{ item.title_en }}</a>
+                        {% else %}
+                            <a href="{{ item.url }}" class="nav-link">{{ item.title_es }}</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <div class="language-switcher">
+                    {% if page.lang == "en" %}
+                        <a href="{{ page.url | remove: '/en' }}" class="lang-link">ES</a>
+                        <span class="lang-separator">|</span>
+                        <span class="lang-link active">EN</span>
+                    {% else %}
+                        <span class="lang-link active">ES</span>
+                        <span class="lang-separator">|</span>
+                        <a href="/en{{ page.url }}" class="lang-link">EN</a>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </nav>
 </header>

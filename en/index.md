@@ -1,7 +1,5 @@
 ---
 layout: home
-lang: es
-ref: home
 ---
 
 <!-- Hero Section -->
@@ -9,16 +7,16 @@ ref: home
     <div class="container">
         <div class="hero-content fade-in-up">
             <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="hero-avatar">
-            <p class="hero-subtitle">{{ site.t.es.hero_subtitle }}</p>
-            <h1>{{ site.t.es.hero_title }}</h1>
+            <p class="hero-subtitle">{{ site.author.bio }}</p>
+            <h1>{{ site.author.name }}</h1>
             <p class="hero-description">
-                {{ site.t.es.hero_tagline }}
+                {{ site.author.tagline }}
             </p>
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">{{ site.t.es.hero_cta_projects }}</a>
-                <a href="/assets/cv/CV_Santiago_Lopez_Begines.pdf" class="btn btn-outline" download>
-                    <i class="fas fa-download"></i> Descargar CV
-                </a>
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="assets/cv/CV_Santiago_Lopez_Begines.pdf" class="btn btn-outline" download>
+                    <i class="fas fa-download"></i> Download CV </a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
             </div>
         </div>
     </div>
@@ -27,29 +25,24 @@ ref: home
 <!-- About Section -->
 <section id="about">
     <div class="container">
-        <h2 class="section-title">{{ site.t.es.about_title }}</h2>
+        <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <h3>{{ site.t.es.about_background }}</h3>
+                <h3>Background</h3>
                 <p>
-                    Neurocientífico con más de 15 años de experiencia en investigación de neurodegeneración, descubrimiento de biomarcadores y análisis avanzado de datos. Actualmente trabajo como <strong>Investigador Postdoctoral en la Universidad de Cádiz</strong>.
+                    Neuroscientist with over 15 years of expertise in neurodegeneration research, biomarker discovery, and advanced data analysis. Currently working as <strong>Postdoctoral Researcher at University of Cádiz</strong>.
                 </p>
                 <p>
-                    Reconvertido en científico de datos tras completar un <strong>Máster en Big Data y Ciencia de Datos (UNED, 2025)</strong>.
-                    Aprovecho el machine learning junto con Python y R para interrogar conjuntos de datos complejos—desde proteómica y transcriptómica hasta datos clínicos y financieros—para generar insights accionables.
-                    Competencia demostrada en Python y R para la curación, validación y análisis de grandes conjuntos de datos científicos (proteómica, clínica, transcriptómica). Experto en el desarrollo de procesos automatizados y
-                    flujos de trabajo analíticos reproducibles, la colaboración entre equipos multidisciplinares y la
-                    comunicación eficaz de conocimientos técnicos. Experiencia en la gestión de proyectos de investigación
-                    y la tutoría de investigadores.
+                  I am now a Data Scientist after completing an MSc in Big Data and Data Science in 2025, which helped me transition into data science and omics data analysis. I have proven proficiency in Python and R for curating, validating, and analyzing large scientific datasets (proteomics, clinical, and transcriptomics). I am skilled in developing automated pipelines and reproducible analytical workflows, collaborating across multidisciplinary teams, and communicating technical insights effectively. I am experienced in managing research projects and mentoring researchers.
                 </p>
                 
-                <h3>{{ site.t.es.about_achievements }}</h3>
+                <h3>Key Achievements</h3>
                 <ul>
-                    <li>Implementación exitosa de modelos de ML para identificar proteínas expresadas diferencialmente en modelos de enfermedad de Batten</li>
-                    <li>Desarrollo de pipelines personalizados para análisis de datos ómicos en investigación neurodegenerativa</li>
-                    <li>Desarrollo de pipeline integral de ML para predicción del mercado bursátil IBEX35</li>
-                    <li>Coautor de publicaciones en Science Advances, EMBO Journal y eLife</li>
-                    <li>Supervisión de estudiantes de doctorado y 100+ horas de docencia en la Universidad de Sevilla</li>
+                    <li>Successfully deployed ML models to identify differentially expressed proteins in Batten disease models</li>
+                    <li>Engineered custom omics data analysis pipelines for neurodegenerative research</li>
+                    <li>Developed comprehensive ML pipeline for IBEX35 stock market prediction</li>
+                    <li>Co-authored publications in Science Advances, EMBO Journal, and eLife</li>
+                    <li>Supervised PhD students and taught 100+ hours at University of Seville</li>
                 </ul>
             </div>
             
@@ -73,79 +66,79 @@ ref: home
 <!-- Projects Section -->
 <section id="projects">
     <div class="container">
-        <h2 class="section-title">{{ site.t.es.projects_title }}</h2>
+        <h2 class="section-title">Featured Projects</h2>
         
         <div class="projects-grid">
             <!-- IBEX35 Project -->
             <div class="project-card">
-                <h3>Predicción del Mercado IBEX35</h3>
+                <h3>IBEX35 Stock Market Prediction</h3>
                 <p>
-                    Modelos de machine learning para predecir movimientos del mercado bursátil español usando indicadores financieros y análisis de sentimiento de noticias GDELT. Tesis de Máster con validación estadística rigurosa.
+                    Machine learning models for predicting Spanish stock market movements using financial indicators and sentiment analysis from GDELT news data. Master's thesis with rigorous statistical validation.
                 </p>
                 <div class="project-tags">
                     <span class="tag">Machine Learning</span>
                     <span class="tag">Python</span>
                     <span class="tag">R</span>
-                    <span class="tag">Mercados Financieros</span>
+                    <span class="tag">Financial Markets</span>
                 </div>
                 <a href="/projects/ibex35-prediction" class="project-link">
-                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                    View Project <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
             
             <!-- Alzheimer Project -->
             <div class="project-card">
-                <h3>Predicción de Enfermedad de Alzheimer</h3>
+                <h3>Alzheimer's Disease Prediction</h3>
                 <p>
-                    Enfoque multimodal de machine learning combinando datos clínicos e imágenes PET para detección temprana de EA usando el dataset del estudio A4.
+                    Multimodal machine learning approach combining clinical data and PET imaging for early AD detection using the A4 Study dataset.
                 </p>
                 <div class="project-tags">
                     <span class="tag">Deep Learning</span>
-                    <span class="tag">Imagen Médica</span>
+                    <span class="tag">Medical Imaging</span>
                     <span class="tag">Python</span>
                     <span class="tag">R</span>
                 </div>
                 <a href="/projects/alzheimer-ml" class="project-link">
-                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                    View Project <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
             
             <!-- Proteomics Project -->
             <div class="project-card">
-                <h3>Pipeline de Análisis Proteómico</h3>
+                <h3>Proteomics Analysis Pipeline</h3>
                 <p>
-                    Análisis de datos proteómicos de alto rendimiento mediante espectrometría de masas para investigación en enfermedades neurodegenerativas. Workflow automatizado para descubrimiento de biomarcadores.
+                    High-throughput proteomic data analysis from mass spectrometry for neurodegenerative disease research. Automated workflow for biomarker discovery.
                 </p>
                 <div class="project-tags">
-                    <span class="tag">Bioinformática</span>
+                    <span class="tag">Bioinformatics</span>
                     <span class="tag">R</span>
-                    <span class="tag">Proteómica</span>
+                    <span class="tag">Proteomics</span>
                 </div>
                 <a href="/projects/proteomics" class="project-link">
-                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                    View Project <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
             
             <!-- AgrIoT Project -->
             <div class="project-card">
-                <h3>AgrIoT Control Inteligente</h3>
+                <h3>AgrIoT Smart Control</h3>
                 <p>
-                    Sistema IoT basado en ESP32 para automatización agrícola con interfaz web, monitorización de sensores y capacidades de control remoto.
+                    ESP32-based IoT system for agricultural automation with web interface, sensor monitoring, and remote control capabilities.
                 </p>
                 <div class="project-tags">
                     <span class="tag">IoT</span>
                     <span class="tag">ESP32</span>
-                    <span class="tag">Desarrollo Web</span>
+                    <span class="tag">Web Development</span>
                 </div>
                 <a href="/projects/agriot" class="project-link">
-                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                    View Project <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
         
         <div style="text-align: center; margin-top: 3rem;">
             <a href="{{ site.social.github }}" class="btn btn-outline" target="_blank">
-                <i class="fab fa-github"></i> {{ site.t.es.projects_view_all }}
+                <i class="fab fa-github"></i> View All on GitHub
             </a>
         </div>
     </div>
@@ -154,10 +147,11 @@ ref: home
 <!-- Contact Section -->
 <section id="contact">
     <div class="container">
-        <h2 class="section-title">{{ site.t.es.contact_title }}</h2>
+        <h2 class="section-title">Get In Touch</h2>
         <div class="contact-content">
             <p style="font-size: 1.15rem;">
-                {{ site.t.es.contact_description }}
+                Interested in collaboration or want to learn more about my work?<br>
+                Feel free to reach out through any of these channels.
             </p>
             
             <div class="contact-links">

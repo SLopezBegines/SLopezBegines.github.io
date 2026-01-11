@@ -1,17 +1,15 @@
 ---
 layout: default
-title: Publicaciones
-lang: es
-ref: publications
+title: Publications
 permalink: /publications/
 ---
 
 <section style="padding: 4rem 0;">
     <div class="container">
-        <h1 class="section-title">Publicaciones</h1>
+        <h1 class="section-title">Publications</h1>
         
         <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem; color: var(--color-text-secondary);">
-            Lista completa de publicaciones científicas y presentaciones en congresos.<br>
+            Complete list of scientific publications and conference presentations.<br>
             <strong>ORCID:</strong> <a href="https://orcid.org/0000-0001-8809-8919" target="_blank">0000-0001-8809-8919</a>
         </p>
         
@@ -126,9 +124,9 @@ permalink: /publications/
                 </div>
             </div>
             
-            <!-- Presentaciones en Congresos -->
+            <!-- Conference Presentations -->
             <div style="margin-top: 4rem;">
-                <h2 style="color: var(--color-primary); font-size: 2rem; margin-bottom: 2rem;">Presentaciones en Congresos Seleccionadas</h2>
+                <h2 style="color: var(--color-primary); font-size: 2rem; margin-bottom: 2rem;">Selected Conference Presentations</h2>
                 
                 <div style="background: var(--color-bg-secondary); padding: 2rem; border-radius: 12px; border: 1px solid var(--color-border);">
                     <p style="margin-bottom: 1rem;"><strong>2025:</strong> 8th Venusberg Meeting on Neuroinflammation (Luxembourg)</p>
@@ -141,7 +139,7 @@ permalink: /publications/
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="/#contact" class="btn btn-primary">Volver al Inicio</a>
+                <a href="/#contact" class="btn btn-primary">Back to Home</a>
             </div>
         </div>
     </div>

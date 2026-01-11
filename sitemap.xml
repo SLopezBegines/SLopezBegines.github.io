@@ -1,0 +1,86 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    
+    <!-- Homepage - Spanish -->
+    <url>
+        <loc>{{ site.url }}/</loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="{{ site.url }}/" />
+        <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+    </url>
+    
+    <!-- Homepage - English -->
+    <url>
+        <loc>{{ site.url }}/en/</loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="{{ site.url }}/" />
+        <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+    </url>
+    
+    <!-- Publications - Spanish -->
+    <url>
+        <loc>{{ site.url }}/publications/</loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="{{ site.url }}/publications/" />
+        <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/publications/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/publications/" />
+    </url>
+    
+    <!-- Publications - English -->
+    <url>
+        <loc>{{ site.url }}/en/publications/</loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="{{ site.url }}/publications/" />
+        <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/publications/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/publications/" />
+    </url>
+    
+    <!-- Projects - Spanish -->
+    {% for project in site.projects %}
+        {% if project.lang == "es" or project.lang == nil %}
+    <url>
+        <loc>{{ site.url }}{{ project.url }}</loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        {% if project.ref %}
+        <xhtml:link rel="alternate" hreflang="es" href="{{ site.url }}{{ project.url }}" />
+        <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ project.url }}" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ project.url }}" />
+        {% endif %}
+    </url>
+        {% endif %}
+    {% endfor %}
+    
+    <!-- Projects - English -->
+    {% for project in site.projects %}
+        {% if project.lang == "en" %}
+    <url>
+        <loc>{{ site.url }}{{ project.url }}</loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        {% if project.ref %}
+        <xhtml:link rel="alternate" hreflang="es" href="{{ site.url }}/projects/{{ project.ref }}/" />
+        <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ project.url }}" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url }}/projects/{{ project.ref }}/" />
+        {% endif %}
+    </url>
+        {% endif %}
+    {% endfor %}
+    
+</urlset>

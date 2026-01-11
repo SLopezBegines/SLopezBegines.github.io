@@ -1,0 +1,48 @@
+<!-- SEO Meta Tags -->
+<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="author" content="{{ site.author.name }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:image" content="{{ site.url }}{{ site.author.avatar }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+<meta property="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+<meta property="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta property="twitter:image" content="{{ site.url }}{{ site.author.avatar }}">
+
+<!-- Hreflang Tags for Multilingual SEO -->
+{% if page.ref %}
+    <!-- Current page alternates -->
+    {% if page.lang == "es" or page.lang == nil %}
+        <link rel="alternate" hreflang="es" href="{{ site.url }}{{ page.url }}" />
+        <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ page.url }}" />
+        <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}" />
+    {% elsif page.lang == "en" %}
+        <link rel="alternate" hreflang="es" href="{{ site.url }}{{ page.url | remove: '/en' }}" />
+        <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url }}" />
+        <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | remove: '/en' }}" />
+    {% endif %}
+{% else %}
+    <!-- Fallback for pages without ref -->
+    {% if page.lang == "en" %}
+        <link rel="alternate" hreflang="es" href="{{ site.url }}/" />
+        <link rel="alternate" hreflang="en" href="{{ site.url }}/en/" />
+        <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+    {% else %}
+        <link rel="alternate" hreflang="es" href="{{ site.url }}/" />
+        <link rel="alternate" hreflang="en" href="{{ site.url }}/en/" />
+        <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+    {% endif %}
+{% endif %}
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.url }}/sitemap.xml" />

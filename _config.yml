@@ -3,13 +3,58 @@ title: Santiago López Begines
 subtitle: Biomedical Data Scientist
 email: santiago.lopez.begines@gmail.com
 description: >-
-  Neuroscientist turned Data Scientist | Machine Learning, Financial Modeling & Biomedical Research
+  Neuroscientist turned Data Scientist | Machine Learning & Biomedical Research
 baseurl: ""
 url: "https://SLopezBegines.github.io"
 
 # Build settings
 markdown: kramdown
 permalink: /:title/
+
+
+# Multi-language support
+languages: ["es", "en"]
+default_lang: "es"
+
+# Translations
+t:
+  es:
+    nav_about: "Sobre mí"
+    nav_projects: "Proyectos"
+    nav_publications: "Publicaciones"
+    nav_contact: "Contacto"
+    hero_subtitle: "Neurocientífico → Científico de Datos"
+    hero_title: "Santiago López Begines, PhD"
+    hero_tagline: "Machine Learning | Investigación Biomédica"
+    hero_cta_projects: "Ver Proyectos"
+    hero_cta_contact: "Contactar"
+    about_title: "Sobre mí"
+    about_background: "Experiencia"
+    about_achievements: "Logros Clave"
+    projects_title: "Proyectos Destacados"
+    projects_view_all: "Ver Todos en GitHub"
+    contact_title: "Contacto"
+    contact_description: "¿Interesado en colaborar o quieres saber más sobre mi trabajo?<br>¿Buscas maximizar el valor de tus datos?<br>No dudes en contactarme por cualquiera de estos canales."
+    footer_built: "Construido con Jekyll"
+  en:
+    nav_about: "About me"
+    nav_projects: "Projects"
+    nav_publications: "Publications"
+    nav_contact: "Contact"
+    hero_subtitle: "Neuroscientist → Data Scientist"
+    hero_title: "Santiago López Begines, PhD"
+    hero_tagline: "Machine Learning | Biomedical Research"
+    hero_cta_projects: "View Projects"
+    hero_cta_contact: "Get in Touch"
+    about_title: "About Me"
+    about_background: "Background"
+    about_achievements: "Key Achievements"
+    projects_title: "Featured Projects"
+    projects_view_all: "View All on GitHub"
+    contact_title: "Get In Touch"
+    contact_description: "Interested in collaboration or want to learn more about my work?<br>Looking to maximize the value of your data?<br>Feel free to reach out through any of these channels."
+    footer_built: "Built with Jekyll"
+
 
 # Collections
 collections:
@@ -42,33 +87,22 @@ author:
 social:
   github: https://github.com/SLopezBegines
   orcid: https://orcid.org/0000-0001-8809-8919
-  linkedin: https://linkedin.com/in/santiago-lopez-begines
-
-# Skills
-skills:
-  - name: R
-    level: 90
-  - name: Python
-    level: 80
-  - name: Data Analysis
-    level: 95
-  - name: Machine Learning
-    level: 80
-  - name: SQL
-    level: 60
+  linkedin: https://linkedin.com/in/santibegines
 
 # Navigation
 navigation:
-  - title: About
-    url: /#about
-  - title: Projects
-    url: /#projects
-  - title: Publications
-    url: /publications
-  - title: CV
-    url: /assets/cv/CV_Santiago_Lopez_Begines.pdf
-  - title: Contact
-    url: /#contact
+  - title_es: "Sobre mí"
+    title_en: "About"
+    url: "/#about"
+  - title_es: "Proyectos"
+    title_en: "Projects"
+    url: "/#projects"
+  - title_es: "Publicaciones"
+    title_en: "Publications"
+    url: "/publications"
+  - title_es: "Contacto"
+    title_en: "Contact"
+    url: "/#contact"
 
 # Google Analytics (opcional - añade tu ID aquí)
 google_analytics: G-8C3HQ7CE3V
