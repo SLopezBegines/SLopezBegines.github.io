@@ -2,6 +2,8 @@
 layout: home
 lang: es
 ref: home
+title: "Santiago López Begines - Data Scientist & Neurocientífico"
+excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine Learning e Investigación Biomédica. PhD en Biomedicina."
 ---
 
 <!-- Hero Section -->
