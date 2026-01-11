@@ -1,0 +1,103 @@
+<!-- FAQ Section for SEO -->
+<section id="faq" style="padding: 4rem 0; background: var(--color-bg-secondary);">
+    <div class="container">
+        <h2 class="section-title">{% if page.lang == "en" %}Frequently Asked Questions{% else %}Preguntas Frecuentes{% endif %}</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            {% if page.lang == "en" %}
+            <!-- English FAQ -->
+            <details class="faq-item" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--color-text); font-size: 1.1rem;">What services do you offer as a data scientist?</summary>
+                <p style="margin-top: 1rem; color: var(--color-text-secondary);">
+                    I specialize in machine learning model development, financial market prediction, biomedical data analysis (proteomics, transcriptomics), and statistical consulting. My expertise spans Python and R for data science, with particular focus on predictive modeling and quantitative analysis.
+                </p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--color-text); font-size: 1.1rem;">What is your background in neuroscience research?</summary>
+                <p style="margin-top: 1rem; color: var(--color-text-secondary);">
+                    I hold a PhD in Biomedicine with 15+ years experience in neurodegeneration research. Currently working as Postdoctoral Researcher at LCSB, Luxembourg, focusing on Batten disease models and biomarker discovery using advanced proteomics and machine learning techniques.
+                </p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--color-text); font-size: 1.1rem;">Can you help with IBEX35 or stock market prediction?</summary>
+                <p style="margin-top: 1rem; color: var(--color-text-secondary);">
+                    Yes, my Master's thesis focused on IBEX35 prediction using machine learning and sentiment analysis. I develop custom models using XGBoost, LightGBM, and neural networks for financial forecasting, with rigorous statistical validation including McNemar and Diebold-Mariano tests.
+                </p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--color-text); font-size: 1.1rem;">What programming languages and tools do you use?</summary>
+                <p style="margin-top: 1rem; color: var(--color-text-secondary);">
+                    Primary: Python (scikit-learn, TensorFlow, pandas, numpy) and R (tidyverse, tidymodels, ggplot2, Bioconductor). Also experienced with SQL, Git, and cloud platforms. For data science, I follow best practices in reproducible research and version control.
+                </p>
+            </details>
+            
+            {% else %}
+            <!-- Spanish FAQ -->
+            <details class="faq-item" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--color-text); font-size: 1.1rem;">¿Qué servicios ofreces como científico de datos?</summary>
+                <p style="margin-top: 1rem; color: var(--color-text-secondary);">
+                    Me especializo en desarrollo de modelos de machine learning, predicción de mercados financieros, análisis de datos biomédicos (proteómica, transcriptómica) y consultoría estadística. Mi experiencia abarca Python y R para ciencia de datos, con enfoque particular en modelado predictivo y análisis cuantitativo.
+                </p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--color-text); font-size: 1.1rem;">¿Cuál es tu experiencia en investigación en neurociencia?</summary>
+                <p style="margin-top: 1rem; color: var(--color-text-secondary);">
+                    Tengo un doctorado en Biomedicina con más de 15 años de experiencia en investigación de neurodegeneración. Actualmente trabajo como investigador postdoctoral en LCSB, Luxemburgo, enfocado en modelos de enfermedad de Batten y descubrimiento de biomarcadores usando proteómica avanzada y machine learning.
+                </p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--color-text); font-size: 1.1rem;">¿Puedes ayudar con predicción del IBEX35 o mercados bursátiles?</summary>
+                <p style="margin-top: 1rem; color: var(--color-text-secondary);">
+                    Sí, mi tesis de Máster se enfocó en predicción del IBEX35 usando machine learning y análisis de sentimiento. Desarrollo modelos personalizados usando XGBoost, LightGBM y redes neuronales para pronóstico financiero, con validación estadística rigurosa incluyendo pruebas de McNemar y Diebold-Mariano.
+                </p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 1.5rem; background: var(--color-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                <summary style="cursor: pointer; font-weight: 600; color: var(--color-text); font-size: 1.1rem;">¿Qué lenguajes de programación y herramientas utilizas?</summary>
+                <p style="margin-top: 1rem; color: var(--color-text-secondary);">
+                    Principales: Python (scikit-learn, TensorFlow, pandas, numpy) y R (tidyverse, tidymodels, ggplot2, Bioconductor). También tengo experiencia con SQL, Git y plataformas cloud. Para ciencia de datos, sigo las mejores prácticas en investigación reproducible y control de versiones.
+                </p>
+            </details>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Schema.org for Rich Snippets -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{% if page.lang == 'en' %}What services do you offer as a data scientist?{% else %}¿Qué servicios ofreces como científico de datos?{% endif %}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{% if page.lang == 'en' %}I specialize in machine learning model development, financial market prediction, biomedical data analysis (proteomics, transcriptomics), and statistical consulting. My expertise spans Python and R for data science, with particular focus on predictive modeling and quantitative analysis.{% else %}Me especializo en desarrollo de modelos de machine learning, predicción de mercados financieros, análisis de datos biomédicos (proteómica, transcriptómica) y consultoría estadística.{% endif %}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{% if page.lang == 'en' %}What is your background in neuroscience research?{% else %}¿Cuál es tu experiencia en investigación en neurociencia?{% endif %}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{% if page.lang == 'en' %}I hold a PhD in Biomedicine with 15+ years experience in neurodegeneration research. Currently working as Postdoctoral Researcher at LCSB, Luxembourg.{% else %}Tengo un doctorado en Biomedicina con más de 15 años de experiencia en investigación de neurodegeneración. Actualmente trabajo como investigador postdoctoral en LCSB, Luxemburgo.{% endif %}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{% if page.lang == 'en' %}Can you help with IBEX35 or stock market prediction?{% else %}¿Puedes ayudar con predicción del IBEX35 o mercados bursátiles?{% endif %}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{% if page.lang == 'en' %}Yes, my Master's thesis focused on IBEX35 prediction using machine learning and sentiment analysis. I develop custom models using XGBoost, LightGBM, and neural networks.{% else %}Sí, mi tesis de Máster se enfocó en predicción del IBEX35 usando machine learning y análisis de sentimiento.{% endif %}"
+      }
+    }
+  ]
+}
+</script>
