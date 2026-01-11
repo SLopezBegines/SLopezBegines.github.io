@@ -1,6 +1,10 @@
 <!-- SEO Meta Tags -->
 <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', ' }}, {% endif %}{{ site.keywords }}">
 <meta name="author" content="{{ site.author.name }}">
+<meta name="robots" content="index, follow">
+<meta name="language" content="{% if page.lang %}{{ page.lang }}{% else %}es{% endif %}">
+<meta name="revisit-after" content="7 days">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -8,13 +12,16 @@
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
 <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 <meta property="og:image" content="{{ site.url }}{{ site.author.avatar }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{% if page.lang == 'en' %}en_US{% else %}es_ES{% endif %}">
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
-<meta property="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
-<meta property="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-<meta property="twitter:image" content="{{ site.url }}{{ site.author.avatar }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+<meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:image" content="{{ site.url }}{{ site.author.avatar }}">
+<meta name="twitter:creator" content="@SLopezBegines">
 
 <!-- Hreflang Tags for Multilingual SEO -->
 {% if page.ref %}
