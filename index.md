@@ -54,22 +54,6 @@ excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine
                     <li>Supervisión de estudiantes de doctorado y 100+ horas de docencia en la Universidad de Sevilla</li>
                 </ul>
             </div>
-            
-            <div class="skills-grid">
-                {% for skill in site.skills %}
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>{{ skill.name }}</span>
-                        <span>{{ skill.level }}%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-level="{{ skill.level }}" style="width: 0%"></div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 </section>
 
 <!-- Projects Section -->
