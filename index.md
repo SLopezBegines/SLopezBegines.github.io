@@ -54,6 +54,8 @@ excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine
                     <li>Supervisión de estudiantes de doctorado y 100+ horas de docencia en la Universidad de Sevilla</li>
                 </ul>
             </div>
+        </div>
+    </div>
 </section>
 
 <!-- Projects Section -->
@@ -136,6 +138,10 @@ excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine
         </div>
     </div>
 </section>
+
+
+<!-- FAQ Section -->
+{% include faq.html %}
 
 <!-- Contact Section -->
 <section id="contact">
