@@ -45,6 +45,8 @@ layout: home
                     <li>Supervised PhD students and taught 100+ hours at University of Seville</li>
                 </ul>
             </div>
+         </div>
+    </div>
 </section>
 
 <!-- Projects Section -->
@@ -127,6 +129,9 @@ layout: home
         </div>
     </div>
 </section>
+
+<!-- FAQ Section -->
+{% include faq.html %}
 
 <!-- Contact Section -->
 <section id="contact">
