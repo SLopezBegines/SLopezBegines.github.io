@@ -25,24 +25,23 @@
                 </ul>
                 
                 <div class="language-switcher">
-                    {% if page.lang == "en" %}
-                        <!-- Link to Spanish version -->
-                        {% if page.ref == "home" %}
+                    {% if page.url contains '/en/' or page.url == '/en' %}
+                        <!-- Currently in English, link to Spanish -->
+                        {% assign es_url = page.url | remove: '/en' %}
+                        {% if es_url == '' or es_url == '/' %}
                             <a href="/" class="lang-link">ES</a>
-                        {% elsif page.ref == "publications" %}
-                            <a href="/publications/" class="lang-link">ES</a>
                         {% else %}
-                            <a href="{{ page.url | replace: '/en/', '/' | replace: '/en', '/' }}" class="lang-link">ES</a>
+                            <a href="{{ es_url }}" class="lang-link">ES</a>
                         {% endif %}
                         <span class="lang-separator">|</span>
                         <span class="lang-link active">EN</span>
                     {% else %}
-                        <!-- Link to English version -->
+                        <!-- Currently in Spanish, link to English -->
                         <span class="lang-link active">ES</span>
                         <span class="lang-separator">|</span>
-                        {% if page.ref == "home" %}
+                        {% if page.url == '/' or page.url == '' %}
                             <a href="/en/" class="lang-link">EN</a>
-                        {% elsif page.ref == "publications" %}
+                        {% elsif page.url == '/publications/' %}
                             <a href="/en/publications/" class="lang-link">EN</a>
                         {% else %}
                             <a href="/en{{ page.url }}" class="lang-link">EN</a>
