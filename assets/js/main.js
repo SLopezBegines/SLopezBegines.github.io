@@ -53,28 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animate skill bars on scroll
-    const observerOptions = {
-        threshold: 0.5,
-        rootMargin: '0px 0px -100px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBar = entry.target.querySelector('.skill-progress');
-                if (progressBar) {
-                    const level = progressBar.getAttribute('data-level');
-                    progressBar.style.width = level + '%';
-                }
-            }
-        });
-    }, observerOptions);
-    
-    document.querySelectorAll('.skill-item').forEach(skill => {
-        observer.observe(skill);
-    });
-    
     // Add active class to current nav item
     const currentLocation = window.location.pathname;
     navLinks.forEach(link => {
