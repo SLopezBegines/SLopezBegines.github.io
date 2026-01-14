@@ -45,22 +45,6 @@ layout: home
                     <li>Supervised PhD students and taught 100+ hours at University of Seville</li>
                 </ul>
             </div>
-            
-            <div class="skills-grid">
-                {% for skill in site.skills %}
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>{{ skill.name }}</span>
-                        <span>{{ skill.level }}%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-level="{{ skill.level }}" style="width: 0%"></div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 </section>
 
 <!-- Projects Section -->
