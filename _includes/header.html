@@ -26,13 +26,27 @@
                 
                 <div class="language-switcher">
                     {% if page.lang == "en" %}
-                        <a href="{{ page.url | remove: '/en' }}" class="lang-link">ES</a>
+                        <!-- Link to Spanish version -->
+                        {% if page.ref == "home" %}
+                            <a href="/" class="lang-link">ES</a>
+                        {% elsif page.ref == "publications" %}
+                            <a href="/publications/" class="lang-link">ES</a>
+                        {% else %}
+                            <a href="{{ page.url | replace: '/en/', '/' | replace: '/en', '/' }}" class="lang-link">ES</a>
+                        {% endif %}
                         <span class="lang-separator">|</span>
                         <span class="lang-link active">EN</span>
                     {% else %}
+                        <!-- Link to English version -->
                         <span class="lang-link active">ES</span>
                         <span class="lang-separator">|</span>
-                        <a href="/en{{ page.url }}" class="lang-link">EN</a>
+                        {% if page.ref == "home" %}
+                            <a href="/en/" class="lang-link">EN</a>
+                        {% elsif page.ref == "publications" %}
+                            <a href="/en/publications/" class="lang-link">EN</a>
+                        {% else %}
+                            <a href="/en{{ page.url }}" class="lang-link">EN</a>
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>
