@@ -140,6 +140,7 @@ layout: home
         <div class="contact-content">
             <p style="font-size: 1.15rem;">
                 Interested in collaboration or want to learn more about my work?<br>
+                Looking to maximize the value of your data?<br>
                 Feel free to reach out through any of these channels.
             </p>
             
