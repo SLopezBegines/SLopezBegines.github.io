@@ -52,7 +52,7 @@ permalink: /publications/
                     <p style="color: var(--color-primary); margin-bottom: 0.5rem;"><em>EMBO Journal</em>.</p>
                     <a href="https://doi.org/10.1038/s44318-024-00179-1" target="_blank" class="btn btn-outline" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem;">
                         <i class="fas fa-external-link-alt"></i> View Article
-                        </a>
+                    </a>
                 </div>
             </div>
             
