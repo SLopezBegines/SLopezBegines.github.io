@@ -21,6 +21,7 @@ excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine
                 <a href="/assets/cv/CV_Santiago_Lopez_Begines.pdf" class="btn btn-outline" download>
                     <i class="fas fa-download"></i> Descargar CV
                 </a>
+                <a href="#contact" class="btn btn-outline">Contacto</a>
             </div>
         </div>
     </div>
