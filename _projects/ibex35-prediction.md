@@ -38,25 +38,25 @@ Predicting stock market direction is a canonical hard problem: markets are noisy
 ```mermaid
 flowchart TD
     subgraph Data ["📥 Data Collection"]
-        A1["IBEX35 + components\nYahoo Finance · 2004–2024"]
-        A2["External markets\nS&P500 · EuroStoxx · Oil · Gold"]
-        A3["GDELT news\n>2,000 ZIP files · ~150 GB"]
+        A1["IBEX35 + components · Yahoo Finance · 2004–2024"]
+        A2["External markets · S&P500 · EuroStoxx · Oil · Gold"]
+        A3["GDELT news · >2,000 ZIP files · ~150 GB"]
     end
 
-    subgraph EDA ["🔬 EDA & Features (R · Quarto)"]
-        B1["Fase 1–2\nTechnical indicators\nRSI · MACD · Bollinger\nVolatility · MAs"]
-        B2["Fase 3–4\nGDELT download\nParquet conversion\nSentiment scoring + lags"]
-        B3["Fase 5\nFeature integration\n~50 features selected\nScaling & consistency checks"]
+    subgraph EDA ["🔬 EDA & Features · R · Quarto"]
+        B1["Fase 1–2 · RSI · MACD · Bollinger · Volatility · MAs"]
+        B2["Fase 3–4 · GDELT download · Parquet · Sentiment scoring"]
+        B3["Fase 5 · Feature integration · ~50 features · Scaling"]
     end
 
-    subgraph ML ["🤖 ML Pipeline (Python · Colab)"]
-        C1["Baselines\nARIMA · Prophet · Naïve"]
-        C2["Gradient boosting\nLightGBM · XGBoost · RF"]
-        C3["Deep learning\nLSTM · GRU · MLP"]
+    subgraph ML ["🤖 ML Pipeline · Python · Colab"]
+        C1["Baselines · ARIMA · Prophet · Naïve"]
+        C2["Gradient boosting · LightGBM · XGBoost · RF"]
+        C3["Deep learning · LSTM · GRU · MLP"]
     end
 
-    subgraph Eval ["📊 Evaluation (Fase 6)"]
-        D1["Accuracy · F1 · AUC\nMcNemar · Diebold–Mariano\nBootstrap CI (n=1000)"]
+    subgraph Eval ["📊 Evaluation · Fase 6"]
+        D1["Accuracy · F1 · AUC · McNemar · Diebold–Mariano · Bootstrap CI"]
     end
 
     Data --> EDA --> ML --> Eval
