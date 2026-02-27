@@ -55,6 +55,34 @@ The pipeline follows six main stages:
 - Dual export (TIFF raster + PDF vector) for all figures
 - Gene identifier mapping through biomaRt and AnnotationDbi (UNIPROT → ENSEMBL/ENTREZ)
 
-## Example Application
+## Example Application — CLN3 Lysosomal Interactome
 
-The repository includes a complete analysis of the **CLN3 lysosomal interactome** in zebrafish (ProteomeXchange [PXD031582](https://www.ebi.ac.uk/pride/archive/projects/PXD031582)), comparing CTRL vs WT vs KO conditions across 12 samples with 3 pairwise comparisons.
+The repository includes a complete analysis of the **CLN3 lysosomal interactome** in human cell lines (ProteomeXchange [PXD031582](https://www.ebi.ac.uk/pride/archive/projects/PXD031582)), comparing CTRL vs WT vs KO conditions across 12 samples and 3 pairwise contrasts.
+
+> Calcagni' et al. *Loss of the batten disease protein CLN3 leads to mis-trafficking of M6PR and defective autophagic-lysosomal reformation.* Nat Commun 14, 3911 (2023). [doi:10.1038/s41467-023-39643-7](https://doi.org/10.1038/s41467-023-39643-7)
+
+---
+
+## Output Gallery
+
+### Quality Control & Normalisation
+
+| QC overview — protein identification and coverage | VSN normalisation diagnostics |
+|:-------------------------------------------------:|:-----------------------------:|
+| ![QC overview](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/05_QC_data_overview_prot_data.png) | ![Normalisation](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/06_Normalization_diagnosis.png) |
+
+| SD before vs after imputation (6 methods) | Intensity distribution — imputation comparison |
+|:-----------------------------------------:|:----------------------------------------------:|
+| ![SD scatter](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/09_SD_before_after_scatter.png) | ![Imputation distribution](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/10_protein_imputation_distribution.png) |
+
+### Dimensionality Reduction & Differential Expression
+
+| PCA — mixed imputation | Volcano plot — KO vs WT |
+|:----------------------:|:-----------------------:|
+| ![PCA](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/14_PCA_Splited_Mixed.png) | ![Volcano](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/26_vulcano_DEP_KO_vs_WT.png) |
+
+### Clustering & Functional Enrichment
+
+| Heatmap — significant proteins across all comparisons | GO lolliplot — KO vs WT upregulated terms |
+|:-----------------------------------------------------:|:-----------------------------------------:|
+| ![Heatmap](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/23_Heatmap_significant.png) | ![GO lolliplot](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/76_Lolliplot_KO_vs_WT_UP.png) |

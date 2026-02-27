@@ -318,10 +318,13 @@ npx lighthouse https://slopezbegines.github.io --view
 - **Tech**: R, Python, Random Forest, SVM
 
 ### 3. Proteomics Analysis Pipeline
-- High-throughput data processing
-- Statistical analysis workflows
-- Automated reporting
-- **Tech**: R, Bioconductor, ggplot2
+- End-to-end LFQ proteomics pipeline from MaxQuant output to functional enrichment
+- Mixed imputation strategy (MNAR/MAR) with 6 configurable methods
+- Differential expression via limma/empirical Bayes with manual contrasts
+- GO, KEGG, STRING, PANTHER enrichment — publication-ready figures (TIFF + PDF)
+- Applied to CLN3 lysosomal interactome (ProteomeXchange PXD031582, 12 samples)
+- **Tech**: R · Bioconductor · DEP · limma · clusterProfiler · ComplexHeatmap · rbioapi
+- **Live**: [slopezbegines.github.io/projects/proteomics](https://slopezbegines.github.io/projects/proteomics/) · [GitHub](https://github.com/SLopezBegines/Proteomics)
 
 ### 4. AgriOT System
 - IoT system for agricultural monitoring
