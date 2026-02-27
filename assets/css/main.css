@@ -495,6 +495,35 @@ section {
   margin: var(--space-md) 0;
 }
 
+.figure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+.figure-grid figure {
+  margin: 0;
+}
+
+.figure-grid figure img {
+  width: 100%;
+  margin: 0 0 0.5rem 0;
+}
+
+.figure-grid figcaption {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .figure-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .project-content table {
   width: 100%;
   border-collapse: collapse;

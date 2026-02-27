@@ -67,22 +67,47 @@ The repository includes a complete analysis of the **CLN3 lysosomal interactome*
 
 ### Quality Control & Normalisation
 
-| QC overview — protein identification and coverage | VSN normalisation diagnostics |
-|:-------------------------------------------------:|:-----------------------------:|
-| ![QC overview](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/05_QC_data_overview_prot_data.png) | ![Normalisation](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/06_Normalization_diagnosis.png) |
-
-| SD before vs after imputation (6 methods) | Intensity distribution — imputation comparison |
-|:-----------------------------------------:|:----------------------------------------------:|
-| ![SD scatter](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/09_SD_before_after_scatter.png) | ![Imputation distribution](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/10_protein_imputation_distribution.png) |
+<div class="figure-grid">
+  <figure>
+    <img src="https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/05_QC_data_overview_prot_data.png" alt="QC overview">
+    <figcaption>QC overview — protein identification and coverage</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/06_Normalization_diagnosis.png" alt="VSN normalisation">
+    <figcaption>VSN normalisation diagnostics</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/09_SD_before_after_scatter.png" alt="SD before vs after imputation">
+    <figcaption>SD before vs after imputation — 6 methods compared</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/10_protein_imputation_distribution.png" alt="Imputation distribution">
+    <figcaption>Intensity distribution — imputation method comparison</figcaption>
+  </figure>
+</div>
 
 ### Dimensionality Reduction & Differential Expression
 
-| PCA — mixed imputation | Volcano plot — KO vs WT |
-|:----------------------:|:-----------------------:|
-| ![PCA](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/14_PCA_Splited_Mixed.png) | ![Volcano](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/26_vulcano_DEP_KO_vs_WT.png) |
+<div class="figure-grid">
+  <figure>
+    <img src="https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/14_PCA_Splited_Mixed.png" alt="PCA mixed imputation">
+    <figcaption>PCA — mixed imputation</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/26_vulcano_DEP_KO_vs_WT.png" alt="Volcano KO vs WT">
+    <figcaption>Volcano plot — KO vs WT</figcaption>
+  </figure>
+</div>
 
 ### Clustering & Functional Enrichment
 
-| Heatmap — significant proteins across all comparisons | GO lolliplot — KO vs WT upregulated terms |
-|:-----------------------------------------------------:|:-----------------------------------------:|
-| ![Heatmap](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/23_Heatmap_significant.png) | ![GO lolliplot](https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/76_Lolliplot_KO_vs_WT_UP.png) |
+<div class="figure-grid">
+  <figure>
+    <img src="https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/23_Heatmap_significant.png" alt="Heatmap significant proteins">
+    <figcaption>Heatmap — significant proteins across all comparisons</figcaption>
+  </figure>
+  <figure>
+    <img src="https://raw.githubusercontent.com/SLopezBegines/Proteomics/main/docs/images/76_Lolliplot_KO_vs_WT_UP.png" alt="GO lolliplot">
+    <figcaption>GO lolliplot — KO vs WT upregulated terms</figcaption>
+  </figure>
+</div>
