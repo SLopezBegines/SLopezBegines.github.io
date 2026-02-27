@@ -95,6 +95,7 @@ SLopezBegines.github.io/
 │   ├── ibex35-prediction.md
 │   ├── alzheimer-ml.md
 │   ├── proteomics.md
+│   ├── single-cell.md
 │   └── agriot.md
 │
 ├── assets/
@@ -326,7 +327,15 @@ npx lighthouse https://slopezbegines.github.io --view
 - **Tech**: R · Bioconductor · DEP · limma · clusterProfiler · ComplexHeatmap · rbioapi
 - **Live**: [slopezbegines.github.io/projects/proteomics](https://slopezbegines.github.io/projects/proteomics/) · [GitHub](https://github.com/SLopezBegines/Proteomics)
 
-### 4. AgriOT System
+### 4. snRNA-seq Analysis Pipeline
+- Modular R pipeline for single-nucleus RNA-seq from 10X CellRanger output
+- QC, SCTransform normalisation, scDblFinder doublet detection, Louvain clustering
+- Differential expression per cluster (Wilcoxon) + 6 parallel enrichment methods (GO, KEGG, STRING, PANTHER, EnrichR)
+- Allen Brain Atlas reference-based cell type annotation (SingleR, Azimuth)
+- **Tech**: R · Seurat v5 · sctransform · scDblFinder · clusterProfiler · ComplexHeatmap · STRINGdb · rbioapi
+- **Live**: [slopezbegines.github.io/projects/single-cell](https://slopezbegines.github.io/projects/single-cell/) · [GitHub](https://github.com/SLopezBegines/snRNAsep_mouse)
+
+### 5. AgriOT System
 - IoT system for agricultural monitoring
 - ESP32/ESP8266 microcontrollers
 - Real-time data visualization
