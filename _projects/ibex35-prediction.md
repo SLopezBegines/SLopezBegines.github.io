@@ -36,7 +36,7 @@ Predicting stock market direction is a canonical hard problem: markets are noisy
 ## Analytical Workflow
 
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph Data ["📥 Data Collection"]
         A1["IBEX35 + components\nYahoo Finance · 2004–2024"]
         A2["External markets\nS&P500 · EuroStoxx · Oil · Gold"]
