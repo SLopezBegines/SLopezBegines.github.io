@@ -115,6 +115,23 @@ excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine
                 </a>
             </div>
             
+            <!-- Single-cell Project -->
+            <div class="project-card">
+                <h3>Pipeline de Análisis snRNA-seq</h3>
+                <p>
+                    Pipeline modular en R para análisis de single-nucleus RNA-seq: control de calidad, normalización SCTransform, clustering Louvain y enriquecimiento funcional multi-capa (GO, KEGG, STRING, PANTHER).
+                </p>
+                <div class="project-tags">
+                    <span class="tag">scRNA-seq</span>
+                    <span class="tag">Seurat</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Bioinformática</span>
+                </div>
+                <a href="/projects/single-cell" class="project-link">
+                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
             <!-- AgrIoT Project -->
             <div class="project-card">
                 <h3>AgrIoT Control Inteligente</h3>

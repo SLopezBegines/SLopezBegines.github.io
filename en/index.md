@@ -105,6 +105,23 @@ layout: home
                 </a>
             </div>
             
+            <!-- Single-cell Project -->
+            <div class="project-card">
+                <h3>snRNA-seq Analysis Pipeline</h3>
+                <p>
+                    Modular R pipeline for single-nucleus RNA-seq: quality control, SCTransform normalisation, Louvain clustering, and multi-layered functional enrichment (GO, KEGG, STRING, PANTHER).
+                </p>
+                <div class="project-tags">
+                    <span class="tag">scRNA-seq</span>
+                    <span class="tag">Seurat</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Bioinformatics</span>
+                </div>
+                <a href="/projects/single-cell" class="project-link">
+                    View Project <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
             <!-- AgrIoT Project -->
             <div class="project-card">
                 <h3>AgrIoT Smart Control</h3>
