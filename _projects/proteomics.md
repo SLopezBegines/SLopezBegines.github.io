@@ -33,19 +33,42 @@ Proteomics experiments generate complex datasets with systematic missing values,
 
 ## Analytical Workflow
 
-The pipeline follows six main stages:
+```mermaid
+flowchart TD
+    A["📥 MaxQuant output · ProteinGroups.txt / .xlsx"] --> B
 
-**Data preparation**: Loading MaxQuant protein groups, contaminant removal, and standardized column mapping across different MaxQuant versions.
+    subgraph QC ["1 · QC & Preprocessing"]
+        B["Load & standardise columns · Remove contaminants"]
+        B --> C["Define experiment design · conditions · replicates · contrasts"]
+        C --> D["Filter missing values · fraction_NA threshold per condition"]
+        D --> E["VSN normalisation"]
+        E --> F["Mixed imputation · MNAR → zero/MinProb/QRILC · MAR → kNN"]
+    end
 
-**Quality control & imputation**: Missing value filtering by condition, VSN normalization, and mixed imputation combining zero/MinProb/QRILC (for MNAR) with kNN (for MAR).
+    subgraph DE ["2 · Differential Expression"]
+        F --> G["limma · empirical Bayes · ~0 + condition · manual contrasts"]
+        G --> H["Log2FC · p-value · BH-adjusted p · UP / DOWN / NO per comparison"]
+    end
 
-**Differential expression**: Protein-wise linear models with empirical Bayes moderation via limma, supporting manual contrast definitions across multiple experimental comparisons.
+    subgraph VIZ ["3 · Visualisation"]
+        H --> I["Volcano plots · Heatmaps · PCA · UpSet"]
+    end
 
-**Visualization**: Publication-ready volcano plots, heatmaps (ComplexHeatmap), PCA biplots, protein overlap plots, and UpSet/Venn diagrams — exported in both TIFF and vector PDF formats.
+    subgraph ENRICH ["4 · Functional Enrichment"]
+        H --> J["ORA — enrichGO · GSEA — gseGO · gseKEGG · pathview"]
+        H --> K["STRING PPI networks · PANTHER · EnrichR"]
+    end
 
-**Functional enrichment**: Over-Representation Analysis (enrichGO) and Gene Set Enrichment Analysis (gseGO, gseKEGG) for Gene Ontology and KEGG pathways, complemented by STRING protein interaction networks (via rbioapi), PANTHER classification, and EnrichR.
+    subgraph SUMM ["5 · Summary"]
+        I & J & K --> L["Statistics tables · DE counts · effect sizes"]
+    end
 
-**Reporting**: All results exported as Excel tables and organized figures for direct integration into manuscripts.
+    style QC fill:#1e3a5f,color:#fff,stroke:#3b82f6
+    style DE fill:#1e3a1e,color:#fff,stroke:#22c55e
+    style VIZ fill:#3a1e1e,color:#fff,stroke:#ef4444
+    style ENRICH fill:#3a2a1e,color:#fff,stroke:#f59e0b
+    style SUMM fill:#2a1e3a,color:#fff,stroke:#8b5cf6
+```
 
 ## Key Technical Details
 
