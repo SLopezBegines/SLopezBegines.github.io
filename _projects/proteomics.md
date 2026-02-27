@@ -1,8 +1,8 @@
 ---
+layout: project
 title: "Proteomics Analysis Pipeline"
 excerpt: "Modular R pipeline for label-free quantitative proteomics: from MaxQuant output to functional enrichment."
 date: 2024-01-01
-collection: projects
 tags:
   - Proteomics
   - R
