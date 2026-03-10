@@ -151,26 +151,6 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
                 </a>
             </div>
 
-            <!-- CLN4/Batten ML -->
-            <div class="project-card">
-                <h3>ML-Based Biomarker Discovery in Neurodegeneration (Batten Disease / CLN4)</h3>
-                <p>
-                    ML classification pipeline combining feature selection, cross-validation, and
-                    differential expression analysis on transgenic mouse proteomics.
-                    Contributed to <strong>first-author publication in Science Advances (2025)</strong>.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Biomarker Discovery</span>
-                    <span class="tag">Proteomics</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">CLN4</span>
-                </div>
-                <a href="/projects/alzheimer-ml" class="project-link">
-                    View Project <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
             <!-- Electrophysiology Pipeline -->
             <div class="project-card">
                 <span class="badge-wip">Work in Progress</span>
