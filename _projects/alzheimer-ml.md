@@ -1,290 +1,111 @@
 ---
 layout: project
-title: "Alzheimer's Disease Prediction using A4 Study Data"
-excerpt: "Multimodal machine learning approach combining clinical data and PET imaging for early AD detection"
+title: "ML-Based Biomarker Discovery in Neurodegeneration (Batten Disease / CLN4)"
+excerpt: "ML classification pipeline combining feature selection, cross-validation, and differential expression analysis to identify biomarkers in CLN4 (Batten disease) transgenic mouse models. Contributed to first-author publication in Science Advances (2025)."
+date: 2025-01-01
 tags:
   - Machine Learning
-  - Medical Imaging
-  - Deep Learning
-  - Alzheimer's Disease
-  - Multimodal Analysis
-  - R
+  - Biomarker Discovery
+  - Proteomics
   - Python
+  - R
+  - Neurodegeneration
+  - CLN4
 ---
 
-# Project Overview
+# ML-Based Biomarker Discovery in Neurodegeneration (Batten Disease / CLN4)
 
-This project applies machine learning to the **A4 Study** (Anti-Amyloid Treatment in Asymptomatic Alzheimer's Disease) dataset to develop predictive models for Alzheimer's disease progression. The analysis combines tabular clinical data with PET neuroimaging in a multimodal approach.
-
-## Research Goals
-
-1. **Tabular Data Analysis**: Predict AD probability from clinical and cognitive assessments
-2. **PET Image Analysis**: Classify amyloid and tau deposits using deep learning
-3. **Multimodal Integration**: Combine both data sources for improved prediction accuracy
-
-## Dataset Information
-
-**Source**: [A4 Study Data Repository](https://discover.a4studydata.org/)
-
-**Reference**: Sperling, R.A., et al. (2020). *The A4 Study: Anti-Amyloid Treatment in Asymptomatic Alzheimer's Disease*. JAMA Neurology. DOI: 10.1001/jamaneurol.2020.0387
-
-**Data Types**:
-- Clinical assessments and cognitive tests
-- Demographics and medical history  
-- PET imaging (amyloid and tau)
-- Longitudinal follow-up data
+**Stack**: Python (scikit-learn, XGBoost, Pandas) · R (tidymodels, limma, ggplot2) · Git
+**Repository**: [github.com/SLopezBegines/AD_ML_A4_study](https://github.com/SLopezBegines/AD_ML_A4_study)
 
 ---
 
-# Methodology
+## Problem
 
-## Part 1: Tabular Data Analysis (R)
+Identifying robust protein biomarkers in CLN4 (Batten disease / Kufs disease) models required integrating high-dimensional proteomics data with rigorous statistical validation to avoid false discovery. Standard differential expression analysis alone is insufficient for biomarker discovery in small-n, high-p proteomics datasets.
 
-### Exploratory Data Analysis
-- Data quality assessment and missing value analysis
-- Outlier detection using statistical methods
-- Feature distribution analysis and transformations
-- Correlation analysis between clinical variables
+## Solution
 
-### Feature Engineering
-- Creation of composite cognitive scores
-- Temporal features from longitudinal data
-- Interaction terms between key biomarkers
-- Age-normalized cognitive measures
+Developed an ML classification pipeline combining:
+- **Feature selection**: LASSO regularization and random forest importance ranking to reduce dimensionality
+- **Cross-validation frameworks**: Stratified k-fold CV with nested hyperparameter tuning to prevent overfitting
+- **Differential expression integration**: limma outputs used as prior knowledge to constrain the candidate feature space
+- **Model validation**: Bootstrap confidence intervals and permutation tests to quantify uncertainty
 
-### Machine Learning Models
-- **tidymodels**: Workflow-based model development
-- **H2O.ai**: Automated machine learning for comparison
-- Models: Logistic Regression, Random Forest, XGBoost, Neural Networks
+Applied to transgenic mouse proteomics data from CLN4 (DNAJC5 mutation) models, integrating mass spectrometry readouts with electrophysiological phenotypes.
 
-```r
-# Example: tidymodels workflow
-library(tidymodels)
-library(themis)
+## Result
 
-# Data preprocessing recipe
-ad_recipe <- recipe(AD_status ~ ., data = train_data) %>%
-  # Handle missing values
-  step_impute_knn(all_predictors(), neighbors = 5) %>%
-  # Remove near-zero variance features
-  step_nzv(all_predictors()) %>%
-  # Normalize numeric features
-  step_normalize(all_numeric_predictors()) %>%
-  # Handle class imbalance
-  step_smote(AD_status)
+Validated biomarker candidates contributed to **first-author publication in Science Advances (2025)**. Pipeline is reproducible and documented for reuse on new neurodegeneration datasets.
 
-# Model specification
-rf_spec <- rand_forest(
-  mtry = tune(),
-  trees = tune(),
-  min_n = tune()
-) %>%
-  set_engine("ranger", importance = "impurity") %>%
-  set_mode("classification")
+> López Begines, S. et al. Mutations in DNAJC5 causing Kufs disease in humans induce lipofuscinosis in mice by a dominant-negative mechanism. *Science Advances* 2025. [doi:10.1126/sciadv.ads3393](https://doi.org/10.1126/sciadv.ads3393)
 
-# Create workflow
-ad_workflow <- workflow() %>%
-  add_recipe(ad_recipe) %>%
-  add_model(rf_spec)
+---
 
-# Hyperparameter tuning
-rf_tuned <- tune_grid(
-  ad_workflow,
-  resamples = vfold_cv(train_data, v = 5),
-  grid = 20,
-  metrics = metric_set(roc_auc, accuracy, sensitivity, specificity)
-)
-```
+## Methodology
 
-## Part 2: PET Image Analysis (Python)
+### Part 1: Feature Engineering & Differential Expression (R)
 
-### Image Preprocessing
-- DICOM file handling and standardization
-- Skull stripping and brain extraction
-- Registration to standard space (MNI)
-- Intensity normalization
+- MaxQuant LFQ output processed through the automated proteomics pipeline (VSN normalization, mixed imputation, limma DE analysis)
+- Candidate feature lists generated per pairwise comparison (WT vs KO, CTRL vs mutant)
+- Composite scores integrating electrophysiology readouts (mIPSC frequency, resting membrane potential) with proteomic features
 
-### Deep Learning Architecture
-- **Convolutional Neural Networks** for image classification
-- Transfer learning from pre-trained models
-- 3D convolutions for volumetric data
-- Attention mechanisms for region importance
+### Part 2: ML Classification Pipeline (Python)
 
 ```python
-# Example: CNN for PET image classification
-import tensorflow as tf
-from tensorflow.keras import layers, models
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LassoCV
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import StratifiedKFold, cross_val_score
 
-def create_3d_cnn(input_shape=(128, 128, 128, 1), num_classes=2):
-    """
-    3D CNN for PET image classification
-    """
-    inputs = layers.Input(shape=input_shape)
-    
-    # Convolutional blocks
-    x = layers.Conv3D(32, (3, 3, 3), activation='relu', padding='same')(inputs)
-    x = layers.MaxPooling3D((2, 2, 2))(x)
-    x = layers.BatchNormalization()(x)
-    
-    x = layers.Conv3D(64, (3, 3, 3), activation='relu', padding='same')(x)
-    x = layers.MaxPooling3D((2, 2, 2))(x)
-    x = layers.BatchNormalization()(x)
-    
-    x = layers.Conv3D(128, (3, 3, 3), activation='relu', padding='same')(x)
-    x = layers.MaxPooling3D((2, 2, 2))(x)
-    x = layers.BatchNormalization()(x)
-    
-    # Attention mechanism
-    attention = layers.GlobalAveragePooling3D()(x)
-    attention = layers.Dense(128, activation='relu')(attention)
-    attention = layers.Dense(128, activation='sigmoid')(attention)
-    attention = layers.Reshape((1, 1, 1, 128))(attention)
-    x = layers.multiply([x, attention])
-    
-    # Classification head
-    x = layers.GlobalAveragePooling3D()(x)
-    x = layers.Dropout(0.5)(x)
-    x = layers.Dense(256, activation='relu')(x)
-    x = layers.Dropout(0.3)(x)
-    outputs = layers.Dense(num_classes, activation='softmax')(x)
-    
-    model = models.Model(inputs=inputs, outputs=outputs)
-    return model
+# Feature selection stage
+lasso_selector = LassoCV(cv=5, max_iter=5000)
 
-# Compile model
-model = create_3d_cnn()
-model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
-    loss='categorical_crossentropy',
-    metrics=['accuracy', tf.keras.metrics.AUC(name='auc')]
-)
+# Classification pipeline
+clf_pipeline = Pipeline([
+    ('scaler', StandardScaler()),
+    ('classifier', RandomForestClassifier(
+        n_estimators=500,
+        max_features='sqrt',
+        random_state=42
+    ))
+])
+
+# Nested cross-validation
+outer_cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+scores = cross_val_score(clf_pipeline, X_selected, y,
+                         cv=outer_cv, scoring='roc_auc')
 ```
 
-### Image-Specific Features
-- Regional amyloid burden quantification
-- Tau distribution patterns
-- Volumetric measurements
-- SUVr (Standardized Uptake Value ratio) calculations
+### Part 3: Model Validation & Reporting
 
-## Part 3: Multimodal Integration
-
-### Fusion Strategies
-1. **Early Fusion**: Concatenate features before final classification
-2. **Late Fusion**: Combine predictions from separate models
-3. **Intermediate Fusion**: Merge at hidden layer level
-
-```python
-# Example: Multimodal CNN architecture
-class MultimodalADModel(tf.keras.Model):
-    def __init__(self, image_shape, tabular_features):
-        super().__init__()
-        
-        # Image processing branch
-        self.cnn_branch = create_3d_cnn(image_shape, num_classes=128)
-        self.cnn_branch.trainable = True
-        
-        # Tabular data branch
-        self.tabular_branch = tf.keras.Sequential([
-            layers.Dense(128, activation='relu'),
-            layers.Dropout(0.3),
-            layers.Dense(64, activation='relu'),
-            layers.Dropout(0.2)
-        ])
-        
-        # Fusion layers
-        self.fusion = tf.keras.Sequential([
-            layers.Dense(128, activation='relu'),
-            layers.Dropout(0.3),
-            layers.Dense(64, activation='relu'),
-            layers.Dense(2, activation='softmax')
-        ])
-    
-    def call(self, inputs):
-        image_input, tabular_input = inputs
-        
-        # Process each modality
-        image_features = self.cnn_branch(image_input)
-        tabular_features = self.tabular_branch(tabular_input)
-        
-        # Concatenate features
-        combined = tf.concat([image_features, tabular_features], axis=1)
-        
-        # Final prediction
-        output = self.fusion(combined)
-        return output
-```
+- Permutation test to confirm models outperform random baseline
+- Bootstrap confidence intervals (n=1000) for AUC estimates
+- SHAP values for interpretable feature importance
+- Results exported as reproducible RMarkdown/Quarto reports
 
 ---
 
-# Expected Outcomes
-
-## Clinical Implications
-- **Early Detection**: Identify at-risk individuals before symptom onset
-- **Personalized Risk Assessment**: Combine multiple biomarkers for individual predictions
-- **Treatment Planning**: Support clinical decision-making for intervention timing
-
-## Technical Contributions
-- Reproducible pipeline for multimodal AD analysis
-- Benchmarking of different fusion strategies
-- Feature importance analysis across modalities
-- Validation of model interpretability for clinical use
-
----
-
-# Technical Stack
+## Technical Stack
 
 **R Environment**:
 - tidyverse, tidymodels for structured workflow
-- Seurat for single-cell analysis (if applicable)
-- ggplot2, plotly for interactive visualizations
-- H2O.ai for automated ML comparison
+- limma, DEP for differential expression
+- ggplot2 for visualization
 
 **Python Environment**:
-- TensorFlow/Keras for deep learning
-- scikit-learn for classical ML
-- nibabel for neuroimaging data
-- numpy, pandas for data manipulation
-- matplotlib, seaborn for visualization
-
-**Neuroimaging Tools**:
-- FSL (FMRIB Software Library)
-- ANTs (Advanced Normalization Tools)
-- SPM (Statistical Parametric Mapping)
+- scikit-learn for ML pipelines and cross-validation
+- XGBoost for gradient boosting
+- pandas, numpy for data manipulation
+- SHAP for model interpretability
 
 ---
 
-# Current Status
+## Related Publications
 
-🚧 **Project Status**: In Development
-
-- ✅ Data acquisition and preprocessing
-- ✅ EDA and feature engineering (tabular data)
-- 🔄 Model development (tabular + imaging)
-- ⏳ Multimodal fusion implementation
-- ⏳ Validation and testing
+- **López Begines, S.** et al. (2025). Mutations in DNAJC5 causing Kufs disease. *Science Advances*. [doi:10.1126/sciadv.ads3393](https://doi.org/10.1126/sciadv.ads3393)
 
 ---
 
-# Repository
-
-📦 **GitHub**: [AD_ML_A4_study](https://github.com/SLopezBegines/AD_ML_A4_study)
-
----
-
-# Related Publications
-
-This work builds on extensive research experience in neurodegenerative diseases:
-
-- **López Begines, S.** et al. (2025). Mutations in DNAJC5 causing Kufs disease in humans induce lipofuscinosis in mice. *Science Advances*. DOI: 10.1126/sciadv.ads3393
-
-- **López-Begines, S.** et al. (2024). Handshaking for ultrafast endocytosis. *EMBO Journal*.
-
----
-
-# References
-
-Sperling, R.A., et al. (2020). The A4 Study: Stopping AD before symptoms begin? *Science Translational Medicine*, 8(362), 362fs13.
-
----
-
-[← Back to Projects](/index.html#projects)
+[← Back to Projects](/#projects)

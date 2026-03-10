@@ -1,9 +1,7 @@
 ---
 layout: home
-lang: es
-ref: home
-title: "Santiago López Begines - Data Scientist & Neurocientífico"
-excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine Learning e Investigación Biomédica. PhD en Biomedicina."
+title: "Santiago López Begines — Biomedical Data Science Consulting"
+excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysiology pipelines, omics data analysis, and biomarker discovery for neurotech and biomedical teams."
 ---
 
 <!-- Hero Section -->
@@ -11,17 +9,20 @@ excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine
     <div class="container">
         <div class="hero-content fade-in-up">
             <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="hero-avatar">
-            <p class="hero-subtitle">{{ site.t.es.hero_subtitle }}</p>
-            <h1>{{ site.t.es.hero_title }}</h1>
+            <h1>Biomedical Data Science Consulting</h1>
             <p class="hero-description">
-                {{ site.t.es.hero_tagline }}
+                I help neurotech and biomedical teams build reliable, reproducible analysis pipelines.
+            </p>
+            <p class="hero-tagline">
+                15+ years experimental neuroscience &nbsp;·&nbsp; Production-grade R &amp; Python &nbsp;·&nbsp; First-author in Science Advances
             </p>
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">{{ site.t.es.hero_cta_projects }}</a>
-                <a href="/assets/cv/CV_Santiago_Lopez_Begines.pdf" class="btn btn-outline" download>
-                    <i class="fas fa-download"></i> Descargar CV
+                <a href="mailto:santiago.lopez.begines@gmail.com" class="btn btn-primary">
+                    Let's talk &rarr; santiago.lopez.begines@gmail.com
                 </a>
-                <a href="#contact" class="btn btn-outline">Contacto</a>
+                <a href="/assets/cv/CV_Santiago_Lopez_Begines.pdf" class="btn btn-outline" download>
+                    <i class="fas fa-download"></i> Download CV
+                </a>
             </div>
         </div>
     </div>
@@ -30,31 +31,95 @@ excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine
 <!-- About Section -->
 <section id="about">
     <div class="container">
-        <h2 class="section-title">{{ site.t.es.about_title }}</h2>
+        <h2 class="section-title">About</h2>
         <div class="about-content">
             <div class="about-text">
-                <h3>{{ site.t.es.about_background }}</h3>
                 <p>
-                    Neurocientífico con más de 15 años de experiencia en investigación de neurodegeneración, descubrimiento de biomarcadores y análisis avanzado de datos. Actualmente trabajo como <strong>Investigador Postdoctoral en la Universidad de Cádiz</strong>.
+                    Neuroscientist and Data Scientist with 15+ years in biomedical research and 4–5 years
+                    specializing in machine learning, multi-omics analysis, and production data pipelines.
                 </p>
                 <p>
-                    Reconvertido en científico de datos tras completar un <strong>Máster en Big Data y Ciencia de Datos (UNED, 2025)</strong>.
-                    Aprovecho el machine learning junto con Python y R para interrogar conjuntos de datos complejos—desde proteómica y transcriptómica hasta datos clínicos y financieros—para generar insights accionables.
-                    Competencia demostrada en Python y R para la curación, validación y análisis de grandes conjuntos de datos científicos (proteómica, clínica, transcriptómica). Experto en el desarrollo de procesos automatizados y
-                    flujos de trabajo analíticos reproducibles, la colaboración entre equipos multidisciplinares y la
-                    comunicación eficaz de conocimientos técnicos. Experiencia en la gestión de proyectos de investigación
-                    y la tutoría de investigadores.
+                    First author in <strong>Science Advances</strong> (2025); co-authored 8+ publications in
+                    EMBO Journal, eLife, and Cell Death &amp; Disease.
                 </p>
-                
-                <h3>{{ site.t.es.about_achievements }}</h3>
+                <p>
+                    Unique hybrid profile: deep experimental background in whole-cell patch-clamp
+                    electrophysiology, proteomics, and transgenic mouse models — combined with
+                    production-level data science in Python and R.
+                </p>
+
+                <h3>Key Results</h3>
                 <ul>
-                    <li>Implementación exitosa de modelos de ML para identificar proteínas expresadas diferencialmente en modelos de enfermedad de Batten</li>
-                    <li>Desarrollo de pipelines personalizados para análisis de datos ómicos en investigación neurodegenerativa</li>
-                    <li>Desarrollo de pipeline integral de ML para predicción del mercado bursátil IBEX35</li>
-                    <li>Coautor de publicaciones en Science Advances, EMBO Journal y eLife</li>
-                    <li>Supervisión de estudiantes de doctorado y 100+ horas de docencia en la Universidad de Sevilla</li>
+                    <li>90% reduction in electrophysiology processing time via automated pipeline (IBiS, Seville)</li>
+                    <li>70% reduction in omics data cleaning time via automated R scripts (LCSB, University of Luxembourg)</li>
+                    <li>ML-based biomarker discovery in neurodegeneration (Batten disease / CLN4)</li>
                 </ul>
+
+                <p style="margin-top: 1.5rem;">
+                    Proficient in <strong>Python</strong> (scikit-learn, XGBoost, LightGBM, TensorFlow) and
+                    <strong>R</strong> (tidyverse, tidymodels, Seurat, Shiny) for automated pipelines,
+                    statistical modeling, and data visualization on large-scale proteomics, transcriptomics,
+                    and electrophysiological datasets.
+                </p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">Services</h2>
+
+        <div class="services-grid">
+
+            <!-- Card A -->
+            <div class="service-card">
+                <h3>Electrophysiology &amp; Signal Analysis Pipelines</h3>
+                <p class="service-intro">
+                    For neurotech teams working with patch-clamp, EEG, or multi-electrode array data who need
+                    to move from raw recordings to reproducible, documented outputs.
+                </p>
+                <ul>
+                    <li>Automated data processing pipelines (pCLAMP / Python / R)</li>
+                    <li>Quality control and artifact rejection frameworks</li>
+                    <li>Statistical analysis: FI curves, input resistance, E/I balance, resting membrane potential</li>
+                    <li>Full documentation and reproducibility standards</li>
+                </ul>
+                <p class="service-deliverable">Deliverable: functional pipeline + technical documentation</p>
+            </div>
+
+            <!-- Card B -->
+            <div class="service-card">
+                <h3>Biomedical Data Pipeline Design &amp; Audit</h3>
+                <p class="service-intro">
+                    For MedTech and Pharma SMEs that need to validate or audit existing analysis pipelines
+                    for regulatory submissions or internal quality standards.
+                </p>
+                <ul>
+                    <li>Pipeline code review and statistical validation</li>
+                    <li>Reproducibility assessment and gap analysis</li>
+                    <li>SOP documentation for reproducible analytical workflows</li>
+                    <li>Recommendations report with prioritized action items</li>
+                </ul>
+                <p class="service-deliverable">Deliverable: written audit report + remediation roadmap</p>
+            </div>
+
+            <!-- Card C -->
+            <div class="service-card">
+                <h3>Omics Data Analysis</h3>
+                <p class="service-intro">
+                    For biomedical research teams and CROs working with proteomics, transcriptomics,
+                    or multi-omics datasets.
+                </p>
+                <ul>
+                    <li>Label-free proteomics: MaxQuant &rarr; differential expression &rarr; biological interpretation</li>
+                    <li>scRNA-seq analysis (Seurat): clustering, cell type annotation, trajectory analysis</li>
+                    <li>ML-based biomarker discovery: feature selection, cross-validation, model validation</li>
+                </ul>
+                <p class="service-deliverable">Deliverable: analysis report + reproducible R/Python scripts</p>
+            </div>
+
         </div>
     </div>
 </section>
@@ -62,130 +127,175 @@ excerpt: "Neurocientífico con 15+ años de experiencia especializado en Machine
 <!-- Projects Section -->
 <section id="projects">
     <div class="container">
-        <h2 class="section-title">{{ site.t.es.projects_title }}</h2>
-        
+        <h2 class="section-title">Projects</h2>
+
         <div class="projects-grid">
-            <!-- IBEX35 Project -->
+
+            <!-- Proteomics -->
             <div class="project-card">
-                <h3>Predicción del Mercado IBEX35</h3>
+                <h3>Automated Proteomics Pipeline for Neurodegeneration Biomarker Discovery</h3>
                 <p>
-                    Modelos de machine learning para predecir movimientos del mercado bursátil español usando indicadores financieros y análisis de sentimiento de noticias GDELT. Tesis de Máster con validación estadística rigurosa.
+                    Built an automated R pipeline for MaxQuant LFQ output covering data cleaning,
+                    normalization, differential expression, and ML-based biomarker discovery.
+                    <strong>70% reduction in data cleaning time</strong> — deployed at LCSB, University of Luxembourg.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Proteomics</span>
+                    <span class="tag">R</span>
+                    <span class="tag">MaxQuant</span>
+                    <span class="tag">Biomarker Discovery</span>
+                    <span class="tag">Neurodegeneration</span>
+                </div>
+                <a href="/projects/proteomics" class="project-link">
+                    View Project <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- CLN4/Batten ML -->
+            <div class="project-card">
+                <h3>ML-Based Biomarker Discovery in Neurodegeneration (Batten Disease / CLN4)</h3>
+                <p>
+                    ML classification pipeline combining feature selection, cross-validation, and
+                    differential expression analysis on transgenic mouse proteomics.
+                    Contributed to <strong>first-author publication in Science Advances (2025)</strong>.
                 </p>
                 <div class="project-tags">
                     <span class="tag">Machine Learning</span>
+                    <span class="tag">Biomarker Discovery</span>
+                    <span class="tag">Proteomics</span>
                     <span class="tag">Python</span>
-                    <span class="tag">R</span>
-                    <span class="tag">Mercados Financieros</span>
-                </div>
-                <a href="/projects/ibex35-prediction" class="project-link">
-                    Ver Proyecto <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Alzheimer Project -->
-            <div class="project-card">
-                <h3>Predicción de Enfermedad de Alzheimer</h3>
-                <p>
-                    Enfoque multimodal de machine learning combinando datos clínicos e imágenes PET para detección temprana de EA usando el dataset del estudio A4.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Deep Learning</span>
-                    <span class="tag">Imagen Médica</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">R</span>
+                    <span class="tag">CLN4</span>
                 </div>
                 <a href="/projects/alzheimer-ml" class="project-link">
-                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                    View Project <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-            
-            <!-- Proteomics Project -->
+
+            <!-- Electrophysiology Pipeline -->
             <div class="project-card">
-                <h3>Pipeline de Análisis Proteómico</h3>
+                <span class="badge-wip">Work in Progress</span>
+                <h3>Automated Electrophysiology Analysis Pipeline for Synaptic Data</h3>
                 <p>
-                    Análisis de datos proteómicos de alto rendimiento mediante espectrometría de masas para investigación en enfermedades neurodegenerativas. Workflow automatizado para descubrimiento de biomarcadores.
+                    Developing an automated pipeline for whole-cell patch-clamp data
+                    (mIPSCs, mEPSCs, FI curves) integrating miniML deep learning event detection.
+                    R modules complete — Python/miniML integration in development.
                 </p>
                 <div class="project-tags">
-                    <span class="tag">Bioinformática</span>
+                    <span class="tag">Electrophysiology</span>
+                    <span class="tag">Python</span>
                     <span class="tag">R</span>
-                    <span class="tag">Proteómica</span>
+                    <span class="tag">Patch-Clamp</span>
+                    <span class="tag">Neurotech</span>
                 </div>
-                <a href="/projects/proteomics" class="project-link">
-                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                <a href="/projects/ephys-pipeline" class="project-link">
+                    View Project <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-            
-            <!-- Single-cell Project -->
+
+            <!-- snRNA-seq -->
             <div class="project-card">
-                <h3>Pipeline de Análisis snRNA-seq</h3>
+                <h3>snRNA-seq Analysis Pipeline</h3>
                 <p>
-                    Pipeline modular en R para análisis de single-nucleus RNA-seq: control de calidad, normalización SCTransform, clustering Louvain y enriquecimiento funcional multi-capa (GO, KEGG, STRING, PANTHER).
+                    Modular R pipeline for single-nucleus RNA-seq: from 10X CellRanger output to
+                    SCTransform normalisation, Louvain clustering, differential expression,
+                    and multi-layered functional enrichment (GO, KEGG, STRING, PANTHER).
                 </p>
                 <div class="project-tags">
                     <span class="tag">scRNA-seq</span>
                     <span class="tag">Seurat</span>
                     <span class="tag">R</span>
-                    <span class="tag">Bioinformática</span>
+                    <span class="tag">Bioinformatics</span>
                 </div>
                 <a href="/projects/single-cell" class="project-link">
-                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                    View Project <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
 
-            <!-- AgrIoT Project -->
+            <!-- IBEX35 -->
             <div class="project-card">
-                <h3>AgrIoT Control Inteligente</h3>
+                <h3>ML Pipeline for Financial Time-Series: Rigorous Validation Framework</h3>
                 <p>
-                    Sistema IoT basado en ESP32 para automatización agrícola con interfaz web, monitorización de sensores y capacidades de control remoto.
+                    A case study in avoiding false discovery in predictive modeling. Only 27% of models
+                    showed genuine predictive value across 336 model/horizon combinations
+                    (McNemar, Diebold-Mariano, bootstrap CIs). Documented negative result — reproducible pipeline.
                 </p>
                 <div class="project-tags">
-                    <span class="tag">IoT</span>
-                    <span class="tag">ESP32</span>
-                    <span class="tag">Desarrollo Web</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Time Series</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Validation</span>
                 </div>
-                <a href="/projects/agriot" class="project-link">
-                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                <a href="/projects/ibex35-prediction" class="project-link">
+                    View Project <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
+
         </div>
-        
+
         <div style="text-align: center; margin-top: 3rem;">
             <a href="{{ site.social.github }}" class="btn btn-outline" target="_blank">
-                <i class="fab fa-github"></i> {{ site.t.es.projects_view_all }}
+                <i class="fab fa-github"></i> View All on GitHub
             </a>
         </div>
     </div>
 </section>
 
-
-<!-- FAQ Section -->
-{% include faq.html %}
+<!-- Other Projects -->
+<section class="other-projects">
+    <div class="container">
+        <h2>Other Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>AgrIoT Smart Motor Control</h3>
+                <p style="font-style: italic; color: var(--color-primary); font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    IoT sensor data pipeline for environmental monitoring — ESP32/ESP8266 sensor network with automated data logging and visualization.
+                </p>
+                <p>
+                    ESP32-based IoT system for agricultural automation with web interface,
+                    real-time sensor monitoring, relay control, and database data logging.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">IoT</span>
+                    <span class="tag">ESP32</span>
+                    <span class="tag">Data Logging</span>
+                </div>
+                <a href="/projects/agriot" class="project-link">
+                    View Project <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Contact Section -->
 <section id="contact">
     <div class="container">
-        <h2 class="section-title">{{ site.t.es.contact_title }}</h2>
+        <h2 class="section-title">Let's work together</h2>
         <div class="contact-content">
-            <p style="font-size: 1.15rem;">
-                {{ site.t.es.contact_description }}
+            <p class="contact-subtitle">
+                Available for consulting projects in neurotech, MedTech, and biomedical data science.
             </p>
-            
-            <div class="contact-links">
-                <a href="mailto:{{ site.email }}" class="contact-link">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email</span>
+
+            <form action="https://formspree.io/f/xnjgpjov" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit">Send message</button>
+            </form>
+
+            <div class="contact-info">
+                <a href="mailto:santiago.lopez.begines@gmail.com">
+                    <i class="fas fa-envelope"></i> santiago.lopez.begines@gmail.com
                 </a>
-                <a href="{{ site.social.github }}" class="contact-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
+                <a href="https://linkedin.com/in/santibegines" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> linkedin.com/in/santibegines
                 </a>
-                <a href="{{ site.social.linkedin }}" class="contact-link" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
+                <a href="https://github.com/SLopezBegines" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> github.com/SLopezBegines
                 </a>
-                <a href="{{ site.social.orcid }}" class="contact-link" target="_blank">
-                    <i class="fab fa-orcid"></i>
-                    <span>ORCID</span>
+                <a href="https://orcid.org/0000-0001-8809-8919" target="_blank" rel="noopener">
+                    <i class="fab fa-orcid"></i> orcid.org/0000-0001-8809-8919
                 </a>
             </div>
         </div>

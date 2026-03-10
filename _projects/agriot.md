@@ -11,7 +11,9 @@ tags:
   - Web Development
 ---
 
-# Project Overview
+# AgrIoT Smart Motor Control
+
+> IoT sensor data pipeline for environmental monitoring — ESP32/ESP8266 sensor network with automated data logging and visualization.
 
 **AgrIoT** is an ESP32/ESP8266-based IoT system designed for agricultural and home automation. The system provides remote control of motors, pumps, and other devices through a web interface, with real-time monitoring of sensors and environmental conditions.
 

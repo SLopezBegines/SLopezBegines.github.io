@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Pipeline for Financial Time-Series: Rigorous Validation Framework | Santiago López Begines</title>
+
+    <!-- SEO -->
+    <!-- SEO Meta Tags -->
+<meta name="description" content="A case study in avoiding false discovery in predictive modeling. Only 27% of models showed genuine predictive value across 336 combinations (McNemar, Diebold...">
+<meta name="keywords" content="Machine Learning, Time Series, Validation Framework, Python, R, LightGBM, Statistical Testing, biomedical data science consulting, neurotech, electrophysiology pipeline, proteomics analysis, biomarker discovery, scRNA-seq, neuroscience, Python, R, Santiago López Begines, patch-clamp, omics">
+<meta name="author" content="Santiago López Begines, PhD">
+<meta name="robots" content="index, follow">
+<meta name="language" content="en">
+<meta name="revisit-after" content="7 days">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://SLopezBegines.github.io/projects/ibex35-prediction/">
+<meta property="og:title" content="ML Pipeline for Financial Time-Series: Rigorous Validation Framework | Santiago López Begines">
+<meta property="og:description" content="A case study in avoiding false discovery in predictive modeling. Only 27% of models showed genuine predictive value across 336 combinations (McNemar, Diebold...">
+<meta property="og:image" content="https://SLopezBegines.github.iohttps://SLopezBegines.github.io/assets/images/photoprofile.jpeg">
+<meta property="og:site_name" content="Santiago López Begines">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://SLopezBegines.github.io/projects/ibex35-prediction/">
+<meta name="twitter:title" content="ML Pipeline for Financial Time-Series: Rigorous Validation Framework | Santiago López Begines">
+<meta name="twitter:description" content="A case study in avoiding false discovery in predictive modeling. Only 27% of models showed genuine predictive value across 336 combinations (McNemar, Diebold...">
+<meta name="twitter:image" content="https://SLopezBegines.github.iohttps://SLopezBegines.github.io/assets/images/photoprofile.jpeg">
+<meta name="twitter:creator" content="@SLopezBegines">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://SLopezBegines.github.io/projects/ibex35-prediction/" />
+
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://SLopezBegines.github.io/sitemap.xml" />
+
+
+    <!-- Schema.org Structured Data -->
+    <!-- JSON-LD Schema.org markup for Google Rich Results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Santiago López Begines, PhD",
+  "url": "https://SLopezBegines.github.io",
+  "image": "https://SLopezBegines.github.iohttps://SLopezBegines.github.io/assets/images/photoprofile.jpeg",
+  "email": "santiago.lopez.begines@gmail.com",
+  "jobTitle": "Biomedical Data Science Consultant",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance Consulting",
+    "url": "https://SLopezBegines.github.io"
+  },
+  "alumniOf": [
+    {
+      "@type": "Organization",
+      "name": "Universidad Nacional de Educación a Distancia (UNED)",
+      "sameAs": "https://www.uned.es/"
+    },
+    {
+      "@type": "Organization",
+      "name": "University of Barcelona",
+      "sameAs": "https://www.ub.edu/web/portal/en/"
+    }
+  ],
+  "knowsAbout": [
+    "Machine Learning",
+    "Data Science",
+    "Neuroscience",
+    "Proteomics",
+    "Financial Modeling",
+    "Python Programming",
+    "R Programming",
+    "Deep Learning",
+    "Bioinformatics"
+  ],
+  "sameAs": [
+    "https://github.com/SLopezBegines",
+    "https://orcid.org/0000-0001-8809-8919",
+    "https://linkedin.com/in/santibegines"
+  ],
+  "nationality": {
+    "@type": "Country",
+    "name": "Spain"
+  }
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "ML Pipeline for Financial Time-Series: Rigorous Validation Framework",
+  "author": {
+    "@type": "Person",
+    "name": "Santiago López Begines, PhD"
+  },
+  "description": "A case study in avoiding false discovery in predictive modeling. Only 27% of models showed genuine predictive value across 336 combinations (McNemar, Diebold-Mariano, bootstrap CIs). Methodology transferable to biomedical and financial time-series problems.",
+  "url": "https://SLopezBegines.github.io/projects/ibex35-prediction/",
+  "keywords": "Machine Learning, Time Series, Validation Framework, Python, R, LightGBM, Statistical Testing",
+  "inLanguage": "en"
+}
+</script>
+
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!-- Google Analytics -->
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8C3HQ7CE3V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8C3HQ7CE3V');
+</script>
+
+
+</head>
+<body>
+    <header class="site-header">
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-text">Santiago López Begines, PhD</span>
+            </a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                
+                <li class="nav-item">
+                    <a href="/#about" class="nav-link">About</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/#services" class="nav-link">Services</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/#projects" class="nav-link">Projects</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/publications" class="nav-link">Publications</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/#contact" class="nav-link">Contact</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+    <main>
+        <article class="project-detail">
+    <div class="container">
+        <a href="/#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+        
+        <header class="project-header">
+            <h1>ML Pipeline for Financial Time-Series: Rigorous Validation Framework</h1>
+            
+            <p class="lead">A case study in avoiding false discovery in predictive modeling. Only 27% of models showed genuine predictive value across 336 combinations (McNemar, Diebold-Mariano, bootstrap CIs). Methodology transferable to biomedical and financial time-series problems.</p>
+            
+            
+            
+            <div class="tags">
+                
+                <span class="tag">Machine Learning</span>
+                
+                <span class="tag">Time Series</span>
+                
+                <span class="tag">Validation Framework</span>
+                
+                <span class="tag">Python</span>
+                
+                <span class="tag">R</span>
+                
+                <span class="tag">LightGBM</span>
+                
+                <span class="tag">Statistical Testing</span>
+                
+            </div>
+            
+        </header>
+        
+        <div class="project-content">
+            <h1 id="ml-pipeline-for-financial-time-series-rigorous-validation-framework">ML Pipeline for Financial Time-Series: Rigorous Validation Framework</h1>
+
+<p><strong>Tech stack</strong>: Python · R · Quarto · LightGBM · XGBoost · TensorFlow/Keras · scikit-learn · GDELT · quantmod · reticulate
+<strong>Repository</strong>: <a href="https://github.com/SLopezBegines/series_temporales_IBEX">github.com/SLopezBegines/series_temporales_IBEX</a>
+<strong>Thesis</strong>: <a href="https://github.com/SLopezBegines/series_temporales_IBEX/raw/main/TFM_Santiago_Lopez_Begines.pdf">TFM_Santiago_Lopez_Begines.pdf</a></p>
+
+<blockquote>
+  <p><strong>A case study in avoiding false discovery in predictive modeling</strong> — methodology transferable to any high-dimensional time-series problem in biomedical or financial domains. The same statistical framework (McNemar, Diebold-Mariano, bootstrap CIs) applies directly to clinical biomarker validation, EEG classifier evaluation, or omics-based predictive models.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="problem">Problem</h2>
+
+<p>Evaluating genuine predictive signal in ML models for IBEX35 closing prices, controlling for multiple comparison bias across 336 model/horizon combinations. The canonical problem in ML-driven predictive modeling: how do you distinguish genuine signal from chance performance when testing many models on the same data?</p>
+
+<p>This is especially relevant in biomedical contexts — omics biomarker panels, EEG classifiers, and clinical prediction models all face the same multiple testing challenge.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>End-to-end pipeline for predicting the <strong>daily directional movement</strong> (up/down) of the Spanish IBEX35 index over a 20-year horizon (2004–2024). The project assesses whether integrating <strong>news sentiment extracted from &gt;2,000 GDELT batches</strong> (~150 GB raw data) improves directional forecasting beyond models trained on price-based technical indicators alone.</p>
+
+<p>Two specific challenges drove the pipeline design:</p>
+
+<ul>
+  <li><strong>Lookahead contamination</strong> — Strict temporal train/test splits and rolling-window validation prevent any future information from leaking into training, a common flaw in published ML studies.</li>
+  <li><strong>Multiple comparison control</strong> — McNemar test (classification) and Diebold-Mariano test (forecasts), with bootstrap confidence intervals (n=1,000), applied across all 336 model/horizon combinations.</li>
+</ul>
+
+<h2 id="result">Result</h2>
+
+<p><strong>Only 27% of models showed genuine predictive value</strong> — confirming that naive model selection without rigorous statistical testing would have produced false positives 73% of the time.</p>
+
+<ul>
+  <li>LightGBM achieves <strong>55–62% directional accuracy</strong> — significantly above the 50% random baseline</li>
+  <li>Sentiment adds marginal, inconsistent improvement (&lt;2 pp); technical indicators dominate feature importance</li>
+  <li>Deep learning (LSTM, GRU) offers no clear advantage over traditional gradient boosting</li>
+  <li>Documented negative result — reproducible pipeline available in repository</li>
+</ul>
+
+<hr />
+
+<h2 id="analytical-workflow">Analytical Workflow</h2>
+
+<pre><code class="language-mermaid">flowchart TD
+    subgraph Data ["📥 Data Collection"]
+        A1["IBEX35 + components · Yahoo Finance · 2004–2024"]
+        A2["External markets · S&amp;P500 · EuroStoxx · Oil · Gold"]
+        A3["GDELT news · &gt;2,000 ZIP files · ~150 GB"]
+    end
+
+    subgraph EDA ["🔬 EDA &amp; Features · R · Quarto"]
+        B1["Fase 1–2 · RSI · MACD · Bollinger · Volatility · MAs"]
+        B2["Fase 3–4 · GDELT download · Parquet · Sentiment scoring"]
+        B3["Fase 5 · Feature integration · ~50 features · Scaling"]
+    end
+
+    subgraph ML ["🤖 ML Pipeline · Python · Colab"]
+        C1["Baselines · ARIMA · Prophet · Naïve"]
+        C2["Gradient boosting · LightGBM · XGBoost · RF"]
+        C3["Deep learning · LSTM · GRU · MLP"]
+    end
+
+    subgraph Eval ["📊 Evaluation · Fase 6"]
+        D1["Accuracy · F1 · AUC · McNemar · Diebold–Mariano · Bootstrap CI"]
+    end
+
+    Data --&gt; EDA --&gt; ML --&gt; Eval
+
+    style Data fill:#1e3a5f,color:#fff,stroke:#1a7a7a
+    style EDA fill:#1e3a1e,color:#fff,stroke:#22c55e
+    style ML fill:#3a1e1e,color:#fff,stroke:#ef4444
+    style Eval fill:#3a2a1e,color:#fff,stroke:#f59e0b
+</code></pre>
+
+<h2 id="key-results">Key Results</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Directional Accuracy</th>
+      <th>ROC-AUC</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>LightGBM</strong></td>
+      <td><strong>55–62%</strong></td>
+      <td><strong>0.58–0.64</strong></td>
+      <td>Best overall</td>
+    </tr>
+    <tr>
+      <td>XGBoost</td>
+      <td>53–59%</td>
+      <td>0.55–0.61</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Random Forest</td>
+      <td>52–57%</td>
+      <td>0.54–0.60</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LSTM / GRU</td>
+      <td>51–56%</td>
+      <td>0.52–0.58</td>
+      <td>No DL advantage</td>
+    </tr>
+    <tr>
+      <td>ARIMA / Prophet</td>
+      <td>50–52%</td>
+      <td>0.50–0.53</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Naïve baseline</td>
+      <td>~50%</td>
+      <td>~0.50</td>
+      <td>Random walk</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><strong>Sentiment impact</strong>: GDELT tone improved accuracy by &lt;2 pp in most conditions. McNemar tests (p &gt; 0.05) confirm the improvement is not statistically significant.</li>
+  <li><strong>Top features</strong>: RSI, short-term moving averages, lagged daily returns, intraday range.</li>
+  <li><strong>Efficient market alignment</strong>: results are consistent with the semi-strong form of the EMH — public news sentiment is already priced in within the same trading session.</li>
+</ul>
+
+<h2 id="pipeline-structure">Pipeline Structure</h2>
+
+<p><strong>EDA &amp; Feature Engineering (R, 6 Quarto phases)</strong>
+Fase 1–2 build the financial feature matrix: technical indicators (RSI, MACD, Bollinger Bands, 10+ moving averages), external market variables, and lagged returns. Fase 3–4 download, filter, and aggregate the GDELT corpus — the most computationally intensive step (~12–24 h, parallelised over &gt;2,000 ZIP archives). Fase 5 merges both feature sets, applies temporal scaling, and verifies consistency before handoff to Python.</p>
+
+<p><strong>ML Pipeline (Python, Google Colab)</strong>
+A single notebook (<code class="language-plaintext highlighter-rouge">pipeline_ML_ibex35.ipynb</code>) runs the complete training, hyperparameter optimisation, and evaluation loop. All modules are factored into reusable scripts under <code class="language-plaintext highlighter-rouge">ML_Colab/scripts/</code> so individual components can be run independently. The pipeline auto-detects whether it runs locally, on Colab, or on Kaggle and adjusts paths accordingly.</p>
+
+<h2 id="key-technical-details">Key Technical Details</h2>
+
+<ul>
+  <li>25 modular R scripts organised by pipeline stage (00–25), each with a single functional responsibility</li>
+  <li>Parallel GDELT download via <code class="language-plaintext highlighter-rouge">parallel::mclapply</code> over &gt;2,000 ZIP files; Parquet format for efficient batch I/O</li>
+  <li>Python–R bridge via <code class="language-plaintext highlighter-rouge">reticulate</code> for seamless object transfer between stages</li>
+  <li>Time-series cross-validation with strict temporal splits to prevent lookahead bias</li>
+  <li>Statistical comparison: McNemar test (classification) and Diebold-Mariano test (forecasts), bootstrap confidence intervals (n=1,000)</li>
+  <li>Google Colab integration with auto-path configuration for GPU-accelerated training</li>
+</ul>
+
+<blockquote>
+  <p>Santiago López Begines, PhD. <em>Predicción de valores y tendencias de cierre del IBEX35 mediante machine learning y webscraping.</em> Master’s Thesis, Data Science, UNED (2025).</p>
+</blockquote>
+
+<hr />
+
+<p><a href="/#projects">← Back to Projects</a></p>
+
+        </div>
+    </div>
+</article>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+  document.querySelectorAll('code.language-mermaid').forEach(el => {
+    const div = document.createElement('div');
+    div.className = 'mermaid';
+    div.textContent = el.textContent;
+    el.parentElement.replaceWith(div);
+  });
+  await mermaid.run();
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Santiago López Begines, PhD</h3>
+                <p>Biomedical Data Science Consulting</p>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://github.com/SLopezBegines" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/santibegines" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://orcid.org/0000-0001-8809-8919" target="_blank" rel="noopener" aria-label="ORCID">
+                    <i class="fab fa-orcid"></i>
+                </a>
+                <a href="mailto:santiago.lopez.begines@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Santiago López Begines, PhD. Built with Jekyll.</p>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Smooth scroll -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

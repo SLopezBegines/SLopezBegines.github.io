@@ -1,65 +1,20 @@
 # Site Settings
 title: Santiago López Begines
-subtitle: Biomedical Data Scientist
+subtitle: Biomedical Data Science Consulting
 email: santiago.lopez.begines@gmail.com
 description: >-
-  Santiago López Begines, PhD - Neuroscientist & Data Scientist specializing in Machine Learning, 
-  Financial Modeling, and Biomedical Research. 15+ years experience in neurodegeneration research, 
-  proteomics, and quantitative analysis. Expert in Python, R, and deep learning for predictive modeling.
+  Neuroscientist and Data Scientist offering consulting in electrophysiology signal analysis,
+  omics data pipelines, and biomarker discovery for neurotech and biomedical teams.
+  15+ years experimental neuroscience · First-author Science Advances · Python & R.
 baseurl: ""
 url: "https://SLopezBegines.github.io"
 # SEO Keywords
-keywords: "data scientist, machine learning, neuroscience, financial modeling, IBEX35 prediction, 
-  proteomics analysis, biomedical research, Python, R, deep learning, Luxembourg, Santiago López Begines"
+keywords: "biomedical data science consulting, neurotech, electrophysiology pipeline, proteomics analysis,
+  biomarker discovery, scRNA-seq, neuroscience, Python, R, Santiago López Begines, patch-clamp, omics"
 
 # Build settings
 markdown: kramdown
 permalink: /:title/
-
-
-# Multi-language support
-languages: ["es", "en"]
-default_lang: "es"
-
-# Translations
-t:
-  es:
-    nav_about: "Sobre mí"
-    nav_projects: "Proyectos"
-    nav_publications: "Publicaciones"
-    nav_contact: "Contacto"
-    hero_subtitle: "Neurocientífico → Científico de Datos"
-    hero_title: "Santiago López Begines, PhD"
-    hero_tagline: "Machine Learning | Investigación Biomédica"
-    hero_cta_projects: "Ver Proyectos"
-    hero_cta_contact: "Contactar"
-    about_title: "Sobre mí"
-    about_background: "Experiencia"
-    about_achievements: "Logros Clave"
-    projects_title: "Proyectos Destacados"
-    projects_view_all: "Ver Todos en GitHub"
-    contact_title: "Contacto"
-    contact_description: "¿Interesado en colaborar o quieres saber más sobre mi trabajo?<br>¿Buscas maximizar el valor de tus datos?<br>No dudes en contactarme por cualquiera de estos canales."
-    footer_built: "Construido con Jekyll"
-  en:
-    nav_about: "About me"
-    nav_projects: "Projects"
-    nav_publications: "Publications"
-    nav_contact: "Contact"
-    hero_subtitle: "Neuroscientist → Data Scientist"
-    hero_title: "Santiago López Begines, PhD"
-    hero_tagline: "Machine Learning | Biomedical Research"
-    hero_cta_projects: "View Projects"
-    hero_cta_contact: "Get in Touch"
-    about_title: "About Me"
-    about_background: "Background"
-    about_achievements: "Key Achievements"
-    projects_title: "Featured Projects"
-    projects_view_all: "View All on GitHub"
-    contact_title: "Get In Touch"
-    contact_description: "Interested in collaboration or want to learn more about my work?<br>Looking to maximize the value of your data?<br>Feel free to reach out through any of these channels."
-    footer_built: "Built with Jekyll"
-
 
 # Collections
 collections:
@@ -81,13 +36,13 @@ exclude:
 # Personal Info
 author:
   name: Santiago López Begines, PhD
-  title: Data Scientist & Neuroscientist
-  bio: Neuroscientist → Data Scientist
-  tagline: Machine Learning | Biomedical Research
+  title: Biomedical Data Science Consulting
+  bio: Neuroscientist · Data Scientist · Consultant
+  tagline: Biomedical Data Science Consulting
   location: Sevilla
   email: santiago.lopez.begines@gmail.com
   avatar: https://SLopezBegines.github.io/assets/images/photoprofile.jpeg
-  
+
 # Social Links
 social:
   github: https://github.com/SLopezBegines
@@ -96,18 +51,16 @@ social:
 
 # Navigation
 navigation:
-  - title_es: "Sobre mí"
-    title_en: "About"
+  - title: "About"
     url: "/#about"
-  - title_es: "Proyectos"
-    title_en: "Projects"
+  - title: "Services"
+    url: "/#services"
+  - title: "Projects"
     url: "/#projects"
-  - title_es: "Publicaciones"
-    title_en: "Publications"
+  - title: "Publications"
     url: "/publications"
-  - title_es: "Contacto"
-    title_en: "Contact"
+  - title: "Contact"
     url: "/#contact"
 
-# Google Analytics (opcional - añade tu ID aquí)
+# Google Analytics
 google_analytics: G-8C3HQ7CE3V

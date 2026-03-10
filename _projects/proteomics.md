@@ -1,21 +1,38 @@
 ---
 layout: project
-title: "Proteomics Analysis Pipeline"
-excerpt: "Modular R pipeline for label-free quantitative proteomics: from MaxQuant output to functional enrichment."
+title: "Automated Proteomics Pipeline for Neurodegeneration Biomarker Discovery"
+excerpt: "Automated R pipeline from MaxQuant output to differential expression and ML-based biomarker discovery. 70% reduction in data cleaning time, deployed at LCSB University of Luxembourg."
 date: 2024-01-01
 tags:
   - Proteomics
   - R
-  - Bioinformatics
-  - Bioconductor
+  - MaxQuant
+  - Biomarker Discovery
+  - Neurodegeneration
+  - Reproducibility
   - limma
-  - Gene Ontology
 ---
 
-# Proteomics Analysis Pipeline
+# Automated Proteomics Pipeline for Neurodegeneration Biomarker Discovery
 
-**Tech stack**: R · Bioconductor · DEP · limma · clusterProfiler · ComplexHeatmap · rbioapi  
+**Stack**: R · DEP · limma · tidyverse · ggplot2 · MaxQuant · Python · Git
 **Repository**: [github.com/SLopezBegines/Proteomics](https://github.com/SLopezBegines/Proteomics)
+
+---
+
+## Problem
+
+Large-scale proteomics datasets from neurodegeneration studies required extensive manual curation before statistical analysis, creating bottlenecks and reproducibility risks. Processing a single dataset could take days of repetitive cleaning and validation work.
+
+## Solution
+
+Built an automated R pipeline for MaxQuant label-free quantification output — covering data cleaning, normalization (VSN), differential expression (DEP/limma), and visualization. Integrated cross-validation frameworks for ML-based biomarker discovery. Each analysis is configured through a single RMarkdown file; modular scripts are reused without modification across datasets.
+
+## Result
+
+**70% reduction in data cleaning time.** Pipeline deployed at LCSB (University of Luxembourg) across multiple neurodegeneration datasets. Contributed to peer-reviewed publications in high-impact journals.
+
+---
 
 ## Overview
 
@@ -23,7 +40,7 @@ A modular and reproducible R pipeline for analyzing label-free quantitative (LFQ
 
 Each analysis is configured through a single RMarkdown file that defines organism parameters and experimental design, then calls reusable modular scripts. This architecture allows rapid deployment on new datasets without code modification.
 
-## Problem & Approach
+## Technical Approach
 
 Proteomics experiments generate complex datasets with systematic missing values, batch effects, and thousands of protein measurements across conditions. Standard tools handle individual steps but lack integration. This pipeline addresses:
 
@@ -63,7 +80,7 @@ flowchart TD
         I & J & K --> L["Statistics tables · DE counts · effect sizes"]
     end
 
-    style QC fill:#1e3a5f,color:#fff,stroke:#3b82f6
+    style QC fill:#1e3a5f,color:#fff,stroke:#1a7a7a
     style DE fill:#1e3a1e,color:#fff,stroke:#22c55e
     style VIZ fill:#3a1e1e,color:#fff,stroke:#ef4444
     style ENRICH fill:#3a2a1e,color:#fff,stroke:#f59e0b

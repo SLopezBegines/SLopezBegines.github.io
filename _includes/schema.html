@@ -7,11 +7,11 @@
   "url": "{{ site.url }}",
   "image": "{{ site.url }}{{ site.author.avatar }}",
   "email": "{{ site.email }}",
-  "jobTitle": "Data Scientist & Neuroscientist",
+  "jobTitle": "Biomedical Data Science Consultant",
   "worksFor": {
     "@type": "Organization",
-    "name": "University of Cádiz",
-    "url": "https://www.uca.es"
+    "name": "Freelance Consulting",
+    "url": "{{ site.url }}"
   },
   "alumniOf": [
     {
@@ -61,7 +61,7 @@
   "description": "{{ page.excerpt | strip_html | strip_newlines }}",
   "url": "{{ site.url }}{{ page.url }}",
   "keywords": "{% if page.tags %}{{ page.tags | join: ', ' }}{% endif %}",
-  "inLanguage": "{% if page.lang %}{{ page.lang }}{% else %}es{% endif %}"
+  "inLanguage": "en"
 }
 </script>
 {% endif %}

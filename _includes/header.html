@@ -1,54 +1,23 @@
 <header class="site-header">
     <nav class="navbar">
         <div class="container">
-            <a href="{% if page.url contains '/en/' or page.url == '/en' %}/en/{% else %}/{% endif %}" class="logo">
+            <a href="/" class="logo">
                 <span class="logo-text">{{ site.author.name }}</span>
             </a>
-            
+
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            
-            <div class="nav-right">
-                <ul class="nav-menu">
-                    {% for item in site.navigation %}
-                    <li class="nav-item">
-                        {% if page.url contains '/en/' or page.url == '/en' %}
-                            <a href="{{ item.url | prepend: '/en' }}" class="nav-link">{{ item.title_en }}</a>
-                        {% else %}
-                            <a href="{{ item.url }}" class="nav-link">{{ item.title_es }}</a>
-                        {% endif %}
-                    </li>
-                    {% endfor %}
-                </ul>
-                
-                <div class="language-switcher">
-                    {% if page.url contains '/en/' or page.url == '/en' %}
-                        <!-- Currently in English, link to Spanish -->
-                        {% assign es_url = page.url | remove: '/en' %}
-                        {% if es_url == '' or es_url == '/' %}
-                            <a href="/" class="lang-link">ES</a>
-                        {% else %}
-                            <a href="{{ es_url }}" class="lang-link">ES</a>
-                        {% endif %}
-                        <span class="lang-separator">|</span>
-                        <span class="lang-link active">EN</span>
-                    {% else %}
-                        <!-- Currently in Spanish, link to English -->
-                        <span class="lang-link active">ES</span>
-                        <span class="lang-separator">|</span>
-                        {% if page.url == '/' or page.url == '' %}
-                            <a href="/en/" class="lang-link">EN</a>
-                        {% elsif page.url == '/publications/' %}
-                            <a href="/en/publications/" class="lang-link">EN</a>
-                        {% else %}
-                            <a href="/en{{ page.url }}" class="lang-link">EN</a>
-                        {% endif %}
-                    {% endif %}
-                </div>
-            </div>
+
+            <ul class="nav-menu">
+                {% for item in site.navigation %}
+                <li class="nav-item">
+                    <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </nav>
 </header>
