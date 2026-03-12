@@ -124,7 +124,7 @@ The CSV output from miniML feeds directly into the R module, creating a unified 
 
 ### Module 2 — R: Statistical Analysis & Reporting (Complete)
 
-Parameterised RMarkdown-based pipeline for statistical analysis and reporting of the miniML output. Designed to be re-run on any new dataset by updating a single configuration block — no code modification required.
+Parameterised RMarkdown-based pipeline for statistical analysis and reporting of the miniML output and/or current clamp experiments. Designed to be re-run on any new dataset by updating a single configuration block — no code modification required.
 
 **Synaptic event analysis:**
 - Import and cleaning of miniML output CSVs (per-cell averages and individual events)
@@ -160,12 +160,11 @@ flowchart TD
     subgraph R_MODULE ["Module 2 — R: Statistical Analysis & Reporting"]
         F --> G["Data cleaning & unit conversion\ntidyverse · janitor"]
         G --> H["Per-cell metrics\nfrequency · IEI · amplitude · charge\nrise time · decay · half-width · tau"]
-        H --> I["Intrinsic properties\nRMP · input resistance · rheobase · FI curves"]
-        I --> J["Statistical analysis\nWilcoxon · Kruskal-Wallis · effect sizes"]
-        J --> K["Parameterised Rmd report\npublication-ready figures · TIFF + PDF"]
+        H --> I["Statistical analysis\nWilcoxon · Kruskal-Wallis · effect sizes"]
+        I --> J["Parameterised Rmd report\npublication-ready figures · TIFF + PDF"]
     end
 
-    K --> L["Final reproducible report\nHTML + PDF + TIFF figures"]
+    J --> K["Final reproducible report\nHTML + PDF + TIFF figures"]
 
     style PY_MODULE fill:#3a2a1e,color:#fff,stroke:#f59e0b
     style R_MODULE fill:#1e3a1e,color:#fff,stroke:#22c55e
