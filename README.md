@@ -93,7 +93,7 @@ SLopezBegines.github.io/
 │
 ├── _projects/              # Project markdown files
 │   ├── ibex35-prediction.md
-│   ├── alzheimer-ml.md
+│   ├── ephys_pipeline.md
 │   ├── proteomics.md
 │   ├── single-cell.md
 │   └── agriot.md
