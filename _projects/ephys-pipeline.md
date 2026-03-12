@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Automated Electrophysiology Analysis Pipeline for Synaptic Data"
-excerpt: "Automated pipeline for whole-cell patch-clamp data (mIPSC/mEPSC, FI curves) integrating R-based analysis and miniML deep learning event detection. Work in progress — R modules complete, Python/miniML integration in development."
+excerpt: "End-to-end pipeline for whole-cell patch-clamp data: miniML deep learning event detection (Python) followed by statistical analysis and reproducible reporting (R). Up to 90% reduction in processing time. Python module complete — unified R/Python pipeline in active development."
 date: 2025-06-01
 tags:
   - Electrophysiology
@@ -13,29 +13,133 @@ tags:
   - Work in Progress
 ---
 
-<span class="badge-wip">Work in Progress</span>
+<span class="badge-wip">🔬 Work in Progress</span>
 
 # Automated Electrophysiology Analysis Pipeline for Synaptic Data
 
-**Stack**: R (in-house Rmd scripts) · Python · miniML (deep learning event detection) · pCLAMP · Git
+**Stack**: Python (miniML · TensorFlow · pandas · h5py) · R (tidyverse · ggplot2 · patchwork · ggdist) · pCLAMP · HEKA · Git
 
 ---
 
 ## Problem
 
-Manual analysis of whole-cell patch-clamp recordings (mIPSCs, mEPSCs, FI curves) required days of processing per dataset, with high operator variability and limited reproducibility. Each researcher applying different threshold criteria to the same recordings introduced systematic inconsistency in downstream statistical comparisons.
+Manual analysis of whole-cell patch-clamp recordings — miniature and spontaneous postsynaptic currents (mIPSCs/mEPSCs/sIPSCs), FI curves, and intrinsic membrane properties — is a major bottleneck in electrophysiology workflows. A single experiment day can generate dozens of recordings requiring hours of operator-driven threshold adjustment, event detection, and statistical summarisation.
+
+Beyond throughput, manual detection introduces **operator-dependent variability**: different threshold criteria applied to the same recordings produce systematically inconsistent amplitude and frequency estimates, compromising reproducibility and cross-study comparisons. This is a recognised problem in the field that deep learning approaches are only beginning to address.
+
+---
 
 ## Solution
 
-Developing an automated pipeline for electrophysiological data analysis integrating:
+An end-to-end automated pipeline in two sequential modules: event detection in Python, followed by statistical analysis and reporting in R.
 
-- **R-based analysis of mIPSC/mEPSC recordings** (amplitude, frequency, kinetics) — based on in-house patch-clamp datasets from IBiS (Instituto de Biomedicina de Sevilla). Covers inter-event intervals, cumulative probability distributions, and statistical comparisons across conditions.
-- **Integration with miniML** (Delvendahl et al.) for ML-based synaptic event detection — a deep learning framework for automated miniature event classification that replaces manual threshold-based detection.
-- **Rmd-based reproducible reporting** for FI curves and intrinsic membrane properties (input resistance, resting membrane potential, rheobase, E/I balance). Each report is parameterized so it can be re-run on new datasets without code modification.
+---
 
-## Result
+### Module 1 — Python / miniML: Event Detection (Complete)
 
-**90% reduction in electrophysiology processing time** (IBiS, Seville). R analysis modules are complete and deployed. Python/miniML integration is in active development, with full pipeline release planned for Q2 2026.
+Classical threshold-based event detection is sensitive to noise, baseline drift, and operator subjectivity. **miniML** (O'Neill et al., 2025) replaces this with a pre-trained deep learning model (LSTM) that detects and classifies miniature synaptic events directly from raw traces, with superior performance in low signal-to-noise conditions.
+
+The batch processing workflow loads all recordings from an experiment folder, applies standardised preprocessing, runs miniML inference on each file, and exports per-cell summary CSVs ready for downstream R analysis.
+
+**Batch processing workflow:**
+
+```python
+# --- Core imports ---
+import sys
+import tensorflow as tf
+from pathlib import Path
+sys.path.append('core/')
+from miniML import MiniTrace, EventDetection
+from miniML_plot_functions import miniML_plots
+import pandas as pd
+import numpy as np
+import h5py
+
+# --- Load pre-trained model ---
+miniml_model = tf.keras.models.load_model('models/GC_lstm_model.h5')
+
+# --- Preprocessing configuration ---
+FILTER_CFG = dict(
+    detrend_type='linear',   # remove slow baseline drift
+    line_freq=50.0,          # notch filter at 50 Hz (EU mains)
+    width=2.0,               # notch filter width (Hz)
+    lowpass=1000.0,          # Butterworth low-pass at 1 kHz
+    order=4
+)
+
+# --- Event detection configuration ---
+DETECTION_CFG = dict(
+    model_threshold=0.7,     # confidence threshold for event acceptance
+    window_size=600,         # analysis window (samples)
+    batch_size=512,          # batch size for GPU inference
+    event_direction='negative'  # for IPSCs; use 'positive' for EPSCs
+)
+
+# --- Batch loop over all recordings in a folder ---
+results = []
+for dat_file in sorted(raw_data_folder.glob('*.dat')):
+    trace = MiniTrace.from_file(
+        str(dat_file),
+        scaling=1e12,        # convert A to pA
+        unit='pA'
+    )
+    trace.filter_trace(**FILTER_CFG)
+
+    detection = EventDetection(
+        data=trace,
+        model=miniml_model,
+        **DETECTION_CFG
+    )
+    detection.detect_events(
+        eval=True,
+        peak_w=5,
+        rel_prom_cutoff=0.25,
+        convolve_win=20,
+        gradient_convolve_win=40
+    )
+
+    # Collect per-cell summary statistics
+    stats = detection.event_stats
+    results.append({
+        'file': dat_file.stem,
+        'n_events': stats.n_events,
+        'frequency_hz': stats.frequency,
+        'amplitude_mean_pA': stats.amplitude.mean,
+        'amplitude_median_pA': stats.amplitude.median,
+        'charge_mean_pC': stats.charge.mean,
+        'risetime_mean_ms': stats.risetime.mean * 1000,
+        'decaytime_mean_ms': stats.decaytime.mean * 1000,
+        'halfwidth_mean_ms': stats.halfwidth.mean * 1000,
+        'tau_ms': stats.tau.mean * 1000
+    })
+
+# Export to CSV for downstream R analysis
+df = pd.DataFrame(results)
+df.to_csv(results_folder / 'summary_avgs_all.csv', index=False)
+```
+
+The CSV output from miniML feeds directly into the R module, creating a unified analysis chain from raw recording to final statistical report.
+
+---
+
+### Module 2 — R: Statistical Analysis & Reporting (Complete)
+
+Parameterised RMarkdown-based pipeline for statistical analysis and reporting of the miniML output. Designed to be re-run on any new dataset by updating a single configuration block — no code modification required.
+
+**Synaptic event analysis:**
+- Import and cleaning of miniML output CSVs (per-cell averages and individual events)
+- Per-cell metrics: event frequency, inter-event interval (IEI), amplitude (mean and median), charge, rise time, decay time, half-width, decay tau
+- Group-level statistics: Wilcoxon rank-sum / Mann-Whitney U tests, effect sizes, summary tables
+- Visualisation: raincloud plots (ggdist), cumulative probability distributions, amplitude histograms, violin + jitter overlays
+
+**Intrinsic membrane property analysis:**
+- Input resistance from I-clamp step protocols
+- Resting membrane potential (RMP) extraction
+- Rheobase estimation from threshold current steps
+- FI curve fitting: linear and sigmoid models for gain and rheobase
+- E/I balance index from spontaneous event rates
+
+**Output:** Parameterised HTML/PDF reports with publication-ready figures (TIFF + PDF), reproducible across experiments and operators.
 
 ---
 
@@ -43,50 +147,35 @@ Developing an automated pipeline for electrophysiological data analysis integrat
 
 ```mermaid
 flowchart TD
-    A["📥 Raw recordings · pCLAMP .abf files"] --> B
+    A["Raw recordings\npCLAMP .abf / HEKA .dat files"] --> B
 
-    subgraph R_MODULE ["R Module — Complete"]
-        B["Load & parse ABF files · abftools"]
-        B --> C["mIPSC/mEPSC detection · threshold-based baseline"]
-        C --> D["Amplitude · frequency · rise time · decay tau"]
-        D --> E["FI curves · input resistance · RMP · rheobase"]
-        E --> F["Statistical analysis · Wilcoxon · Kruskal-Wallis · effect sizes"]
-        F --> G["Rmd report generation · publication-ready figures"]
+    subgraph PY_MODULE ["Module 1 — Python / miniML: Event Detection"]
+        B["Preprocessing\ndetrend · notch filter · low-pass"]
+        B --> C["miniML inference\nLSTM deep learning event detection"]
+        C --> D["Event classification\nminiature vs. spontaneous"]
+        D --> E["Feature extraction\namplitude · kinetics · frequency · charge"]
+        E --> F["Export CSVs\nsummary_avgs_all · individual_events_all"]
     end
 
-    subgraph PY_MODULE ["Python/miniML Module — In Development"]
-        A --> H["miniML inference · deep learning event detection"]
-        H --> I["Event classification · miniature vs. spontaneous"]
-        I --> J["Feature extraction · amplitude · kinetics · frequency"]
-        J --> K["Integration with R output · unified dataset"]
+    subgraph R_MODULE ["Module 2 — R: Statistical Analysis & Reporting"]
+        F --> G["Data cleaning & unit conversion\ntidyverse · janitor"]
+        G --> H["Per-cell metrics\nfrequency · IEI · amplitude · charge\nrise time · decay · half-width · tau"]
+        H --> I["Intrinsic properties\nRMP · input resistance · rheobase · FI curves"]
+        I --> J["Statistical analysis\nWilcoxon · Kruskal-Wallis · effect sizes"]
+        J --> K["Parameterised Rmd report\npublication-ready figures · TIFF + PDF"]
     end
 
-    G & K --> L["Final reproducible report · TIFF + PDF figures"]
+    K --> L["Final reproducible report\nHTML + PDF + TIFF figures"]
 
-    style R_MODULE fill:#1e3a1e,color:#fff,stroke:#22c55e
     style PY_MODULE fill:#3a2a1e,color:#fff,stroke:#f59e0b
+    style R_MODULE fill:#1e3a1e,color:#fff,stroke:#22c55e
 ```
 
 ---
 
-## Technical Details
+## Result
 
-### R Module (Complete)
-
-- ABF file parsing via `abftools` / custom loaders
-- mIPSC/mEPSC analysis: inter-event interval distributions, cumulative probability plots, amplitude histograms
-- FI curve fitting: linear and sigmoid models for gain and rheobase estimation
-- Intrinsic property extraction: input resistance (I-clamp steps), RMP, action potential threshold
-- E/I balance index calculated per cell from spontaneous event rates
-- Parameterized RMarkdown templates: one config file per experiment, reports auto-generated
-
-### Python/miniML Integration (In Development)
-
-miniML (Delvendahl et al., 2024) provides a pre-trained deep learning model for automated detection and classification of miniature synaptic events in patch-clamp recordings, outperforming classical threshold-based approaches especially in low SNR conditions.
-
-**Reference**: Delvendahl et al. miniML — automated detection of miniature synaptic events.
-- GitHub: [https://github.com/delvendahl/miniML](https://github.com/delvendahl/miniML)
-- Publication: [doi:10.7554/eLife.98485.3](https://doi.org/10.7554/eLife.98485.3)
+**Up to 90% reduction in electrophysiology processing time** compared to fully manual workflows. miniML eliminates manual event detection — the most time-consuming and operator-variable step; the R module eliminates manual figure generation and statistical reporting.
 
 ---
 
@@ -94,23 +183,34 @@ miniML (Delvendahl et al., 2024) provides a pre-trained deep learning model for 
 
 | Module | Status |
 |---|---|
-| R mIPSC/mEPSC analysis scripts | Complete |
-| R FI curve & intrinsic properties reporting | Complete |
-| Rmd parameterized report templates | Complete |
-| Python miniML integration | In development |
-| Unified R + Python output pipeline | Planned Q2 2026 |
-| Public repository & documentation | Planned Q2 2026 |
+| Python — HEKA/pCLAMP file loading & preprocessing | Complete |
+| Python — miniML batch event detection | Complete |
+| R — mIPSC/mEPSC/sIPSC statistical analysis | Complete |
+| R — FI curves & intrinsic properties reporting | Complete |
+| R — Parameterised Rmd report templates | Complete |
+| Python to R unified output pipeline | In development |
+| Public repository & full documentation | Planned Q2 2026 |
 
 ---
 
-## Experimental Context
+## Compatibility
 
-Pipeline developed from in-house whole-cell patch-clamp recordings at **IBiS (Instituto de Biomedicina de Sevilla)**, Fernández-Chacón lab. Recordings include:
-- Hippocampal and cortical neurons (mouse, acute slices and primary cultures)
-- Voltage-clamp: spontaneous and miniature IPSCs and EPSCs
-- Current-clamp: FI curves, RMP, input resistance, action potential properties
-- Conditions: WT vs. transgenic CLN4 (DNAJC5) and synaptic mutant models
+**Recording formats:** HEKA `.dat` (via h5py), Axon `.abf` (pCLAMP compatible)
+
+**Event types:** mIPSCs, mEPSCs, sIPSCs, sEPSCs (configurable direction and model)
+
+**Cell types:** The pipeline is generic — not tied to any specific cell type or brain region. miniML models are available for granule cells, CA1 pyramidal neurons, and others; custom model training is supported.
+
+**Operating system:** Linux / macOS / Windows (Python); Linux / macOS preferred for R batch processing
 
 ---
 
-[← Back to Projects](/#projects)
+## Reference
+
+O'Neill P.S., Baccino-Calace M., Rupprecht P., Lee S., Hao Y.A., Lin M.Z., Friedrich R.W., Müller M., and Delvendahl I. (2025). **A deep learning framework for automated and generalized synaptic event analysis.** *eLife* 13:RP98485. [doi:10.7554/eLife.98485](https://doi.org/10.7554/eLife.98485)
+
+miniML repository: [github.com/delvendahl/miniML](https://github.com/delvendahl/miniML)
+
+---
+
+[Back to Projects](/#projects)
