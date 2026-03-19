@@ -14,7 +14,7 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
                 I help neurotech and biomedical teams build reliable, reproducible analysis pipelines.
             </p>
             <p class="hero-tagline">
-                15+ years experimental neuroscience &nbsp;·&nbsp; Production-grade R &amp; Python &nbsp;·&nbsp; First-author in Science Advances
+                15+ years experimental neuroscience &nbsp;·&nbsp; Production-grade R &amp; Python
             </p>
             <div class="hero-cta">
                 <a href="mailto:santiago.lopez.begines@gmail.com" class="btn btn-primary">
