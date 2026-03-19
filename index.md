@@ -81,7 +81,7 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
                     to move from raw recordings to reproducible, documented outputs.
                 </p>
                 <ul>
-                    <li>Automated data processing pipelines (HEKA / pCLAMP / Python / R)</li>
+                    <li>Automated/Semi-automated data processing pipelines (HEKA / pCLAMP / Python / R)</li>
                     <li>Quality control and artifact rejection frameworks</li>
                     <li>Statistical analysis: FI curves, input resistance, E/I balance, resting membrane potential</li>
                     <li>Full documentation and reproducibility standards</li>
