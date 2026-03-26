@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://SLopezBegines.github.io/sitemap.xml
