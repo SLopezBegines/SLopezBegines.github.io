@@ -10,7 +10,25 @@
 
     <!-- Schema.org Structured Data -->
     {% include schema.html %}
+<!-- Essential SEO Meta Tags -->
+<meta name="description" content="Santiago López Begines - Biomedical Data Science Consultant. 15+ years neuroscience research, ML pipelines, proteomics, electrophysiology analysis.">
+<meta name="keywords" content="neuroscience data science, biomedical consulting, proteomics pipeline, electrophysiology analysis, neurotech, machine learning biomarker discovery">
+<meta name="author" content="Santiago López Begines">
+<link rel="canonical" href="https://slopezbegines.github.io{{ page.url | default: '/' }}">
 
+<!-- Open Graph (LinkedIn, Facebook) -->
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}Santiago López Begines">
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}Biomedical Data Science Consulting - ML pipelines, proteomics, electrophysiology{% endif %}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://slopezbegines.github.io{{ page.url | default: '/' }}">
+<meta property="og:image" content="https://slopezbegines.github.io/assets/images/photoprofile.jpeg">
+<meta property="og:site_name" content="Santiago López Begines">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}Santiago López Begines">
+<meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}Biomedical Data Science Consulting{% endif %}">
+<meta name="twitter:image" content="https://slopezbegines.github.io/assets/images/photoprofile.jpeg">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
