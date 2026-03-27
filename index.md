@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Santiago López Begines — Biomedical Data Science Consulting"
+title: "Biomedical Data Science Consulting"
 excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysiology pipelines, omics data analysis, and biomarker discovery for neurotech and biomedical teams."
 ---
 
