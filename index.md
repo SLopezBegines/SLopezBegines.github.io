@@ -53,6 +53,9 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
                     <li>90% reduction in electrophysiology processing time via automated pipeline (IBiS, Seville)</li>
                     <li>70% reduction in omics data cleaning time via automated R scripts (LCSB, University of Luxembourg)</li>
                     <li>ML-based biomarker discovery in neurodegeneration (Batten disease / CLN4)</li>
+                    <p style="margin-top: 1.5rem;">
+                    <a href="/publications" style="color: var(--color-primary);">→ View full publication list</a>
+                </p>
                 </ul>
 
                 <p style="margin-top: 1.5rem;">
@@ -81,6 +84,9 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
                     to move from raw recordings to reproducible, documented outputs.
                 </p>
                 <ul>
+                  <p style="margin-top: 1rem; font-size: 0.95rem;">
+                    <a href="/projects/ephys-pipeline" style="color: var(--color-primary);">→ See our automated electrophysiology pipeline</a>
+                    </p>
                     <li>Automated/Semi-automated data processing pipelines (HEKA / pCLAMP / Python / R)</li>
                     <li>Quality control and artifact rejection frameworks</li>
                     <li>Statistical analysis: FI curves, input resistance, E/I balance, resting membrane potential</li>
@@ -113,6 +119,10 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
                     or multi-omics datasets.
                 </p>
                 <ul>
+                <p style="margin-top: 1rem; font-size: 0.95rem;">
+                    <a href="/projects/proteomics" style="color: var(--color-primary);">→ Proteomics pipeline</a> | 
+                    <a href="/projects/single-cell" style="color: var(--color-primary);">→ scRNA-seq pipeline</a>
+                </p>
                     <li>Label-free proteomics: MaxQuant &rarr; differential expression &rarr; biological interpretation</li>
                     <li>scRNA-seq analysis (Seurat): clustering, cell type annotation, trajectory analysis</li>
                     <li>ML-based biomarker discovery: feature selection, cross-validation, model validation</li>

@@ -57,6 +57,8 @@ navigation:
     url: "/#services"
   - title: "Projects"
     url: "/#projects"
+  - title: "Blog"
+    url: "/blog"
   - title: "Publications"
     url: "/publications"
   - title: "Contact"
