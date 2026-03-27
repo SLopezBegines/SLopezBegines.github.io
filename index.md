@@ -227,18 +227,18 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
         <h2>Other Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>AgrIoT Smart Motor Control</h3>
-                <p style="font-style: italic; color: var(--color-primary); font-size: 0.9rem; margin-bottom: 0.5rem;">
-                    IoT sensor data pipeline for environmental monitoring — ESP32/ESP8266 sensor network with automated data logging and visualization.
-                </p>
+                <h3>Legacy System Modernization: Remote Monitoring for a 1972 Diesel Engine</h3>
                 <p>
-                    ESP32-based IoT system for agricultural automation with web interface,
-                    real-time sensor monitoring, relay control, and database data logging.
+                    Custom LoRa wireless system enabling remote start/stop and real-time telemetry
+                    (voltage, oil pressure, RPM, fuel) of a 50-year-old irrigation engine from 2+ km away.
+                    <strong>86% reduction in site visits</strong> — 99.2% uptime over 6 months. Total cost: &lt;€150.
                 </p>
                 <div class="project-tags">
+                    <span class="tag">Embedded Systems</span>
                     <span class="tag">IoT</span>
-                    <span class="tag">ESP32</span>
-                    <span class="tag">Data Logging</span>
+                    <span class="tag">LoRa</span>
+                    <span class="tag">PCB Design</span>
+                    <span class="tag">C/C++</span>
                 </div>
                 <a href="/projects/agriot" class="project-link">
                     View Project <i class="fas fa-arrow-right"></i>
