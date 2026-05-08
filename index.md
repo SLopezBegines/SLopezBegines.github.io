@@ -261,10 +261,10 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
 <!-- Contact Section -->
 <section id="contact">
     <div class="container">
-        <h2 class="section-title">Let's work together</h2>
+        <h2 class="section-title">Let's build together</h2>
         <div class="contact-content">
             <p class="contact-subtitle">
-                Available for consulting projects in neurotech, MedTech, and biomedical data science.
+                Available for colaborating projects in neurotech, MedTech, and biomedical data science.
             </p>
 
             <form action="https://formspree.io/f/xnjgpjov" method="POST" class="contact-form">
