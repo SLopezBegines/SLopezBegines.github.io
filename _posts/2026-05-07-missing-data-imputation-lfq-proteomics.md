@@ -49,7 +49,7 @@ MNAR is the dominant pattern in label-free proteomics. Proteins missing in all r
 
 Before imputing, you should always plot the missing value pattern. This repo [LFQ proteomic analysis pipeline](https://github.com/SLopezBegines/Proteomics) & blog entry ([LFQ Proteomics project](https://slopezbegines.github.io/projects/proteomics/)) are based on `DEP`package `(version 1.32.0)` from Bioconductor. All code presented here can be found at [Mixed imputation script](https://github.com/SLopezBegines/Proteomics/blob/main/code/03_cleaning_data_mixed_imputation.R). The DEP R package generates a heat-map showing which proteins and samples have missing values. Patterns you'll see:
 
-![Distribution missing values](/assets/images/007_missing_values_prot_data.jpg)
+![Distribution missing values](/assets/images/007_missing_values_prot_data.jpg){: style="width: 75%; display: block; margin: 0 auto;"}
 
 - **Vertical stripes**: A sample has many missing values (possible batch effect or low protein recovery).
 - **Horizontal stripes**: A protein is missing across many or all samples (likely a true absence or very low abundance).
@@ -392,7 +392,7 @@ The script includes a diagnostic function that compares standard deviation befor
 
 Scatter plots of SD before vs. after, with regression lines and slope/intercept annotations, reveal which methods preserve the variance structure best. This is crucial for selecting an imputation approach.
 
-![SD before vs. after imputation](/assets/images/008_01_SD_before_after_scatter.jpg)
+![SD before vs. after imputation](/assets/images/008_01_SD_before_after_scatter.jpg){: style="width: 65%; display: block; margin: 0 auto;"}
 
 ## Practical Recommendations
 
