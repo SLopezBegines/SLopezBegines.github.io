@@ -5,6 +5,7 @@ date: 2026-05-07
 tags: [proteomics, imputation, data science, R, bioinformatics]
 reading_time: 12
 excerpt: "Missing values are unavoidable in label-free quantitative proteomics. Learn when and how to apply MNAR versus MAR imputation strategies using a robust mixed approach that classifies missingness patterns at the protein-condition level."
+image: /assets/images/007_missing_values_prot_data.jpg
 ---
 
 Label-free quantitative (LFQ) proteomics measures protein abundance directly from mass spectrometry signal intensity. It's powerful, but messier than other omics: proteins disappear from the dataset when they fall below the instrument's detection limit or when sampling variance prevents quantification in particular replicates, or can also depends of detection method (DDA vs. DIA). The result is a dataset riddled with missing values—and how you handle them shapes your downstream statistical conclusions.
