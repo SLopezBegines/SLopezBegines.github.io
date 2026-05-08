@@ -11,16 +11,16 @@
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
 <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-<meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.author.avatar }}{% endif %}">
+{% if page.image %}<meta property="og:image" content="{{ site.url }}{{ page.image }}">{% endif %}
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
 <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
 <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-<meta name="twitter:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.author.avatar }}{% endif %}">
+{% if page.image %}<meta name="twitter:image" content="{{ site.url }}{{ page.image }}">{% endif %}
 <meta name="twitter:creator" content="@SLopezBegines">
 
 <!-- Canonical URL -->
