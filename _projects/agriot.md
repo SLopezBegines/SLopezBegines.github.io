@@ -542,11 +542,14 @@ pre code .op  { color: #d4d4d4; } /* operators */
 </div>
 
 <!-- ── Hero image ───────────────────────────────────────────── -->
-<div class="img-placeholder wide">
-  <span class="ph-icon">📷</span>
-  <span class="ph-label">INSERT: Diesel engine with PCB installation</span>
-  <span class="ph-hint">Side-by-side: 1972 engine block and custom PCB mounted in enclosure</span>
-</div>
+<figure class="project-figure">
+  <img src="{{ '/assets/images/projects/agriot/engine_field.jpg' | relative_url }}"
+       alt="1972 MWM diesel irrigation engine in field with LoRa IoT control box installed, Badajoz Spain"
+       style="width:100%; border-radius:10px; display:block;">
+  <figcaption style="font-size:0.82rem; color:var(--color-text-secondary); margin-top:0.5rem; text-align:center;">
+    1972 MWM diesel irrigation engine retrofitted with a custom LoRa + WiFi control box — Badajoz, Spain
+  </figcaption>
+</figure>
 
 <hr class="section-divider">
 
@@ -561,11 +564,14 @@ A 1972 diesel engine powers an irrigation pump on a remote farm. The engine is m
 
 Every start, stop, and parameter check required a physical site visit. Oil pressure, battery voltage, engine RPM, and fuel level could only be read on-site. Missing a low-pressure event — even briefly — risks catastrophic engine damage: scored cylinder walls, seized pistons, complete overhaul.
 
-<div class="img-placeholder">
-  <span class="ph-icon">🌾</span>
-  <span class="ph-label">INSERT: Diesel engine in field context</span>
-  <span class="ph-hint">Photo showing engine location relative to farm and distance from main building</span>
-</div>
+<figure class="project-figure">
+  <img src="{{ '/assets/images/projects/agriot/engine_plate_1972.jpg' | relative_url }}"
+       alt="Engine manufacturer plate showing MWM Diaz de Terán, Zafra, España, year 1972"
+       style="width:100%; border-radius:10px; display:block;">
+  <figcaption style="font-size:0.82rem; color:var(--color-text-secondary); margin-top:0.5rem; text-align:center;">
+    Original manufacturer plate — MWM Díaz de Terán, Zafra (Badajoz), 1972. The engine has been in continuous operation for over 50 years.
+  </figcaption>
+</figure>
 
 <div class="before-after" style="margin-top: 1.5rem;">
   <div class="ba-card ba-before">
@@ -693,11 +699,22 @@ A two-node LoRa network bridges the engine to the cloud. The gateway node (ESP32
     <h4 style="color: var(--color-text); margin-bottom: 1rem;">Power Supply Chain</h4>
     <p>The engine's 12 V battery powers the entire control node. A DC-DC buck converter (LM2596) steps down to 5 V for the Arduino and relays. An LDO regulator (LM1117-3.3) supplies the RFM95 LoRa module, which requires a stable 3.3 V rail.</p>
     <p>Relay drivers use flyback diodes to suppress the inductive kick from relay coils. All sensor inputs include RC low-pass filters to reduce noise from the engine alternator.</p>
-    <div class="img-placeholder" style="margin-top: 1rem;">
-      <span class="ph-icon">🔌</span>
-      <span class="ph-label">INSERT: Custom PCB — top view</span>
-      <span class="ph-hint">High-resolution photo showing relay array, screw terminals, and sensor connectors</span>
-    </div>
+    <figure class="project-figure" style="margin-top: 1rem;">
+      <img src="{{ '/assets/images/projects/agriot/pcb_top.jpg' | relative_url }}"
+           alt="Custom red PCB held in hand showing Arduino Nano, RFM95 LoRa module, power regulation and relay connectors"
+           style="width:100%; border-radius:10px; display:block;">
+      <figcaption style="font-size:0.82rem; color:var(--color-text-secondary); margin-top:0.5rem; text-align:center;">
+        Custom PCB v3.0 — Arduino Nano (centre), RFM95W LoRa module (bottom-left), LM2596 buck converter (top-right), relay screw terminals (top)
+      </figcaption>
+    </figure>
+    <figure class="project-figure" style="margin-top: 1rem;">
+      <img src="{{ '/assets/images/projects/agriot/actuator_throttle.jpg' | relative_url }}"
+           alt="Linear actuator mounted on engine frame connecting to throttle and brake mechanism"
+           style="width:100%; border-radius:10px; display:block;">
+      <figcaption style="font-size:0.82rem; color:var(--color-text-secondary); margin-top:0.5rem; text-align:center;">
+        Linear actuator controlling throttle and brake — driven by Relay 5 (A0) and Relay 6 (A1), activated via 1-second pulses from the control node
+      </figcaption>
+    </figure>
   </div>
 </div>
 
@@ -955,11 +972,14 @@ All analog readings use a 100-sample averaging loop to suppress ADC noise from t
   </div>
 </div>
 
-<div class="img-placeholder wide">
-  <span class="ph-icon">📱</span>
-  <span class="ph-label">INSERT: Blynk dashboard screenshot</span>
-  <span class="ph-hint">Mobile app showing real-time voltage, pressure, RPM gauges and relay control buttons</span>
-</div>
+<figure class="project-figure">
+  <img src="{{ '/assets/images/projects/agriot/enclosure_wiring.jpg' | relative_url }}"
+       alt="Weatherproof enclosure open showing PCB, relay board, Arduino, and cable management installed on engine frame"
+       style="max-width:500px; width:100%; border-radius:10px; display:block; margin: 0 auto;">
+  <figcaption style="font-size:0.82rem; color:var(--color-text-secondary); margin-top:0.5rem; text-align:center;">
+    Control node installed on the engine frame — custom PCB and relay board housed in a weatherproof enclosure with labelled wiring runs to sensors and actuators
+  </figcaption>
+</figure>
 
 <hr class="section-divider">
 
@@ -998,19 +1018,19 @@ All analog readings use a 100-sample averaging loop to suppress ADC noise from t
       </tbody>
     </table>
 
-    <h4 style="color: var(--color-text); margin: 1.5rem 0 1rem;">PCB Schematic</h4>
-    <div class="img-placeholder">
-      <span class="ph-icon">📐</span>
-      <span class="ph-label">INSERT: PCB schematic (click to view full size)</span>
-      <span class="ph-hint">KiCad schematic export — power regulation, relay drivers, sensor inputs, LoRa module connections</span>
-    </div>
-
-    <h4 style="color: var(--color-text); margin: 1.5rem 0 1rem;">PCB Layout</h4>
-    <div class="img-placeholder">
-      <span class="ph-icon">🔧</span>
-      <span class="ph-label">INSERT: PCB layout — assembled board</span>
-      <span class="ph-hint">Top view of assembled PCB showing relay array, terminal blocks, and component placement</span>
-    </div>
+    <h4 style="color: var(--color-text); margin: 1.5rem 0 1rem;">PCB Schematic — V3.0</h4>
+    <figure class="project-figure">
+      <a href="{{ '/assets/docs/agriot/schematic_v3.pdf' | relative_url }}" target="_blank" rel="noopener" title="Open full schematic PDF">
+        <img src="{{ '/assets/images/projects/agriot/schematic_v3.jpg' | relative_url }}"
+             alt="EasyEDA schematic PCB Motor LoRa WiFi V3.0 showing Arduino Nano, RFM95 LoRa, LM2596 buck, LM1117T-3.3 LDO, ESP-01, relay terminals and sensor inputs"
+             style="width:100%; border-radius:10px; display:block; cursor:zoom-in;">
+      </a>
+      <figcaption style="font-size:0.82rem; color:var(--color-text-secondary); margin-top:0.5rem; text-align:center;">
+        PCB Motor LoRa WiFi V3.0 — EasyEDA, 2022. Click to open full schematic PDF.
+        <a href="{{ '/assets/docs/agriot/schematic_v1.pdf' | relative_url }}" target="_blank" rel="noopener"
+           style="margin-left:1rem; color:var(--color-primary);">V1 schematic (2020)</a>
+      </figcaption>
+    </figure>
 
     <p style="margin-top: 1.5rem;">
       <a href="https://github.com/SLopezBegines/AgrIoT-Smart-Motor-Control" class="btn btn-outline" target="_blank" rel="noopener" style="font-size: 0.9rem; padding: 0.6rem 1.5rem;">
