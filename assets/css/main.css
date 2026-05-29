@@ -7,8 +7,8 @@
   --color-bg: #162820;              /* brand text-main — darkest surface, visibly dark green */
   --color-bg-secondary: #1B3A2D;   /* brand green-deep — card/surface elevation */
   --color-bg-tertiary: #1f4232;    /* slightly lighter green — badges, tags bg */
-  --color-text: #f0f5f2;            /* near-white with green tint */
-  --color-text-secondary: #7FBA9E;  /* brand green-light (on dark backgrounds) */
+  --color-text: #e8e4e0;            /* warm off-white — tonally distinct from green backgrounds */
+  --color-text-secondary: #c0d8cb;  /* light sage, brighter than brand green-light for readability */
   --color-primary: #2E7D52;         /* brand green-mid */
   --color-primary-hover: #3a9163;   /* lighter mid-green for hover states */
   --color-primary-light: #F2F7F4;   /* brand green-pale */
