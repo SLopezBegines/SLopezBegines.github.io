@@ -31,9 +31,9 @@ All 12 color variables in `:root` replaced with brand equivalents.
 
 | Variable | Old value | New value | Brand token |
 |---|---|---|---|
-| `--color-bg` | `#0a0a0a` | `#0f1f18` | dark green-black (derived) |
-| `--color-bg-secondary` | `#1a1a1a` | `#162820` | `--text-main` used as mid-dark surface |
-| `--color-bg-tertiary` | `#2a2a2a` | `#1B3A2D` | `--green-deep` |
+| `--color-bg` | `#0a0a0a` | `#162820` | `--text-main` — darkest surface, visibly dark green |
+| `--color-bg-secondary` | `#1a1a1a` | `#1B3A2D` | `--green-deep` — card/surface elevation |
+| `--color-bg-tertiary` | `#2a2a2a` | `#1f4232` | lighter dark green — badges, tags |
 | `--color-text` | `#e8e8e8` | `#f0f5f2` | near-white with green tint |
 | `--color-text-secondary` | `#a0a0a0` | `#7FBA9E` | `--green-light` (on dark bg) |
 | `--color-primary` | `#1a7a7a` | `#2E7D52` | `--green-mid` |
@@ -58,13 +58,13 @@ Six inline rgba values that hardcoded the old teal color were updated:
 
 | Location | Old | New |
 |---|---|---|
-| `.site-header` background | `rgba(10,10,10,0.9)` | `rgba(15,31,24,0.92)` |
+| `.site-header` background | `rgba(10,10,10,0.9)` | `rgba(22,40,32,0.92)` |
 | `.hero-avatar` box-shadow | `rgba(26,122,122,0.3)` | `rgba(46,125,82,0.3)` |
 | `.btn-primary:hover` box-shadow | `rgba(26,122,122,0.3)` | `rgba(46,125,82,0.3)` |
 | `.service-card:hover` box-shadow | `rgba(26,122,122,0.2)` | `rgba(46,125,82,0.2)` |
 | `.badge-wip` background | `rgba(26,122,122,0.15)` | `rgba(46,125,82,0.15)` |
 | Contact form `button:hover` box-shadow | `rgba(26,122,122,0.3)` | `rgba(46,125,82,0.3)` |
-| Mobile nav background | `rgba(10,10,10,0.98)` | `rgba(15,31,24,0.98)` |
+| Mobile nav background | `rgba(10,10,10,0.98)` | `rgba(22,40,32,0.98)` |
 
 ---
 
@@ -88,7 +88,10 @@ Replaced plain text `{{ site.author.name }}` with inline SVG icon + styled text.
 | Dendritic stub | stroke `#1B3A2D` | stroke `#7FBA9E`, opacity 0.55 |
 | Peak node (coral) | `#E07050` | unchanged — already visible |
 
-Logo sizing: `width: 40px; height: 40px` — fits within the 70px header height with 15px vertical padding each side.
+**Logo sizing and viewBox:**
+- `width="40" height="40"` set as HTML attributes (not just CSS) to guarantee size regardless of stylesheet load order
+- `viewBox="-4 -5 84 84"` — expanded from original `"0 0 75.419441 74.141153"` to add padding on all sides, especially 5px at the top where the peak circle (cy=5.69, r=4.8, top edge ≈ y=0.89) was being clipped by the original viewBox boundary
+- Fits within the 70px header with ~15px vertical padding each side
 
 **New CSS rules added** (in `.site-header` section of `main.css`):
 - `.logo { display: flex; align-items: center; gap: 0.6rem; }`

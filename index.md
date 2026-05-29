@@ -35,7 +35,7 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
         <div class="about-content">
             <div class="about-text">
                 <p>
-                    Neuroscientist and Data Scientist with 15+ years in biomedical research and 4–5 years
+                    Hi! I'm Santiago López Begines, Neuroscientist and Data Scientist with 15+ years in biomedical research and 5+ years
                     specializing in machine learning, multi-omics analysis, and production data pipelines.
                 </p>
                 <p>

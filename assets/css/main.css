@@ -4,9 +4,9 @@
 
 :root {
   /* Colors — brand palette (Option A: dark mode aligned to brand identity) */
-  --color-bg: #0f1f18;              /* dark green-black */
-  --color-bg-secondary: #162820;    /* brand text-main used as mid-dark surface */
-  --color-bg-tertiary: #1B3A2D;     /* brand green-deep */
+  --color-bg: #162820;              /* brand text-main — darkest surface, visibly dark green */
+  --color-bg-secondary: #1B3A2D;   /* brand green-deep — card/surface elevation */
+  --color-bg-tertiary: #1f4232;    /* slightly lighter green — badges, tags bg */
   --color-text: #f0f5f2;            /* near-white with green tint */
   --color-text-secondary: #7FBA9E;  /* brand green-light (on dark backgrounds) */
   --color-primary: #2E7D52;         /* brand green-mid */
@@ -138,7 +138,7 @@ main {
   left: 0;
   right: 0;
   height: var(--header-height);
-  background: rgba(15, 31, 24, 0.92);
+  background: rgba(22, 40, 32, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
@@ -877,7 +877,7 @@ section {
     left: 0;
     right: 0;
     flex-direction: column;
-    background: rgba(15, 31, 24, 0.98);
+    background: rgba(22, 40, 32, 0.98);
     backdrop-filter: blur(10px);
     padding: var(--space-md);
     border-bottom: 1px solid var(--color-border);
