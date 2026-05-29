@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 580 120"
+   version="1.1"
+   id="svg7"
+   sodipodi:docname="logo_full_v5.svg"
+   inkscape:version="1.4.3 (fcd0343856, 2026-01-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0819953"
+     inkscape:cx="134.93589"
+     inkscape:cy="60.536308"
+     inkscape:window-width="1920"
+     inkscape:window-height="960"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7"
+     showguides="true" />
+  <!--
+    Logo Full v5 — Santiago López Begines
+    Mark: logo_icon_v4_2 (straight-line trace, 9 elements)
+    Scale: 1.187 to fit 88px height in 120px canvas, centered vertically
+    Wordmark: confirmed hierarchy — Santiago / López Begines / subtitle
+  -->
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .g  { fill: #1B3A2D; }
+      .c  { fill: #E07050; }
+      .tr { fill: none; stroke: #2E7D52; stroke-width: 1.5;
+            stroke-linecap: round; stroke-linejoin: round; opacity: 0.48; }
+      .dn { fill: none; stroke: #1B3A2D; stroke-linecap: round;
+            stroke-linejoin: round; }
+      .nm-first { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+                  font-size: 13px; font-weight: 400; fill: #2E7D52;
+                  letter-spacing: 1.8px; text-transform: uppercase; }
+      .nm-last  { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+                  font-size: 27px; font-weight: 700; fill: #1B3A2D;
+                  letter-spacing: -0.3px; }
+      .subtitle { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+                  font-size: 10px; font-weight: 400; fill: #4A6A55;
+                  letter-spacing: 0.6px; }
+    </style>
+  </defs>
+  <!-- ── MARK — scale 1.187, centred vertically in 120px canvas ─────── -->
+  <g
+     transform="translate(4, 16) scale(1.187)"
+     id="g5">
+    <!-- Trace: straight-line polyline through 4 AP nodes -->
+    <path
+       class="tr"
+       d="M 17.683441,54.928516 34.693949,5.5805993 49.537966,70.390383 69.030799,53.482658"
+       id="path1" />
+    <!-- Soma -->
+    <circle
+       cx="17.683441"
+       cy="54.928516"
+       r="7"
+       class="g"
+       opacity="0.92"
+       id="circle1" />
+    <!-- Dendritic stub -->
+    <path
+       class="dn"
+       stroke-width="1.6"
+       opacity="0.62"
+       d="M 17.344482,54.815533 10.237016,42.531292"
+       id="path2" />
+    <circle
+       cx="10.237016"
+       cy="42.531292"
+       r="2.2"
+       class="g"
+       opacity="0.60"
+       id="circle2" />
+    <!-- Peak — sole coral accent -->
+    <circle
+       cx="34.647152"
+       cy="5.6862454"
+       r="4.8"
+       class="c"
+       opacity="1.00"
+       id="circle3" />
+    <!-- Hyperpolarisation -->
+    <circle
+       cx="50.177113"
+       cy="69.685051"
+       r="2.8"
+       class="g"
+       opacity="0.78"
+       id="circle4" />
+    <!-- Recovery -->
+    <circle
+       cx="69.331062"
+       cy="53.260921"
+       r="1.8"
+       class="g"
+       opacity="0.55"
+       id="circle5" />
+  </g>
+  <!-- ── WORDMARK ─────────────────────────────────────────────────────── -->
+  <text
+     x="94.13208"
+     y="70.177467"
+     class="nm-last"
+     id="text6"
+     style="font-size:37.3333px">López Begines</text>
+  <line
+     x1="96.994057"
+     y1="79.197182"
+     x2="568.99402"
+     y2="79.197182"
+     stroke="#c5ddd0"
+     stroke-width="0.8"
+     opacity="0.7"
+     id="line6" />
+  <text
+     x="95.431557"
+     y="101.78648"
+     class="subtitle"
+     id="text7"
+     style="font-size:21.3333px;line-height:0">Bioinformatics &amp; Data Science Consulting</text>
+  <text
+     x="95.796135"
+     y="36.177464"
+     class="nm-first"
+     id="text5"
+     style="font-size:26.6667px">Santiago</text>
+</svg>

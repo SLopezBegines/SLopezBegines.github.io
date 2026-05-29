@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 75.419441 74.141153"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="logo_icon_v4_2.svg"
+   width="75.419441"
+   height="74.141151"
+   inkscape:version="1.4.3 (fcd0343856, 2026-01-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="3.1291667"
+     inkscape:cx="44.101199"
+     inkscape:cy="37.23036"
+     inkscape:window-width="1920"
+     inkscape:window-height="960"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6">
+    <inkscape:grid
+       id="grid6"
+       units="px"
+       originx="-0.15978695"
+       originy="-4.9533958"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14902"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+    <inkscape:page
+       x="0"
+       y="0"
+       width="75.419441"
+       height="74.141151"
+       id="page6"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <!--
+    Logo Icon v4 — Santiago López Begines
+    Philosophy: BeginAnalytics-level simplicity + neuroscience/AP specificity
+
+    Structure: 5 key AP nodes connected by a single trace path
+      Soma (hub) → Threshold → Peak (coral) → Hyperpol → Recovery
+    + 1 dendritic stub (path + bouton) anchoring the neuron reading
+
+    8 elements total (vs 14 in v3; from 27 in v1)
+
+    Dual reading:
+      – Network / graph analysis: 5 connected nodes, hub-spoke topology at soma
+      – Neuroscience:             soma + apical dendrite + non-ideal AP waveform
+      – UMAP / trajectory:        scatter nodes along an asymmetric path
+  -->
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .g  { fill: #1B3A2D; }
+      .c  { fill: #E07050; }
+      .tr { fill: none; stroke: #2E7D52; stroke-width: 1.5;
+            stroke-linecap: round; stroke-linejoin: round; opacity: 0.48; }
+      .dn { fill: none; stroke: #1B3A2D; stroke-linecap: round;
+            stroke-linejoin: round; }
+    </style>
+  </defs>
+  <!-- ── TRACE — the edge connecting all 5 nodes ────────────────────────
+       Each bezier segment terminates at a node position:
+         seg 1 end → Threshold  (37, 63)
+         seg 2 end → Peak       (50, 15)
+         seg 3 end → crossing baseline
+         seg 4 end → Hyperpol   (78, 82)
+         seg 5 end → Recovery   (108, 69)
+         seg 6 end → resting    (114, 70)                                  -->
+  <path
+     class="tr"
+     d="M 17.683441,54.928516 34.693949,5.5805993 49.537966,70.390383 69.030799,53.482658"
+     id="path1"
+     sodipodi:nodetypes="cccc" />
+  <!-- ── NODE 1: SOMA — hub; dominant; anchors the neuronal reading ───── -->
+  <circle
+     cx="17.683441"
+     cy="54.928516"
+     r="7"
+     class="g"
+     opacity="0.92"
+     id="circle1" />
+  <!-- ── DENDRITIC STUB — apical trunk; bouton = satellite node ─────────
+       Together: soma→bouton is a 2-node network edge AND a neuron dendrite -->
+  <path
+     class="dn"
+     stroke-width="1.6"
+     opacity="0.62"
+     d="M 17.344482,54.815533 10.237016,42.531292"
+     id="path2"
+     sodipodi:nodetypes="cc" />
+  <circle
+     cx="10.237016"
+     cy="42.531292"
+     r="2.2"
+     class="g"
+     opacity="0.6"
+     id="circle2" />
+  <!-- ── NODE 2: THRESHOLD — slow depolarisation; sits on the ramp ────── -->
+  <!-- ── NODE 3: PEAK — sole coral element; maximum signal ─────────────
+       Single dominant accent — AP spike; "Begin" / data discovery moment  -->
+  <circle
+     cx="34.647152"
+     cy="5.6862454"
+     r="4.8000002"
+     class="c"
+     opacity="1"
+     id="circle4" />
+  <!-- ── NODE 4: HYPERPOLARISATION — trough below baseline (y=70) ───── -->
+  <circle
+     cx="50.177113"
+     cy="69.685051"
+     r="2.8"
+     class="g"
+     opacity="0.78"
+     id="circle5" />
+  <!-- ── NODE 5: RECOVERY — terminal anchor for the trace tail ────────── -->
+  <circle
+     cx="69.331062"
+     cy="53.260921"
+     r="1.8"
+     class="g"
+     opacity="0.55"
+     id="circle6" />
+</svg>
