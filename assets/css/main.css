@@ -9,12 +9,12 @@
   --color-bg-tertiary: #1f4232;    /* slightly lighter green — badges, tags bg */
   --color-text: #e8e4e0;            /* warm off-white — tonally distinct from green backgrounds */
   --color-text-secondary: #dde5e0;  /* neutral sage-grey — desaturated for clear contrast on dark green bg */
-  --color-primary: #2E7D52;         /* brand green-mid */
+  --color-primary: #89c2a3;         /* brand green-mid */
   --color-primary-hover: #3a9163;   /* lighter mid-green for hover states */
   --color-primary-light: #F2F7F4;   /* brand green-pale */
   --color-primary-mid: #C5DDD0;     /* brand green-border */
   --color-accent: #E07050;          /* brand coral — replaces purple */
-  --color-success: #2E7D52;         /* brand green-mid */
+  --color-success: #89c2a3;         /* brand green-mid */
   --color-border: #1B3A2D;          /* brand green-deep */
 
   /* Typography */
