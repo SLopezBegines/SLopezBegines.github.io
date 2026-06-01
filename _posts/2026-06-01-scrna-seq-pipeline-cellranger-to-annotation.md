@@ -355,6 +355,11 @@ all_markers %>%
   print()
 ```
 
+Visualising the top markers as a heatmap across all clusters gives you an instant read on how well-separated the populations are. Clusters with crisp, cluster-specific yellow bands are well-defined; clusters with diffuse or shared expression warrant closer inspection before labelling.
+
+![Heatmap of top marker genes per cluster](/assets/images/snrnaseq_067_HeatMap_cluster_plot.png)
+*DoHeatmap of the top differentially expressed genes across 17 clusters (0–16). Each column group is a cluster; each row is a marker gene. Yellow = high expression, purple = low. The diagonal banding pattern confirms that most clusters have a distinct transcriptional signature with little bleed-through to adjacent clusters.*
+
 Here is what the canonical marker validation looks like in practice across the 17 clusters of GSE262881, split by condition (Control vs Inulin) to check for condition-specific marker shifts:
 
 ![DotPlot of canonical markers per cluster, split by condition](/assets/images/snrnaseq_127_DotPlot_features.png)
