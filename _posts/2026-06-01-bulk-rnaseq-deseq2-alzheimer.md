@@ -70,7 +70,7 @@ metadata <- parse_metadata(colnames(counts))
 
 A first sanity check is to look at library sizes across all samples, faceted by age and tissue. All 192 samples in GSE168137 passed QC — no sample fell below a minimum depth threshold, and the distributions are well-behaved across timepoints:
 
-![Library size distribution across timepoints and tissue types](/assets/images/bulkrnaseq_003_library_distribution.png)
+![Library size distribution across timepoints and tissue types](/assets/images/bulkrnaseq_003_library_distribution.jpg)
 *Library size distribution (log₁₀ total counts) by age, tissue (solid = cortex, dashed = hippocampus), and genotype (red = 5xFAD, blue = BL6). The dashed red line marks the minimum acceptable depth. All 192 samples pass.*
 
 One note: GEO originally had a fractional count (39.42) for one gene in one sample. **Always check for non-integer counts when importing from supplementary files.** Round to integers before building the DESeqDataSet:
@@ -229,14 +229,14 @@ Before calling a single DE gene, it is worth asking: what is actually driving th
 
 I ran PCA on the VST-normalised counts. PC1 explains 30.8% of variance, PC2 17.7%. Coloured by genotype, the picture is not a clean separation:
 
-![PCA coloured by genotype](/assets/images/bulkrnaseq_008_PCA_genotype.png)
+![PCA coloured by genotype](/assets/images/bulkrnaseq_008_PCA_genotype.jpg)
 *PCA of 192 samples (PC1 = 30.8%, PC2 = 17.7%), coloured by genotype. Distinct subclusters are visible but genotype alone does not explain them — tissue is the dominant driver of variance.*
 
 The subclusters visible here correspond primarily to tissue type, not genotype. This matters for the design formula. Running `~ sex + age_months + genotype` on all samples combined treats a cortex sample and a hippocampus sample as interchangeable except for their genotype — they are not. Cortex and hippocampus have substantially different transcriptional profiles, and that difference dwarfs the 5xFAD effect in this combined analysis.
 
 UMAP makes the structure even clearer when tissue is explicitly encoded:
 
-![UMAP coloured by genotype and tissue](/assets/images/bulkrnaseq_011_UMAP_genotype.png)
+![UMAP coloured by genotype and tissue](/assets/images/bulkrnaseq_011_UMAP_genotype.jpg)
 *UMAP of 192 samples. Circles = cortex, triangles = hippocampus. Tissue drives the primary separation into distinct clusters. Within each tissue cluster, some genotype-specific structure is visible.*
 
 This is precisely why the "Handling complexity" section below recommends running separate analyses per tissue rather than modelling all samples together. The combined-sample analysis I ran here is useful as an exploratory step — it tells you which genes change across the full dataset regardless of region — but it is not the right frame for asking region-specific biological questions.
@@ -262,7 +262,7 @@ The MA plot should show little trend: LFC should be centered around zero across 
 
 Here is the MA plot from the GSE168137 run after apeglm shrinkage:
 
-![MA plot — DESeq2 with apeglm shrinkage](/assets/images/bulkrnaseq_014_DESeq2_MA.png)
+![MA plot — DESeq2 with apeglm shrinkage](/assets/images/bulkrnaseq_014_DESeq2_MA.jpg)
 *MA plot after apeglm LFC shrinkage. Significant genes (padj < 0.05, |log₂FC| ≥ 1) shown in red. The pattern is clean: no trend at high expression, and the shrinkage is visible in the compression of LFC estimates toward zero at low expression levels.*
 
 ### Volcano plot
@@ -289,7 +289,7 @@ This gives you a quick visual of the effect sizes and significances. A clean vol
 
 Here is the actual volcano for GSE168137 (5xFAD vs BL6, all samples combined):
 
-![Volcano plot — 5xFAD vs BL6, DESeq2](/assets/images/bulkrnaseq_013_DESeq2_volcano.png)
+![Volcano plot — 5xFAD vs BL6, DESeq2](/assets/images/bulkrnaseq_013_DESeq2_volcano.jpg)
 *Volcano plot. Significant genes at padj < 0.05 and |log₂FC| ≥ 1 shown in red (418 genes, all upregulated). Top genes by combined significance and effect size: Clec7a, Cst7, Ccl6, Ccl8, Trem2, Cd68, Tyrobp — a strongly microglial signature. The notable asymmetry (no downregulated genes at this stringent threshold) is discussed in the results section below.*
 
 ### Heatmap of top DE genes
@@ -344,7 +344,7 @@ Running the pipeline on all 192 samples with design `~ sex + age_months + genoty
 
 The two methods agreed closely on effect size estimates: Pearson r = 0.952 between DESeq2 and edgeR log₂FC values across all tested genes.
 
-![DESeq2 vs edgeR LFC comparison](/assets/images/bulkrnaseq_017_comparison_LFC.png)
+![DESeq2 vs edgeR LFC comparison](/assets/images/bulkrnaseq_017_comparison_LFC.jpg)
 *Log₂FC comparison between DESeq2 (x-axis) and edgeR (y-axis). Green = concordant significant genes, orange = method-specific calls, gray = non-significant. Pearson r = 0.952. The fitted line (solid) nearly overlaps the identity (dashed), indicating no systematic bias between methods.*
 
 The high correlation gives confidence that the signal is real, not an artefact of any single statistical model. Method-specific calls (orange) tend to cluster near zero on the DESeq2 axis, suggesting that edgeR is somewhat less conservative for low-effect-size genes in this dataset.

@@ -357,19 +357,19 @@ all_markers %>%
 
 Visualising the top markers as a heatmap across all clusters gives you an instant read on how well-separated the populations are. Clusters with crisp, cluster-specific yellow bands are well-defined; clusters with diffuse or shared expression warrant closer inspection before labelling.
 
-![Heatmap of top marker genes per cluster](/assets/images/snrnaseq_067_HeatMap_cluster_plot.png)
+![Heatmap of top marker genes per cluster](/assets/images/snrnaseq_067_HeatMap_cluster_plot.jpg)
 *DoHeatmap of the top differentially expressed genes across 17 clusters (0–16). Each column group is a cluster; each row is a marker gene. Yellow = high expression, purple = low. The diagonal banding pattern confirms that most clusters have a distinct transcriptional signature with little bleed-through to adjacent clusters.*
 
 Here is what the canonical marker validation looks like in practice across the 17 clusters of GSE262881, split by condition (Control vs Inulin) to check for condition-specific marker shifts:
 
-![DotPlot of canonical markers per cluster, split by condition](/assets/images/snrnaseq_127_DotPlot_features.png)
+![DotPlot of canonical markers per cluster, split by condition](/assets/images/snrnaseq_127_DotPlot_features.jpg)
 *Split DotPlot: canonical marker genes (x-axis) across 17 clusters split by condition (Ctrl / Inulin). Dot size = percent of cells expressing the gene; colour = mean normalised expression (red = high, blue = low). Cluster 0 lights up for Calb1/Gabra6 (cerebellar interneurons); Cluster 2 for Gfap/Aqp4 (astrocytes); Cluster 6 for Mbp/Plp1 (oligodendrocytes); Cluster 14 for Cx3cr1/Aif1 (microglia).*
 
 **Why manual validation matters:** A cluster of 500 cells with mean expression of RBFOX3 = 2.1 and Gad1 = 0.3 is primarily excitatory but has GABAergic contamination or real excitatory-inhibitory interaction. The numbers reveal biology; SingleR gives you a label but not the confidence to defend it.
 
 The result of combining automated labels, manual marker validation, and cluster-specific DE is a fully annotated UMAP. For GSE262881 at resolution 0.5, the pipeline identifies 11 cell type populations across mouse brain regions:
 
-![UMAP with manual cell type annotations](/assets/images/snrnaseq_128_UMAP_manual_annotation.png)
+![UMAP with manual cell type annotations](/assets/images/snrnaseq_128_UMAP_manual_annotation.jpg)
 *Annotated UMAP of GSE262881 (forebrain + cerebellum, 5xFAD mouse, ~50k nuclei). Populations identified: excitatory neurons (ExN L2/3, ExN_L6, ExN, ExN_DG), inhibitory neurons (InN, InN Sst/Pv, InN SSt+), oligodendrocytes, OPC, astrocytes, microglia, SMC-Pericytes, and one unresolved cluster (16). Cell types are consistent with the expected brain cell type composition.*
 
 Note cluster 16 on the lower-left: unlabeled because no canonical marker set assigned it a confident identity. Don't rename ambiguous clusters — keep them in the object, document them, and investigate them separately.
@@ -380,7 +380,7 @@ After annotation and per-cluster DE analysis (FindMarkers with 5xFAD vs control 
 
 Here is the gseGO result for Cluster 0 (cerebellar interneurons, upregulated genes in 5xFAD):
 
-![gseGO dotplot — Cluster 0, upregulated genes](/assets/images/snrnaseq_282_gseGO_cluster0_UP.png)
+![gseGO dotplot — Cluster 0, upregulated genes](/assets/images/snrnaseq_282_gseGO_cluster0_UP.jpg)
 *GSE dotplot for Cluster 0 upregulated genes (5xFAD vs control). Activated GO terms are predominantly mitochondrial (organelle inner membrane, mitochondrial membrane, mitochondrion), suggesting increased energy demand or mitochondrial stress. Suppressed terms include broad developmental processes (cell differentiation, tissue development). p.adjust < 0.05 for shown terms.*
 
 This kind of result illustrates why you need per-cluster enrichment, not a global DE followed by one GO analysis. The functional signature of mitochondrial activation in interneurons is biologically distinct from the microglial activation signature (DAM genes) in the microglia cluster — lumping them together would bury both signals.
