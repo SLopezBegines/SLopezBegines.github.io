@@ -363,8 +363,10 @@ Visualising the top markers as a heatmap across all clusters gives you an instan
 Here is what the canonical marker validation looks like in practice across the 17 clusters of GSE262881, split by condition (Control vs Inulin) to check for condition-specific marker shifts:
 
 ![DotPlot of canonical markers per cluster, split by condition](/assets/images/snrnaseq_127_DotPlot_features.jpg)
-*Split DotPlot: canonical marker genes (x-axis) across 17 clusters split by condition (Ctrl / Inulin). Dot size = percent of cells expressing the gene; colour = mean normalised expression (red = high, blue = low). Cluster 0 lights up for Calb1/Gabra6 (cerebellar interneurons); Cluster 2 for Gfap/Aqp4 (astrocytes); Cluster 6 for Mbp/Plp1 (oligodendrocytes); Cluster 14 for Cx3cr1/Aif1 (microglia).*
+*Split DotPlot: canonical marker genes (x-axis) across 17 clusters split by condition (Ctrl / Inulin). Dot size = percent of cells expressing the gene; colour = mean normalised expression (red = high, blue = low).*
 
+![Violin plot of canonical markers per cluster, split by condition](/assets/images/snrnaseq_126_Stacked_VlnPlot_markers.jpg)
+*Stacked Violin Plot: canonical markers across clusters, split by condition. Each row is a marker gene; each column is a cluster. The violin shape shows the distribution of expression across cells in that cluster.*
 **Why manual validation matters:** A cluster of 500 cells with mean expression of RBFOX3 = 2.1 and Gad1 = 0.3 is primarily excitatory but has GABAergic contamination or real excitatory-inhibitory interaction. The numbers reveal biology; SingleR gives you a label but not the confidence to defend it.
 
 The result of combining automated labels, manual marker validation, and cluster-specific DE is a fully annotated UMAP. For GSE262881 at resolution 0.5, the pipeline identifies 11 cell type populations across mouse brain regions:
