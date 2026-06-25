@@ -77,8 +77,8 @@ The annotated output, at resolution 0.5 for GSE262881:
 ![UMAP with manual cell type annotations](/assets/images/snrnaseq_128_UMAP_manual_annotation.jpg)
 *Annotated UMAP (forebrain + cerebellum, 5xFAD mouse, ~50k nuclei): excitatory and inhibitory neuron subtypes, oligodendrocytes, OPC, astrocytes, microglia, SMC-pericytes, and one unresolved cluster (16) left deliberately unlabeled. Don't rename ambiguous clusters — document and investigate them.*
 
-![DotPlot of canonical markers per cluster, split by condition](/assets/images/snrnaseq_127_DotPlot_features.jpg)
-*Split DotPlot of canonical markers across clusters (Ctrl / Inulin). Dot size = percent expressing; colour = mean normalised expression. This is the manual-validation step that SingleR alone cannot replace.*
+![ViolinPlot of canonical markers per cluster, split by condition](/assets/images/snrnaseq_126_Stacked_VlnPlot_markers.jpg)
+*Split VioinPlot of canonical markers across clusters (Ctrl / Inulin). This is the manual-validation step that SingleR alone cannot replace.*
 
 Per-cluster GO/GSEA (`clusterProfiler::gseGO()`) then gives a functional read per cell population — run per cluster, not on a single global DE list, so that distinct signatures (e.g. mitochondrial activation in interneurons vs. DAM genes in microglia) are not averaged away.
 
