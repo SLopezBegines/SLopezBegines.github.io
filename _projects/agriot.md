@@ -544,10 +544,10 @@ pre code .op  { color: #d4d4d4; } /* operators */
 <!-- ── Hero image ───────────────────────────────────────────── -->
 <figure class="project-figure">
   <img src="{{ '/assets/images/projects/agriot/engine_field.jpg' | relative_url }}"
-       alt="1972 MWM diesel irrigation engine in field with LoRa IoT control box installed, Badajoz Spain"
+       alt="1972 diesel irrigation engine in field with LoRa IoT control box installed"
        style="width:100%; border-radius:10px; display:block;">
   <figcaption style="font-size:0.82rem; color:var(--color-text-secondary); margin-top:0.5rem; text-align:center;">
-    1972 MWM diesel irrigation engine retrofitted with a custom LoRa + WiFi control box — Badajoz, Spain
+    1972 diesel irrigation engine retrofitted with a custom LoRa + WiFi control box
   </figcaption>
 </figure>
 
@@ -562,7 +562,7 @@ pre code .op  { color: #d4d4d4; } /* operators */
 
 A 1972 diesel engine powers an irrigation pump on a remote farm. The engine is mechanically reliable — decades of proper maintenance have kept it running — but its complete lack of remote capability creates a serious operational bottleneck.
 
-Every start, stop, and parameter check required a physical site visit. Oil pressure, battery voltage, engine RPM, and fuel level could only be read on-site. Missing a low-pressure event — even briefly — risks catastrophic engine damage: scored cylinder walls, seized pistons, complete overhaul.
+Every start, stop, and parameter check required a physical site visit. Irrigation water pressure, battery voltage, engine RPM, and fuel level could only be read on-site. Missing a low-pressure event — even briefly — risks catastrophic engine damage.
 
 <figure class="project-figure">
   <img src="{{ '/assets/images/projects/agriot/engine_plate_1972.jpg' | relative_url }}"
@@ -577,7 +577,7 @@ Every start, stop, and parameter check required a physical site visit. Oil press
   <div class="ba-card ba-before">
     <h4>Before</h4>
     <ul>
-      <li>7 on-site visits per week for start/stop</li>
+      <li>+7 on-site visits per week for start/stop</li>
       <li>No remote visibility of engine parameters</li>
       <li>Low-pressure events detected only on-site</li>
       <li>€5,000+ commercial IoT solutions require engine replacement</li>
@@ -683,14 +683,14 @@ A two-node LoRa network bridges the engine to the cloud. The gateway node (ESP32
       <li><span class="component-badge">D8</span> Relay 1 — Engine start (pulse, 500 ms)</li>
       <li><span class="component-badge">D7</span> Relay 2 — Engine stop (pulse, 550 ms)</li>
       <li><span class="component-badge">D6</span> Relay 3 — Cooldown sequence (3 s)</li>
-      <li><span class="component-badge">D5</span> Relay 4 — Oil pump / run indicator</li>
+      <li><span class="component-badge">D5</span> Relay 4 — </li>
       <li><span class="component-badge">A0</span> Relay 5 — Throttle (linear actuator)</li>
       <li><span class="component-badge">A1</span> Relay 6 — Brake (linear actuator)</li>
       <li><span class="component-badge">A2</span> Relay 7 — Electrovalve (fertiliser)</li>
       <li><span class="component-badge">A3</span> Relay 8 — Auxiliary output</li>
       <li><span class="component-badge">A7</span> Battery voltage (22kΩ/4.7kΩ divider)</li>
       <li><span class="component-badge">A6</span> Alternator voltage (same divider)</li>
-      <li><span class="component-badge">A5</span> Oil pressure (analog transducer)</li>
+      <li><span class="component-badge">A5</span> Irrigation water pressure (analog transducer)</li>
       <li><span class="component-badge">D4</span> Fuel level (digital sensor)</li>
       <li><span class="component-badge">D3</span> RPM — Hall effect, INT1 interrupt</li>
     </ul>
@@ -742,7 +742,7 @@ Telemetry packets from the node are sent as a JSON array (9 values, ~60 bytes), 
 [
   <span class="nu">12.8</span>,   <span class="cm">// [0] Battery voltage (V)  — avgVoltage1</span>
   <span class="nu">14.1</span>,   <span class="cm">// [1] Alternator voltage (V) — avgVoltage2</span>
-  <span class="nu">3.2</span>,    <span class="cm">// [2] Oil pressure (bar)   — avgPresion1</span>
+  <span class="nu">3.2</span>,    <span class="cm">// [2] Water pressure (bar)   — avgPresion1</span>
   <span class="nu">0</span>,      <span class="cm">// [3] Electrovalve state   — LedRelay_7</span>
   <span class="nu">1</span>,      <span class="cm">// [4] Engine OFF indicator — LedRelay_3</span>
   <span class="nu">0</span>,      <span class="cm">// [5] Engine ON indicator  — LedRelay_4</span>
@@ -766,7 +766,7 @@ The serialisation function from the actual node firmware:
 
   array.add(avgVoltage1);   <span class="cm">// battery voltage</span>
   array.add(avgVoltage2);   <span class="cm">// alternator voltage</span>
-  array.add(avgPresion1);   <span class="cm">// oil pressure</span>
+  array.add(avgPresion1);   <span class="cm">// Water pressure</span>
   array.add(LedRelay_7);    <span class="cm">// electrovalve state</span>
   array.add(LedRelay_3);    <span class="cm">// motor-off indicator</span>
   array.add(LedRelay_4);    <span class="cm">// motor-on indicator</span>
@@ -820,7 +820,7 @@ All analog readings use a 100-sample averaging loop to suppress ADC noise from t
       <td>Same divider; detects charging state (≈14.1 V when running)</td>
     </tr>
     <tr>
-      <td>Oil pressure</td>
+      <td>Water pressure</td>
       <td>Analog transducer</td>
       <td>A5</td>
       <td><code>Presion = (raw × 5000 mV × 0.0028) / 1023</code>; 100-sample average</td>
