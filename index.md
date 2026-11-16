@@ -20,6 +20,9 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
                 <a href="#contact" class="btn btn-primary">
                     Let's talk &rarr;
                 </a>
+                <a href="/assets/cv/CV_Santiago_Lopez_Begines.pdf" class="btn btn-outline" download>
+                    <i class="fas fa-download"></i> Download CV
+                </a>
             </div>
         </div>
     </div>

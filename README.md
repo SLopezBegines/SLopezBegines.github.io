@@ -347,7 +347,7 @@ npx lighthouse https://slopezbegines.github.io --view
 
 - **Contact**: [contact form](https://slopezbegines.github.io/#contact)
 - **GitHub**: [@SLopezBegines](https://github.com/SLopezBegines)
-- **LinkedIn**: [Santiago López Begines](https://www.linkedin.com/in/santiago-lopez-begines)
+- **LinkedIn**: [Santiago López Begines](https://www.linkedin.com/in/santibegines/)
 - **ORCID**: [0000-0001-8809-8919](https://orcid.org/0000-0001-8809-8919)
 - **Google Scholar**: [Profile](https://scholar.google.com/citations?user=YOUR_ID)
 
