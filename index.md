@@ -39,7 +39,7 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
   <div class="lp-wrap">
     <div class="lp-stat"><div class="lp-stat-n">90<small>%</small></div><p>less electrophysiology processing time with an automated pipeline (IBiS, Seville)</p></div>
     <div class="lp-stat"><div class="lp-stat-n">70<small>%</small></div><p>less omics data-cleaning time with automated R scripts (LCSB, University of Luxembourg)</p></div>
-    <div class="lp-stat"><div class="lp-stat-n">86<small>%</small></div><p>fewer site visits with LoRa remote monitoring, 99.2% uptime over 6 months</p></div>
+    <div class="lp-stat"><div class="lp-stat-n">27<small>%</small></div><p>of 336 financial ML models showed real predictive value under rigorous validation</p></div>
   </div>
 </div>
 
