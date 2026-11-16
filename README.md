@@ -345,7 +345,7 @@ npx lighthouse https://slopezbegines.github.io --view
 
 ## 📫 Contact
 
-- **Email**: [santiago.lopez.begines@gmail.com](mailto:santiago.lopez.begines@gmail.com)
+- **Contact**: [contact form](https://slopezbegines.github.io/#contact)
 - **GitHub**: [@SLopezBegines](https://github.com/SLopezBegines)
 - **LinkedIn**: [Santiago López Begines](https://www.linkedin.com/in/santiago-lopez-begines)
 - **ORCID**: [0000-0001-8809-8919](https://orcid.org/0000-0001-8809-8919)

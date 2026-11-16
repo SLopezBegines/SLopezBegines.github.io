@@ -17,11 +17,8 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
                 15+ years experimental neuroscience &nbsp;·&nbsp; Production-grade R &amp; Python
             </p>
             <div class="hero-cta">
-                <a href="mailto:santiago.lopez.begines@gmail.com" class="btn btn-primary">
-                    Let's talk &rarr; santiago.lopez.begines@gmail.com
-                </a>
-                <a href="/assets/cv/CV_Santiago_Lopez_Begines.pdf" class="btn btn-outline" download>
-                    <i class="fas fa-download"></i> Download CV
+                <a href="#contact" class="btn btn-primary">
+                    Let's talk &rarr;
                 </a>
             </div>
         </div>
@@ -275,9 +272,6 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
             </form>
 
             <div class="contact-info">
-                <a href="mailto:santiago.lopez.begines@gmail.com">
-                    <i class="fas fa-envelope"></i> santiago.lopez.begines@gmail.com
-                </a>
                 <a href="https://linkedin.com/in/santibegines" target="_blank" rel="noopener">
                     <i class="fab fa-linkedin"></i> linkedin.com/in/santibegines
                 </a>

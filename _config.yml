@@ -1,7 +1,6 @@
 # Site Settings
 title: Santiago López Begines
 subtitle: Biomedical Data Science Consulting
-email: santiago.lopez.begines@gmail.com
 description: >-
   Neuroscientist and Data Scientist offering consulting in electrophysiology signal analysis,
   omics data pipelines, and biomarker discovery for neurotech and biomedical teams.
@@ -40,7 +39,6 @@ author:
   bio: Neuroscientist · Data Scientist · Consultant
   tagline: Biomedical Data Science Consulting
   location: Sevilla
-  email: santiago.lopez.begines@gmail.com
   avatar: /assets/images/photoprofile.jpeg
 
 # Social Links
