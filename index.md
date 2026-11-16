@@ -4,287 +4,170 @@ title: "Biomedical Data Science Consulting"
 excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysiology pipelines, omics data analysis, and biomarker discovery for neurotech and biomedical teams."
 ---
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="container">
-        <div class="hero-content fade-in-up">
-            <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}" class="hero-avatar">
-            <h1>Biomedical Data Science Consulting</h1>
-            <p class="hero-description">
-                I help neurotech and biomedical teams build reliable, reproducible analysis pipelines.
-            </p>
-            <p class="hero-tagline">
-                15+ years experimental neuroscience &nbsp;·&nbsp; Production-grade R &amp; Python
-            </p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">
-                    Let's talk &rarr;
-                </a>
-                <a href="/assets/cv/CV_Santiago_Lopez_Begines.pdf" class="btn btn-outline" download>
-                    <i class="fas fa-download"></i> Download CV
-                </a>
-            </div>
-        </div>
+<div class="lp">
+
+<!-- Hero -->
+<section class="lp-hero">
+  <div class="lp-wrap">
+    <div>
+      <span class="lp-eyebrow">Biomedical data science consulting</span>
+      <h1>Reproducible analysis pipelines for <em>neurotech</em> and biomedical teams.</h1>
+      <p class="lp-lead">From raw recordings and mass-spec output to documented, validated results your team can rerun.</p>
+      <div class="lp-cta">
+        <a class="lp-btn lp-btn-primary" href="#contact">Let's talk &rarr;</a>
+        <a class="lp-btn lp-btn-ghost" href="#projects">See the work</a>
+      </div>
+      <div class="lp-proof">
+        <span>15+ years experimental neuroscience</span>
+        <span>First author, Science Advances</span>
+        <span>R &amp; Python</span>
+      </div>
     </div>
+    <div class="lp-panel">
+      <div class="lp-panel-bar"><i></i><i></i><i></i><b>snrna-seq / seurat / cell types</b></div>
+      <div class="lp-fig">
+        <img src="/assets/images/snrnaseq_128_UMAP_hero.jpg" width="1012" height="570" fetchpriority="high"
+             alt="UMAP of single-nucleus RNA-seq clusters with manual cell-type annotation">
+      </div>
+      <div class="lp-panel-foot"><span>UMAP &middot; manual cell-type annotation</span><strong>Reproducible R pipeline</strong></div>
+    </div>
+  </div>
 </section>
 
-<!-- About Section -->
-<section id="about">
-    <div class="container">
-        <h2 class="section-title">About</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    Hi! I'm Santiago López Begines, Neuroscientist and Data Scientist with 15+ years in biomedical research and 5+ years
-                    specializing in machine learning, multi-omics analysis, and production data pipelines.
-                </p>
-                <p>
-                    First author in <strong>Science Advances</strong> (2025); co-authored 8+ publications in
-                    EMBO Journal, eLife, and Cell Death &amp; Disease.
-                </p>
-                <p>
-                    Unique hybrid profile: deep experimental background in whole-cell patch-clamp
-                    electrophysiology, proteomics, and transgenic mouse models — combined with
-                    production-level data science in Python and R.
-                </p>
+<!-- Proof strip -->
+<div class="lp-stats">
+  <div class="lp-wrap">
+    <div class="lp-stat"><div class="lp-stat-n">90<small>%</small></div><p>less electrophysiology processing time with an automated pipeline (IBiS, Seville)</p></div>
+    <div class="lp-stat"><div class="lp-stat-n">70<small>%</small></div><p>less omics data-cleaning time with automated R scripts (LCSB, University of Luxembourg)</p></div>
+    <div class="lp-stat"><div class="lp-stat-n">86<small>%</small></div><p>fewer site visits with LoRa remote monitoring, 99.2% uptime over 6 months</p></div>
+  </div>
+</div>
 
-                <h3>Key Results</h3>
-                <ul>
-                    <li>90% reduction in electrophysiology processing time via automated pipeline (IBiS, Seville)</li>
-                    <li>70% reduction in omics data cleaning time via automated R scripts (LCSB, University of Luxembourg)</li>
-                    <li>ML-based biomarker discovery in neurodegeneration (Batten disease / CLN4)</li>
-                    <p style="margin-top: 1.5rem;">
-                    <a href="/publications" style="color: var(--color-primary);">→ View full publication list</a>
-                </p>
-                </ul>
-
-                <p style="margin-top: 1.5rem;">
-                    Proficient in <strong>Python</strong> (scikit-learn, XGBoost, LightGBM, TensorFlow) and
-                    <strong>R</strong> (tidyverse, tidymodels, Seurat, Shiny) for automated pipelines,
-                    statistical modeling, and data visualization on large-scale proteomics, transcriptomics,
-                    and electrophysiological datasets.
-                </p>
-            </div>
-        </div>
+<!-- Services -->
+<section class="lp-sec" id="services">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <span class="lp-eyebrow">Services</span>
+      <h2>What I build for your team.</h2>
+      <p>Three ways to work together, each ending in something you can run and keep.</p>
     </div>
+    <div class="lp-services">
+      <div class="lp-svc">
+        <div class="lp-svc-ic" aria-hidden="true"><i class="fas fa-wave-square"></i></div>
+        <h3>Electrophysiology &amp; signal pipelines</h3>
+        <p>Raw patch-clamp, EEG or MEA recordings to reproducible, documented outputs, with QC and artifact rejection built in.</p>
+        <a class="lp-svc-link" href="/projects/ephys-pipeline">See the pipeline &rarr;</a>
+        <div class="lp-svc-for"><b>Deliverable</b>Working pipeline + technical documentation</div>
+      </div>
+      <div class="lp-svc">
+        <div class="lp-svc-ic" aria-hidden="true"><i class="fas fa-clipboard-check"></i></div>
+        <h3>Pipeline design &amp; audit</h3>
+        <p>Code review, statistical validation and reproducibility gap analysis for teams preparing regulatory or quality submissions.</p>
+        <div class="lp-svc-for"><b>Deliverable</b>Audit report + remediation roadmap</div>
+      </div>
+      <div class="lp-svc">
+        <div class="lp-svc-ic" aria-hidden="true"><i class="fas fa-dna"></i></div>
+        <h3>Omics data analysis</h3>
+        <p>Label-free proteomics, scRNA-seq and ML biomarker discovery, from MaxQuant or CellRanger output to interpretation.</p>
+        <a class="lp-svc-link" href="/projects/proteomics">Proteomics</a>
+        <div class="lp-svc-for"><b>Deliverable</b>Analysis report + R/Python scripts</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Services Section -->
-<section id="services">
-    <div class="container">
-        <h2 class="section-title">Services</h2>
-
-        <div class="services-grid">
-
-            <!-- Card A -->
-            <div class="service-card">
-                <h3>Electrophysiology &amp; Signal Analysis Pipelines</h3>
-                <p class="service-intro">
-                    For neurotech teams working with patch-clamp, EEG, or multi-electrode array data who need
-                    to move from raw recordings to reproducible, documented outputs.
-                </p>
-                <ul>
-                  <p style="margin-top: 1rem; font-size: 0.95rem;">
-                    <a href="/projects/ephys-pipeline" style="color: var(--color-primary);">→ See our automated electrophysiology pipeline</a>
-                    </p>
-                    <li>Automated/Semi-automated data processing pipelines (HEKA / pCLAMP / Python / R)</li>
-                    <li>Quality control and artifact rejection frameworks</li>
-                    <li>Statistical analysis: FI curves, input resistance, E/I balance, resting membrane potential</li>
-                    <li>Full documentation and reproducibility standards</li>
-                </ul>
-                <p class="service-deliverable">Deliverable: functional pipeline + technical documentation</p>
-            </div>
-
-            <!-- Card B -->
-            <div class="service-card">
-                <h3>Biomedical Data Pipeline Design &amp; Audit</h3>
-                <p class="service-intro">
-                    For MedTech and Pharma SMEs that need to validate or audit existing analysis pipelines
-                    for regulatory submissions or internal quality standards.
-                </p>
-                <ul>
-                    <li>Pipeline code review and statistical validation</li>
-                    <li>Reproducibility assessment and gap analysis</li>
-                    <li>SOP documentation for reproducible analytical workflows</li>
-                    <li>Recommendations report with prioritized action items</li>
-                </ul>
-                <p class="service-deliverable">Deliverable: written audit report + remediation roadmap</p>
-            </div>
-
-            <!-- Card C -->
-            <div class="service-card">
-                <h3>Omics Data Analysis</h3>
-                <p class="service-intro">
-                    For biomedical research teams and CROs working with proteomics, transcriptomics,
-                    or multi-omics datasets.
-                </p>
-                <ul>
-                <p style="margin-top: 1rem; font-size: 0.95rem;">
-                    <a href="/projects/proteomics" style="color: var(--color-primary);">→ Proteomics pipeline</a> | 
-                    <a href="/projects/single-cell" style="color: var(--color-primary);">→ scRNA-seq pipeline</a>
-                </p>
-                    <li>Label-free proteomics: MaxQuant &rarr; differential expression &rarr; biological interpretation</li>
-                    <li>scRNA-seq analysis (Seurat): clustering, cell type annotation, trajectory analysis</li>
-                    <li>ML-based biomarker discovery: feature selection, cross-validation, model validation</li>
-                </ul>
-                <p class="service-deliverable">Deliverable: analysis report + reproducible R/Python scripts</p>
-            </div>
-
-        </div>
+<!-- Projects -->
+<section class="lp-sec lp-flush" id="projects">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <span class="lp-eyebrow">Selected work</span>
+      <h2>Pipelines in production.</h2>
     </div>
+    <div class="lp-bento">
+      <a class="lp-card lp-c-big" href="/projects/proteomics">
+        <div class="lp-thumb"><img src="/assets/images/025_vulcano_DEP_CTRL_vs_KO.jpg" width="1200" height="900" loading="lazy" alt="Volcano plot of differentially expressed proteins, control versus knockout"></div>
+        <div class="lp-card-body">
+          <div class="lp-metric">&minus;70%</div>
+          <h3>Automated proteomics pipeline for neurodegeneration biomarkers</h3>
+          <p>MaxQuant LFQ cleaning, normalisation, differential expression and ML biomarker discovery. Deployed at LCSB, University of Luxembourg.</p>
+          <div class="lp-tags"><span>Proteomics</span><span>R</span><span>MaxQuant</span></div>
+        </div>
+      </a>
+      <a class="lp-card lp-c-sm" href="/projects/ephys-pipeline">
+        <div class="lp-trace" aria-hidden="true">
+          <svg width="190" height="80" viewBox="0 0 190 80" fill="none"><path d="M2 58 L26 58 L40 8 L58 70 L74 52 L110 58 L124 20 L138 64 L150 54 L188 56" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="40" cy="8" r="4" fill="#E07050"/></svg>
+        </div>
+        <div class="lp-card-body">
+          <div class="lp-wip">Work in progress</div>
+          <h3>Electrophysiology analysis pipeline</h3>
+          <p>Patch-clamp mIPSCs, mEPSCs and FI curves with miniML event detection.</p>
+          <div class="lp-tags"><span>Python</span><span>R</span></div>
+        </div>
+      </a>
+      <a class="lp-card lp-c-mid" href="/projects/single-cell">
+        <div class="lp-thumb"><img src="/assets/images/snrnaseq_067_HeatMap_cluster_plot.jpg" width="400" height="900" loading="lazy" alt="Heatmap of top marker genes per snRNA-seq cluster"></div>
+        <div class="lp-card-body">
+          <h3>snRNA-seq analysis pipeline</h3>
+          <p>10X CellRanger to SCTransform, clustering, differential expression and functional enrichment.</p>
+          <div class="lp-tags"><span>Seurat</span><span>R</span></div>
+        </div>
+      </a>
+      <a class="lp-card lp-c-mid" href="/projects/agriot">
+        <div class="lp-thumb"><img src="/assets/images/projects/agriot/engine_field.jpg" width="1200" height="900" loading="lazy" alt="1972 diesel irrigation engine fitted with LoRa remote monitoring"></div>
+        <div class="lp-card-body">
+          <h3>Remote monitoring for a 1972 diesel engine</h3>
+          <p>LoRa telemetry from 2+ km away. 99.2% uptime, under &euro;150 total cost.</p>
+          <div class="lp-tags"><span>IoT</span><span>LoRa</span><span>C/C++</span></div>
+        </div>
+      </a>
+    </div>
+    <p class="lp-more">Also: <a href="/projects/ibex35-prediction">an ML validation framework for financial time series</a> (only 27% of 336 models showed real predictive value). <a href="{{ site.social.github }}" target="_blank" rel="noopener">View all on GitHub &rarr;</a></p>
+  </div>
 </section>
 
-<!-- Projects Section -->
-<section id="projects">
-    <div class="container">
-        <h2 class="section-title">Projects</h2>
-
-        <div class="projects-grid">
-
-            <!-- Proteomics -->
-            <div class="project-card">
-                <h3>Automated Proteomics Pipeline for Neurodegeneration Biomarker Discovery</h3>
-                <p>
-                    Built an automated R pipeline for MaxQuant LFQ output covering data cleaning,
-                    normalization, differential expression, and ML-based biomarker discovery.
-                    <strong>70% reduction in data cleaning time</strong> — deployed at LCSB, University of Luxembourg.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Proteomics</span>
-                    <span class="tag">R</span>
-                    <span class="tag">MaxQuant</span>
-                    <span class="tag">Biomarker Discovery</span>
-                    <span class="tag">Neurodegeneration</span>
-                </div>
-                <a href="/projects/proteomics" class="project-link">
-                    View Project <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <!-- Electrophysiology Pipeline -->
-            <div class="project-card">
-                <span class="badge-wip">Work in Progress</span>
-                <h3>Automated Electrophysiology Analysis Pipeline for Synaptic Data</h3>
-                <p>
-                    Developing an automated pipeline for whole-cell patch-clamp data
-                    (mIPSCs, mEPSCs, FI curves) integrating miniML deep learning event detection.
-                    R modules complete — Python/miniML integration in development.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Electrophysiology</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">R</span>
-                    <span class="tag">Patch-Clamp</span>
-                    <span class="tag">Neurotech</span>
-                </div>
-                <a href="/projects/ephys-pipeline" class="project-link">
-                    View Project <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <!-- snRNA-seq -->
-            <div class="project-card">
-                <h3>snRNA-seq Analysis Pipeline</h3>
-                <p>
-                    Modular R pipeline for single-nucleus RNA-seq: from 10X CellRanger output to
-                    SCTransform normalisation, Louvain clustering, differential expression,
-                    and multi-layered functional enrichment (GO, KEGG, STRING, PANTHER).
-                </p>
-                <div class="project-tags">
-                    <span class="tag">scRNA-seq</span>
-                    <span class="tag">Seurat</span>
-                    <span class="tag">R</span>
-                    <span class="tag">Bioinformatics</span>
-                </div>
-                <a href="/projects/single-cell" class="project-link">
-                    View Project <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <!-- IBEX35 -->
-            <div class="project-card">
-                <h3>ML Pipeline for Financial Time-Series: Rigorous Validation Framework</h3>
-                <p>
-                    A case study in avoiding false discovery in predictive modeling. Only 27% of models
-                    showed genuine predictive value across 336 model/horizon combinations
-                    (McNemar, Diebold-Mariano, bootstrap CIs). Documented negative result — reproducible pipeline.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Time Series</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">R</span>
-                    <span class="tag">Validation</span>
-                </div>
-                <a href="/projects/ibex35-prediction" class="project-link">
-                    View Project <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="{{ site.social.github }}" class="btn btn-outline" target="_blank">
-                <i class="fab fa-github"></i> View All on GitHub
-            </a>
-        </div>
+<!-- About -->
+<section class="lp-sec lp-about" id="about">
+  <div class="lp-wrap">
+    <img src="{{ site.author.avatar }}" width="260" height="260" loading="lazy" alt="{{ site.author.name }}">
+    <div>
+      <span class="lp-eyebrow">About</span>
+      <h2>Experimentalist who writes production code.</h2>
+      <p>I'm Santiago López Begines, a neuroscientist and data scientist with 15+ years in biomedical research and 5+ in machine learning, multi-omics and data pipelines.</p>
+      <p>First author in <strong>Science Advances</strong> (2025), co-author of 8+ papers in EMBO Journal, eLife and Cell Death &amp; Disease. A deep wet-lab background in patch-clamp, proteomics and transgenic models, combined with <strong>Python</strong> and <strong>R</strong> at production level.</p>
+      <div class="lp-links">
+        <a href="/publications">Publications &rarr;</a>
+        <a href="/blog">Blog &rarr;</a>
+        <a href="/assets/cv/CV_Santiago_Lopez_Begines.pdf" download>Download CV</a>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Other Projects -->
-<section class="other-projects">
-    <div class="container">
-        <h2>Other Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Legacy System Modernization: Remote Monitoring for a 1972 Diesel Engine</h3>
-                <p>
-                    Custom LoRa wireless system enabling remote start/stop and real-time telemetry
-                    (voltage, oil pressure, RPM, fuel) of a 50-year-old irrigation engine from 2+ km away.
-                    <strong>86% reduction in site visits</strong> — 99.2% uptime over 6 months. Total cost: &lt;€150.
-                </p>
-                <div class="project-tags">
-                    <span class="tag">Embedded Systems</span>
-                    <span class="tag">IoT</span>
-                    <span class="tag">LoRa</span>
-                    <span class="tag">PCB Design</span>
-                    <span class="tag">C/C++</span>
-                </div>
-                <a href="/projects/agriot" class="project-link">
-                    View Project <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+<!-- Contact -->
+<section class="lp-sec lp-flush lp-contact" id="contact">
+  <div class="lp-wrap">
+    <div class="lp-box">
+      <div>
+        <span class="lp-eyebrow">Contact</span>
+        <h2>Let's build something reproducible.</h2>
+        <p>Available for collaborations in neurotech, MedTech and biomedical data science. Tell me about your data and I'll reply within a couple of days.</p>
+        <div class="lp-social">
+          <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="{{ site.social.github }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          <a href="{{ site.social.orcid }}" target="_blank" rel="noopener"><i class="fab fa-orcid"></i> ORCID</a>
         </div>
+      </div>
+      <form action="https://formspree.io/f/xnjgpjov" method="POST" class="lp-form">
+        <label class="lp-sr" for="lp-name">Name</label>
+        <input id="lp-name" type="text" name="name" placeholder="Name" autocomplete="name" required>
+        <label class="lp-sr" for="lp-email">Email</label>
+        <input id="lp-email" type="email" name="email" placeholder="Email" autocomplete="email" required>
+        <label class="lp-sr" for="lp-message">Message</label>
+        <textarea id="lp-message" name="message" placeholder="Message" required></textarea>
+        <button type="submit" class="lp-btn lp-btn-primary">Send message</button>
+      </form>
     </div>
+  </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact">
-    <div class="container">
-        <h2 class="section-title">Let's build together</h2>
-        <div class="contact-content">
-            <p class="contact-subtitle">
-                Available for colaborating projects in neurotech, MedTech, and biomedical data science.
-            </p>
-
-            <form action="https://formspree.io/f/xnjgpjov" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Message" required></textarea>
-                <button type="submit">Send message</button>
-            </form>
-
-            <div class="contact-info">
-                <a href="https://linkedin.com/in/santibegines" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin"></i> linkedin.com/in/santibegines
-                </a>
-                <a href="https://github.com/SLopezBegines" target="_blank" rel="noopener">
-                    <i class="fab fa-github"></i> github.com/SLopezBegines
-                </a>
-                <a href="https://orcid.org/0000-0001-8809-8919" target="_blank" rel="noopener">
-                    <i class="fab fa-orcid"></i> orcid.org/0000-0001-8809-8919
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+</div>

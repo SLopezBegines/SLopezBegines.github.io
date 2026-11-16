@@ -3,21 +3,23 @@
    ========================================================================== */
 
 :root {
-  /* Colors — brand palette (Option A: dark mode aligned to brand identity) */
-  --color-bg: #162820;              /* brand text-main — darkest surface, visibly dark green */
-  --color-bg-secondary: #1B3A2D;   /* brand green-deep — card/surface elevation */
-  --color-bg-tertiary: #1f4232;    /* slightly lighter green — badges, tags bg */
-  --color-text: #e8e4e0;            /* warm off-white — tonally distinct from green backgrounds */
-  --color-text-secondary: #dde5e0;  /* neutral sage-grey — desaturated for clear contrast on dark green bg */
-  --color-primary: #89c2a3;         /* brand green-mid */
-  --color-primary-hover: #3a9163;   /* lighter mid-green for hover states */
+  /* Colors — Editorial theme: cream page, deep green, coral accent */
+  --color-bg: #f5f2ea;              /* cream page */
+  --color-bg-secondary: #fffdf8;    /* cards, panels */
+  --color-bg-tertiary: #ece7da;     /* badges, tags bg */
+  --color-text: #15281f;            /* deep green-black */
+  --color-text-secondary: #41554a;  /* muted green-grey */
+  --color-primary: #2d7552;         /* brand green (AA on cream) */
+  --color-primary-hover: #1B3A2D;   /* deep green for hover */
   --color-primary-light: #F2F7F4;   /* brand green-pale */
   --color-primary-mid: #C5DDD0;     /* brand green-border */
-  --color-accent: #E07050;          /* brand coral — replaces purple */
-  --color-success: #89c2a3;         /* brand green-mid */
-  --color-border: #1B3A2D;          /* brand green-deep */
+  --color-accent: #B9472A;          /* brand coral, darkened for text contrast */
+  --color-success: #2d7552;
+  --color-border: #d9d2c0;          /* warm hairline */
+  --color-dark: #1B3A2D;            /* footer and code blocks */
 
   /* Typography */
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'Roboto Mono', 'JetBrains Mono', 'Fira Code', monospace;
 
@@ -62,7 +64,9 @@ body {
    ========================================================================== */
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--color-text);
@@ -138,7 +142,7 @@ main {
   left: 0;
   right: 0;
   height: var(--header-height);
-  background: rgba(22, 40, 32, 0.92);
+  background: rgba(245, 242, 234, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
@@ -877,8 +881,7 @@ section {
     left: 0;
     right: 0;
     flex-direction: column;
-    background: rgba(22, 40, 32, 0.98);
-    backdrop-filter: blur(10px);
+    background: var(--color-bg);
     padding: var(--space-md);
     border-bottom: 1px solid var(--color-border);
     gap: 0;
@@ -961,3 +964,35 @@ section > * {
 section > *:nth-child(1) { animation-delay: 0.1s; }
 section > *:nth-child(2) { animation-delay: 0.2s; }
 section > *:nth-child(3) { animation-delay: 0.3s; }
+
+/* ==========================================================================
+   Editorial theme overrides
+   Dark surfaces kept on purpose: footer and code blocks.
+   ========================================================================== */
+
+.logo-svg [stroke="#7FBA9E"] { stroke: #3f8a68; }
+.logo-svg [fill="#7FBA9E"] { fill: #3f8a68; }
+
+.site-footer {
+  background: var(--color-dark);
+  border-top-color: var(--color-dark);
+}
+.site-footer h3 { color: #eef1ee; }
+.footer-info p, .footer-bottom p { color: #b9c7bf; }
+.footer-bottom { border-top-color: #2f5a45; }
+.footer-social a { background: #245240; color: #eef1ee; }
+.footer-social a:hover { background: #89c2a3; color: #0b1a12; }
+
+pre {
+  background: var(--color-dark);
+  border-color: var(--color-dark);
+}
+pre code { color: #e8e4e0; }
+
+/* Post images must never exceed the reading column */
+.post-content img { max-width: 100%; height: auto; }
+
+/* Mermaid: subgraphs use dark fills (set per diagram), so their titles must be light */
+.mermaid .cluster .cluster-label,
+.mermaid .cluster .cluster-label *,
+.mermaid .cluster text { color: #fff !important; fill: #fff !important; }
