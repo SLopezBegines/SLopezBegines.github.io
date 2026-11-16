@@ -996,3 +996,8 @@ pre code { color: #e8e4e0; }
 .mermaid .cluster .cluster-label,
 .mermaid .cluster .cluster-label *,
 .mermaid .cluster text { color: #fff !important; fill: #fff !important; }
+
+/* Long content must not widen the page on small screens */
+.post-content, .project-content { overflow-wrap: break-word; }
+.post-content :not(pre) > code, .project-content :not(pre) > code { overflow-wrap: anywhere; }
+.post-content table, .project-content table { display: block; max-width: 100%; overflow-x: auto; }

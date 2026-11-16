@@ -112,16 +112,38 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
           <div class="lp-tags"><span>Seurat</span><span>R</span></div>
         </div>
       </a>
-      <a class="lp-card lp-c-mid" href="/projects/agriot">
-        <div class="lp-thumb"><img src="/assets/images/projects/agriot/engine_field.jpg" width="1200" height="900" loading="lazy" alt="1972 diesel irrigation engine fitted with LoRa remote monitoring"></div>
+      <a class="lp-card lp-c-mid" href="/bulk-rnaseq-deseq2-alzheimer/">
+        <div class="lp-thumb"><img src="/assets/images/bulkrnaseq_pca-grid-1.jpg" width="1200" height="800" loading="lazy" alt="PCA of 192 mouse brain samples coloured by genotype, tissue, sex and age"></div>
         <div class="lp-card-body">
-          <h3>Remote monitoring for a 1972 diesel engine</h3>
-          <p>LoRa telemetry from 2+ km away. 99.2% uptime, under &euro;150 total cost.</p>
-          <div class="lp-tags"><span>IoT</span><span>LoRa</span><span>C/C++</span></div>
+          <h3>Bulk RNA-seq with DESeq2 and edgeR</h3>
+          <p>192 5xFAD Alzheimer mouse samples (GSE168137): design formula, fold-change shrinkage and a DESeq2-vs-edgeR cross-check. Written up as a blog post.</p>
+          <div class="lp-tags"><span>DESeq2</span><span>edgeR</span><span>R</span></div>
         </div>
       </a>
     </div>
     <p class="lp-more">Also: <a href="/projects/ibex35-prediction">an ML validation framework for financial time series</a> (only 27% of 336 models showed real predictive value). <a href="{{ site.social.github }}" target="_blank" rel="noopener">View all on GitHub &rarr;</a></p>
+  </div>
+</section>
+
+<!-- Side project -->
+<section class="lp-sec lp-flush" id="side-projects">
+  <div class="lp-wrap">
+    <div class="lp-head">
+      <span class="lp-eyebrow">Side project</span>
+      <h2>Beyond the lab.</h2>
+      <p>Embedded hardware, built for the farm, not for a client.</p>
+    </div>
+    <div class="lp-bento">
+      <a class="lp-card lp-c-big lp-c-wide" href="/projects/agriot">
+        <div class="lp-thumb"><img src="/assets/images/projects/agriot/engine_field.jpg" width="1200" height="900" loading="lazy" alt="1972 diesel irrigation engine fitted with LoRa remote monitoring"></div>
+        <div class="lp-card-body">
+          <div class="lp-metric">&minus;86%</div>
+          <h3>Remote monitoring for a 1972 diesel engine</h3>
+          <p>Custom LoRa system for remote start/stop and live telemetry (voltage, oil pressure, RPM, fuel) from 2+ km away. 86% fewer site visits, 99.2% uptime over 6 months, under &euro;150 total cost.</p>
+          <div class="lp-tags"><span>Embedded</span><span>IoT</span><span>LoRa</span><span>PCB design</span><span>C/C++</span></div>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 

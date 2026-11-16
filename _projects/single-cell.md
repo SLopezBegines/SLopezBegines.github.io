@@ -74,6 +74,31 @@ flowchart TD
     style ENRICH fill:#3a2a1e,color:#fff,stroke:#f59e0b
 ```
 
+## Output Gallery
+
+<div class="figure-grid">
+  <figure style="grid-column: 1 / -1;">
+    <img src="/assets/images/snrnaseq_128_UMAP_manual_annotation.jpg" alt="UMAP of single-nucleus clusters with manual cell-type annotation">
+    <figcaption>UMAP — clusters with manual cell-type annotation</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/snrnaseq_067_HeatMap_cluster_plot.jpg" alt="Heatmap of top marker genes per cluster" style="max-height: 520px; object-fit: contain; background: #fff;">
+    <figcaption>Heatmap — top marker genes per cluster</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/snrnaseq_126_Stacked_VlnPlot_markers.jpg" alt="Stacked violin plot of canonical markers per cluster" style="max-height: 520px; object-fit: contain; background: #fff;">
+    <figcaption>Stacked violin plot — canonical markers per cluster</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/snrnaseq_282_gseGO_cluster0_UP.jpg" alt="GO gene set enrichment for upregulated genes in cluster 0">
+    <figcaption>GO gene set enrichment — cluster 0, upregulated</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/snrnaseq_284_gseGO_cluster1_UP.jpg" alt="GO gene set enrichment for upregulated genes in cluster 1">
+    <figcaption>GO gene set enrichment — cluster 1, upregulated</figcaption>
+  </figure>
+</div>
+
 ## Key Technical Details
 
 - 14 modular R scripts with single functional responsibility; sourced from RMarkdown notebooks

@@ -240,17 +240,17 @@ pre code .op  { color: #d4d4d4; } /* operators */
   gap: 0.6rem;
 }
 .feature-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  padding: 0.75rem 1rem;
+  display: block;
+  position: relative;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  overflow-wrap: anywhere;
   background: var(--color-bg-secondary);
   border-radius: 8px;
   border: 1px solid var(--color-border);
   font-size: 0.9rem;
   color: var(--color-text-secondary);
 }
-.feature-list li .fi { color: var(--color-primary); font-size: 1rem; flex-shrink: 0; }
+.feature-list li .fi { position: absolute; left: 1rem; top: 0.75rem; color: var(--color-primary); font-size: 1rem; }
 
 /* ── Results metrics ─────────────────────────────────────────── */
 .metrics-section {
