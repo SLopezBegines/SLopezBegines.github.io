@@ -104,7 +104,7 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
           <div class="lp-tags"><span>Python</span><span>R</span></div>
         </div>
       </a>
-      <a class="lp-card lp-c-mid" href="/projects/single-cell">
+      <a class="lp-card lp-c-third" href="/projects/single-cell">
         <div class="lp-thumb"><img src="/assets/images/snrnaseq_067_HeatMap_cluster_plot.jpg" width="400" height="900" loading="lazy" alt="Heatmap of top marker genes per snRNA-seq cluster"></div>
         <div class="lp-card-body">
           <h3>snRNA-seq analysis pipeline</h3>
@@ -112,7 +112,7 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
           <div class="lp-tags"><span>Seurat</span><span>R</span></div>
         </div>
       </a>
-      <a class="lp-card lp-c-mid" href="/bulk-rnaseq-deseq2-alzheimer/">
+      <a class="lp-card lp-c-third" href="/bulk-rnaseq-deseq2-alzheimer/">
         <div class="lp-thumb"><img src="/assets/images/bulkrnaseq_pca-grid-1.jpg" width="1200" height="800" loading="lazy" alt="PCA of 192 mouse brain samples coloured by genotype, tissue, sex and age"></div>
         <div class="lp-card-body">
           <h3>Bulk RNA-seq with DESeq2 and edgeR</h3>
@@ -120,8 +120,16 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
           <div class="lp-tags"><span>DESeq2</span><span>edgeR</span><span>R</span></div>
         </div>
       </a>
+      <a class="lp-card lp-c-third" href="/projects/ibex35-prediction">
+        <div class="lp-thumb lp-thumb-metric"><span class="lp-metric">27%</span><span class="lp-metric-note">of 336 model and horizon combinations showed real predictive value</span></div>
+        <div class="lp-card-body">
+          <h3>ML validation framework for financial time series</h3>
+          <p>A case study in avoiding false discovery: McNemar, Diebold-Mariano and bootstrap confidence intervals. A documented negative result with a reproducible pipeline.</p>
+          <div class="lp-tags"><span>Machine learning</span><span>Time series</span><span>Python</span><span>R</span></div>
+        </div>
+      </a>
     </div>
-    <p class="lp-more">Also: <a href="/projects/ibex35-prediction">an ML validation framework for financial time series</a> (only 27% of 336 models showed real predictive value). <a href="{{ site.social.github }}" target="_blank" rel="noopener">View all on GitHub &rarr;</a></p>
+    <p class="lp-more"><a href="{{ site.social.github }}" target="_blank" rel="noopener">View all on GitHub &rarr;</a></p>
   </div>
 </section>
 
@@ -131,7 +139,7 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
     <div class="lp-head">
       <span class="lp-eyebrow">Side project</span>
       <h2>Beyond the lab.</h2>
-      <p>Embedded hardware, built for the farm, not for a client.</p>
+      <p>Embedded hardware and IoT, away from biomedical data.</p>
     </div>
     <div class="lp-bento">
       <a class="lp-card lp-c-big lp-c-wide" href="/projects/agriot">
@@ -172,7 +180,7 @@ excerpt: "Neuroscientist and Data Scientist offering consulting in electrophysio
       <div>
         <span class="lp-eyebrow">Contact</span>
         <h2>Let's build something reproducible.</h2>
-        <p>Available for collaborations in neurotech, MedTech and biomedical data science. Tell me about your data and I'll reply within a couple of days.</p>
+        <p>Available for collaborations in neurotech, MedTech and biomedical data science. Tell me about your data and what you need to deliver.</p>
         <div class="lp-social">
           <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
           <a href="{{ site.social.github }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>

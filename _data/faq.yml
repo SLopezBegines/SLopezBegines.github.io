@@ -1,0 +1,40 @@
+# FAQ entries. Drives both the visible page (faq.md) and the FAQPage structured data.
+# Plain text only. Optional `link` is shown after the answer on the page.
+
+- question: "What services do you offer?"
+  answer: "Three kinds of work: electrophysiology and signal-analysis pipelines (patch-clamp, EEG, multi-electrode arrays); pipeline design and audit for teams that need validated, reproducible analysis; and omics data analysis (label-free proteomics, scRNA-seq and machine-learning biomarker discovery). Each one ends in something your team can run and keep."
+  link: { text: "See the services", url: "/#services" }
+
+- question: "Who do you work with?"
+  answer: "Neurotech and biomedical teams that need reliable analysis pipelines, MedTech and Pharma SMEs that need to validate or audit existing pipelines for regulatory submissions or internal quality standards, and research teams and CROs working with proteomics, transcriptomics or multi-omics data."
+
+- question: "What do I receive at the end of a project?"
+  answer: "It depends on the service: a working pipeline with technical documentation, a written audit report with a prioritised remediation roadmap, or an analysis report together with the reproducible R and Python scripts that produced it."
+
+- question: "Can you review a pipeline we already have?"
+  answer: "Yes. A pipeline audit covers code review and statistical validation, a reproducibility assessment and gap analysis, and SOP documentation for reproducible analytical workflows. It closes with a recommendations report with prioritised action items."
+
+- question: "Which data and file formats do you work with?"
+  answer: "Electrophysiology recordings from HEKA and pCLAMP (patch-clamp), EEG and multi-electrode array data; label-free proteomics output from MaxQuant; single-nucleus RNA-seq from 10X CellRanger; and bulk RNA-seq count matrices."
+  link: { text: "See the projects", url: "/#projects" }
+
+- question: "Which tools and languages do you use?"
+  answer: "R (tidyverse, tidymodels, Seurat, Shiny) and Python (scikit-learn, XGBoost, LightGBM, TensorFlow) for automated pipelines, statistical modelling and visualisation, with Git for version control."
+
+- question: "How do you make results reproducible?"
+  answer: "Analyses are written as modular scripts that run from documented notebooks, with the R environment pinned in an renv lockfile. Quality-control steps and analytical decisions are documented, and I write SOPs for reproducible workflows when an audit calls for them."
+
+- question: "How do you validate machine-learning models?"
+  answer: "With cross-validation and model validation rather than a single accuracy figure. In a financial time-series case study, only 27% of 336 model and horizon combinations showed genuine predictive value (McNemar, Diebold-Mariano and bootstrap confidence intervals). That negative result is documented with a reproducible pipeline."
+  link: { text: "Read the case study", url: "/projects/ibex35-prediction" }
+
+- question: "What is your background?"
+  answer: "I'm a neuroscientist and data scientist with a PhD in Biomedicine, 15+ years in experimental neuroscience and 5+ years in machine learning, multi-omics analysis and production data pipelines. I'm first author in Science Advances (2025) and co-author of 8+ publications in journals including EMBO Journal, eLife and Cell Death & Disease."
+  link: { text: "See the publications", url: "/publications" }
+
+- question: "Have your pipelines been used in real projects?"
+  answer: "Yes. An automated electrophysiology pipeline at IBiS in Seville cut processing time by 90%, and automated R scripts for omics data cleaning at LCSB, University of Luxembourg, cut it by 70%."
+
+- question: "How do we get started?"
+  answer: "Send a message through the contact form on the home page. Tell me what data you have and what you need to deliver or decide, and we can take it from there."
+  link: { text: "Go to the contact form", url: "/#contact" }

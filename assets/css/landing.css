@@ -157,9 +157,16 @@
 .lp-c-big .lp-card-body { flex: 1; }
 .lp-c-sm { grid-column: span 2; }
 .lp-c-mid { grid-column: span 3; }
+.lp-c-third { grid-column: span 2; }
 .lp-c-wide { grid-column: span 6; }
 @media (min-width: 901px) { .lp-c-wide .lp-thumb { height: 340px; } }
 .lp-metric { font-size: 2.2rem; font-weight: 300; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 4px; font-variant-numeric: tabular-nums; }
+.lp-thumb-metric {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 0 24px;
+  text-align: center; background: linear-gradient(180deg, var(--lp-surface-2), var(--lp-surface));
+}
+.lp-thumb-metric .lp-metric { font-size: 3.4rem; margin: 0; color: var(--lp-ink); }
+.lp-metric-note { font-size: 13px; color: var(--lp-ink-muted); max-width: 17em; line-height: 1.4; }
 .lp-wip { margin-bottom: 10px; font: 500 10.5px var(--lp-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--lp-coral); }
 .lp-trace {
   height: 140px; display: grid; place-items: center; color: var(--lp-green);
@@ -213,7 +220,7 @@
   .lp-stat:first-child { border-top: 0; }
   .lp-svc:first-child { border-top: 0; }
   .lp-bento { grid-template-columns: 1fr; }
-  .lp-c-big, .lp-c-sm, .lp-c-mid, .lp-c-wide { grid-column: auto; }
+  .lp-c-big, .lp-c-sm, .lp-c-mid, .lp-c-third, .lp-c-wide { grid-column: auto; }
   .lp-c-big { flex-direction: column; }
   .lp-c-big .lp-thumb { aspect-ratio: 16 / 9; border-right: 0; border-bottom: 1px solid var(--lp-hairline); }
   .lp-about img { max-width: 180px; }
